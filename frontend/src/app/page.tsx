@@ -2,28 +2,52 @@
 import styles from "./page.module.css";
 import {Button} from "@nextui-org/button";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react"
+import './grid.css';
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <Button size="sm">
-        Large
-      </Button>  
-    <Card className="py-4">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold">Daily Mix</p>
-        <small className="text-default-500">12 Tracks</small>
-        <h4 className="font-bold text-large">Frontend Radio</h4>
-      </CardHeader>
-      <CardBody className="overflow-visible py-2">
-        <Image
-          alt="Card background"
-          className="object-cover rounded-xl"
-          src="https://nextui.org/images/hero-card-complete.jpeg"
-          width={270}
-        />
-      </CardBody>
-    </Card>
+    <div >
+      <div className="ms-full-screen-container">
+        <div className="menu">Menu</div>
+        <div className="ms-h-flex-container ms-home-screen ">
+          {/* 1 */}
+          <div className="ms-v-flex-container">
+              <div className="ms-flex-square">
+                  <div>left</div>
+                  <div>right</div>
+              </div>
+              <div className="ms-flex-square">
+                  <div>left</div>
+                  <div>right</div>
+              </div>
+          </div>
+          {/* 2 */}
+          <div className="ms-v-flex-container">
+              <div className="ms-flex-square">
+                  <div>left</div>
+                  <div>right</div>
+              </div>
+              <div className="ms-flex-square">
+                  <div>left</div>
+                  <div>right</div>
+              </div>
+          </div>
+          {/* 3 */}
+          <div className="ms-v-flex-container">
+              <div className="ms-flex-square">
+                  <div>left</div>
+                  <div>right</div>
+              </div>
+              <div className="ms-flex-square">
+                  <div>left</div>
+                  <div>right</div>
+              </div>
+          </div>
+     
+  
+        </div>
+      </div>
     </div>
   );
 }

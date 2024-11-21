@@ -1,0 +1,77 @@
+.ms-grid-square, 
+.ms-h-flex-container, 
+.ms-grid-square div, 
+.ms-flex-square, 
+.ms-flex-row, 
+.ms-v-flex-container, 
+.ms-flex-square > div {
+    display: flex;
+}
+
+.ms-flex-row {
+    background-color: red;
+    width: 100%;
+}
+.ms-full-screen-container {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 25px auto;
+    width: 200px;
+}
+
+.ms-grid-square {
+    aspect-ratio: 1 / 1;
+    flex-basis: 33%;
+    width: 30%;
+}
+.ms-h-flex-container {
+    flex-direction: row;
+}
+
+.ms-v-flex-container {
+    flex-direction: column;
+}
+
+.ms-home-screen > .ms-v-flex-container, .ms-v-flex-container > div, .ms-flex-square > div {
+    flex: 1;
+}
+
+.ms-home-screen > .ms-v-flex-container:nth-child(odd) {
+    background-color: #ccc;
+}
+.ms-home-screen > .ms-v-flex-container:nth-child(even) {
+    background-color: #bbb;
+}
+
+
+.ms-h-flex-stretch > .ms-v-flex-container,  .ms-v-flex-container  {
+   height: 100vh;
+}
+
+.ms-grid-square div {
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    border: solid 1px #ccc;
+}
+
+.ms-flex-square {
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    text-align: center;
+}
+.ms-flex-square > div {
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    height: 100%;
+}
