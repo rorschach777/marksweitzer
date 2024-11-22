@@ -68,3 +68,7 @@ a {
   padding: 1.5rem;
   box-sizing: border-box;
 }
+
+.u-hide {
+  display: none !important
+}

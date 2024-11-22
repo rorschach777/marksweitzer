@@ -20,13 +20,13 @@ export default function Home() {
           </div>
           {/* 2 */}
           <div className="ms-v-flex-container">
-            <FlexSquare/>
-            <FlexSquare/>
+            <FlexSquare croppedContent={["M", "S"]}/>
+            <FlexSquare croppedContent={["M", "S"]}/>
           </div>
           {/* 3 */}
           <div className="ms-v-flex-container">
-          <FlexSquare label="Content"/>
-          <FlexSquare label="Content"/>
+            <FlexSquare label="Content"/>
+            <FlexSquare label="Content"/>
           </div>
      
   

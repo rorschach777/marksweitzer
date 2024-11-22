@@ -39,10 +39,107 @@
     font-weight: var(--ms-font-weight);
 
 }
-.ms-flex-square span::after {
+.ms-flex-square span.label::after {
     width: 100%;
     height: .3rem;
     content: '';
     display: block;
     background-color: white;
+}
+.cropped-content {
+    position: absolute;
+    z-index: 4;
+    font-family: var(--ms-font);
+    font-weight: var(--ms-font-weight);
+    font-size: 25rem;
+    color: white;
+}
+.cropped-content::after {
+    display: none;
+}
+.ms-flex-square-panel {
+    overflow: hidden;
+    position: relative;
+}
+.ms-flex-square-cropped-content:first-child > div:first-child span.cropped-content {
+    bottom: -18.9rem;
+    right: -12rem;
+    animation-delay: .3s;
+    animation: croppedContentBottom 6s infinite ease-in-out ;
+
+
+}
+.ms-flex-square-cropped-content:first-child > div:last-child span.cropped-content {
+    bottom: -18.9rem;
+    animation-delay: .1s;
+    animation: croppedContentLeft 6s infinite ease-in-out ;
+}
+.ms-flex-square-cropped-content:last-child > div:first-child span.cropped-content {
+    top: -18.9rem;
+    right: -12rem;
+    animation-delay: .2s;
+    animation: croppedContentRight 6s infinite ease-in-out ;
+}
+.ms-flex-square-cropped-content:last-child > div:last-child span.cropped-content {
+    top: -18.9rem;
+    left: -12rem;
+    animation-delay: .2s;
+    animation: croppedContentTop 6s infinite ease-in-out ;
+}
+
+@keyframes croppedContentBottom {
+    0% {
+        bottom: -50rem
+    } 
+    30% {
+        bottom: -18.9rem;
+    }
+    60% {
+        bottom: -18.9rem;
+    }
+    100% {
+        bottom: -50rem
+    } 
+}
+@keyframes croppedContentTop {
+    0% {
+        top: -50rem
+    } 
+    30% {
+        top: -18.9rem;
+    }
+    60% {
+        top: -18.9rem;
+    }
+    100% {
+        top: -50rem
+    } 
+}
+@keyframes croppedContentLeft {
+    0% {
+        left: -50rem
+    } 
+    30% {
+        left: -12rem;
+    }
+    60% {
+        left: -12rem;
+    }
+    100% {
+        left: -50rem
+    } 
+}
+@keyframes croppedContentRight {
+    0% {
+        right: -50rem
+    } 
+    30% {
+        right: -12rem;
+    }
+    60% {
+        right: -12rem;
+    }
+    100% {
+        right: -50rem
+    } 
 }
