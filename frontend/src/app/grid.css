@@ -1,3 +1,4 @@
+
 .ms-grid-square, 
 .ms-h-flex-container, 
 .ms-grid-square div, 
@@ -8,23 +9,18 @@
     display: flex;
 }
 
+
 .ms-flex-row {
-    background-color: red;
     width: 100%;
 }
 .ms-full-screen-container {
-    background-color: red;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    max-height: 100vh;
     position: relative;
+    overflow-y: hidden;
 }
-.menu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 25px auto;
-    width: 200px;
-}
+
 
 .ms-grid-square {
     aspect-ratio: 1 / 1;
@@ -62,16 +58,13 @@
     border: solid 1px #ccc;
 }
 
-.ms-flex-square {
-    align-items: center;
-    justify-content: center;
-    background-color: #000;
-    text-align: center;
+
+.ms-v-flex-container > .ms-flex-square:nth-child(2){
+    border-top: var(--border-style);
 }
-.ms-flex-square > div {
-    justify-content: center;
-    align-items: center;
-    border-left: 1px solid #aaa;
-    border-top: 1px solid #aaa;
-    height: 100%;
+
+.ms-home .ms-h-flex-container .ms-v-flex-container:not(:first-child), .ms-flex-square > div:nth-child(2){
+    border-left: var(--border-style)
 }
+
+

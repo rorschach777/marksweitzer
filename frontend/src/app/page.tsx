@@ -3,46 +3,30 @@ import styles from "./page.module.css";
 import {Button} from "@nextui-org/button";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react"
 import './grid.css';
-
+import Header from './components/Header';
+import FlexSquare from './components/FlexSquare';
 
 export default function Home() {
   return (
-    <div >
+    <div className="root-container ms-home">
       <div className="ms-full-screen-container">
-        <div className="menu">Menu</div>
+        <Header/>
         <div className="ms-h-flex-container ms-home-screen ">
           {/* 1 */}
           <div className="ms-v-flex-container">
-              <div className="ms-flex-square">
-                  <div>left</div>
-                  <div>right</div>
-              </div>
-              <div className="ms-flex-square">
-                  <div>left</div>
-                  <div>right</div>
-              </div>
+            <FlexSquare label="Content"/>
+            <FlexSquare label="Content"/>
+              
           </div>
           {/* 2 */}
           <div className="ms-v-flex-container">
-              <div className="ms-flex-square">
-                  <div>left</div>
-                  <div>right</div>
-              </div>
-              <div className="ms-flex-square">
-                  <div>left</div>
-                  <div>right</div>
-              </div>
+            <FlexSquare/>
+            <FlexSquare/>
           </div>
           {/* 3 */}
           <div className="ms-v-flex-container">
-              <div className="ms-flex-square">
-                  <div>left</div>
-                  <div>right</div>
-              </div>
-              <div className="ms-flex-square">
-                  <div>left</div>
-                  <div>right</div>
-              </div>
+          <FlexSquare label="Content"/>
+          <FlexSquare label="Content"/>
           </div>
      
   

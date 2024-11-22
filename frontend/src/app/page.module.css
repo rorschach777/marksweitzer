@@ -1,3 +1,5 @@
+
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -165,3 +167,13 @@ a.secondary {
     filter: invert();
   }
 }
+
+
+/* hide page scrollbar */
+html { scrollbar-width: none; } /* Firefox */
+body  { -ms-overflow-style: none; } /* IE and Edge */
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Chrome */
+/* end hide page scrollbar */
+
+
+

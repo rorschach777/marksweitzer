@@ -1,0 +1,65 @@
+header {
+    transition: all .2s;
+    background-color: white;
+}
+
+
+
+header ul li {
+    color: black;
+    font-family: var(--ms-font);
+    font-weight: 700;
+    font-size: 4.5rem;
+    letter-spacing: -0.17rem;
+    line-height: 5rem;
+
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(var(--header-height) - 3rem);
+  
+}
+
+
+
+
+.menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 25px auto;
+    width: 200px;
+    cursor: pointer;
+    z-index: 3;
+}
+.menu span {
+    width: 25px;
+    display: block;
+    border: solid 1px #ccc;
+    margin: 5px;
+    display: block;
+    margin: .5rem auto;
+    transition: all .5s;
+    animation-timing-function: ease-in-out;
+}
+.menu-open > span {
+    border-color: black;
+}
+.menu-open > span:first-child{
+    transform: rotate(45deg) translateY(5px);
+    
+}
+.menu-open > span:last-child{
+    transform: rotate(-45deg) translateY(-5px);;
+}
+.ms-mega-menu {
+    margin-top: calc(var(--header-height) * -1);
+    transition: all .5s;
+    animation-timing-function: ease-in-out;
+}
+.ms-mega-menu-open {
+    margin-top: 0;
+}

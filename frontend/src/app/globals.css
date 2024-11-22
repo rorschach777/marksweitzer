@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 62.5%;
+}
+
+.root-container {
+  position: relative;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --header-height: 45vh;
+  --header-height-mobile: 100vh;
+  --border-style: 1px solid #424242;
+  --ms-font: 'pragmatica', sans-serif;
+  --ms-font-weight: 700;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +38,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
 }
 
 * {
@@ -43,4 +56,15 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+
+/* Containers */
+
+.ms-container {
+  width: 108rem;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
