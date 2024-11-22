@@ -17,6 +17,8 @@ html {
   --border-style: 1px solid #424242;
   --ms-font: 'pragmatica', sans-serif;
   --ms-font-weight: 700;
+  --cropped-content-offset-y: -16rem;
+  --cropped-content-offset-x: -10rem;
 }
 
 @media (prefers-color-scheme: dark) {

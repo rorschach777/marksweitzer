@@ -14,9 +14,8 @@ export default function Home() {
         <div className="ms-h-flex-container ms-home-screen ">
           {/* 1 */}
           <div className="ms-v-flex-container">
-            <FlexSquare label="Content"/>
-            <FlexSquare label="Content"/>
-              
+            <FlexSquare label="Portfolio"/>
+            <FlexSquare label="Experience"/>
           </div>
           {/* 2 */}
           <div className="ms-v-flex-container">
@@ -25,13 +24,13 @@ export default function Home() {
           </div>
           {/* 3 */}
           <div className="ms-v-flex-container">
-            <FlexSquare label="Content"/>
-            <FlexSquare label="Content"/>
+            <FlexSquare label="Skills"/>
+            <FlexSquare label="Contact"/>
           </div>
-     
-  
         </div>
+        <footer className="footer">Mark Sweitzer | &copy; All Rights Reserved 2024 </footer>
       </div>
+
     </div>
   );
 }
