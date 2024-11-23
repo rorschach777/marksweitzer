@@ -26,10 +26,11 @@
     transition: all .5s;
     z-index: 1;
 }
-.ms-flex-square:hover:after{
+.ms-home-screen .ms-v-flex-container:first-child .ms-flex-square:hover:after, 
+.ms-home-screen .ms-v-flex-container:last-child .ms-flex-square:hover:after
+{
     transform: translateX(100%);
     animation-timing-function: ease-in-out;
-
 }
 .ms-flex-square .label {
     font-size: 1.8rem;

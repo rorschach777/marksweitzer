@@ -27,8 +27,8 @@ const FlexSquare = ( props ) => {
                 )}
             </div>
             {props.label && (
-                <Link className="label">
-                 {props.label}
+                <Link className="label" href={`${props.label.toLowerCase()}`}>
+                    {props.label}
                 </Link>
               
             )}

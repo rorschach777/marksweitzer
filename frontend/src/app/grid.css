@@ -21,7 +21,9 @@
     overflow-y: hidden;
 }
 
-
+.ms-flex-container {
+    display: flex;
+}
 .ms-grid-square {
     aspect-ratio: 1 / 1;
     flex-basis: 33%;

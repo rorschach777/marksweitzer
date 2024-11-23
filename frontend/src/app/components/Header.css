@@ -3,8 +3,6 @@ header {
     background-color: white;
 }
 
-
-
 header ul li {
     color: black;
     font-family: var(--ms-font);
@@ -24,12 +22,11 @@ header nav ul {
 }
 
 
-
-
 .menu {
     position: absolute;
     left: 0;
     right: 0;
+    top: 25px;
     margin: 25px auto;
     width: 200px;
     cursor: pointer;
@@ -39,7 +36,6 @@ header nav ul {
     width: 25px;
     display: block;
     border: solid 1px #ccc;
-    margin: 5px;
     display: block;
     margin: .5rem auto;
     transition: all .5s;

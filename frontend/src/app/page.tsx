@@ -14,8 +14,8 @@ export default function Home() {
         <div className="ms-h-flex-container ms-home-screen ">
           {/* 1 */}
           <div className="ms-v-flex-container">
-            <FlexSquare label="Portfolio"/>
-            <FlexSquare label="Experience"/>
+            <FlexSquare label="Profile"/>
+            <FlexSquare label="Skills"/>
           </div>
           {/* 2 */}
           <div className="ms-v-flex-container">
@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           {/* 3 */}
           <div className="ms-v-flex-container">
-            <FlexSquare label="Skills"/>
+            <FlexSquare label="Experience"/>
             <FlexSquare label="Contact"/>
           </div>
         </div>
