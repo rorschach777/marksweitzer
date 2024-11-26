@@ -59,3 +59,7 @@ header nav ul {
 .ms-mega-menu-open {
     margin-top: 0;
 }
+
+header a {
+    cursor: pointer;
+}

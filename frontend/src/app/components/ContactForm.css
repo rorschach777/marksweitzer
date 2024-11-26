@@ -1,0 +1,70 @@
+.form-title {
+    font-family: var(--ms-font);
+    letter-spacing: -0.17rem;
+
+    font-size: 2.6rem;
+    color: black;
+    font-weight: 700;
+}
+
+.contact-form {
+    position: relative;
+    padding: 1.5rem;
+    width: 40rem;
+    right: 0;
+
+}
+
+.form-group {
+    width: 100%;
+}
+.form-group > * {
+    display: block;
+    color: black;
+    width: inherit;
+}
+
+.form-group input, .form-group textarea {
+
+    background-color: #e7e7e7;
+    border-radius: .5rem;
+    padding:0.5rem;
+    box-sizing: border-box;
+    margin: .5rem 0 ;
+}
+
+.form-group textarea {
+    min-height: 10rem;
+}
+
+.form-group button {
+    color: black;
+    font-size: 1.4rem;
+    width: 20rem;
+    margin: 2rem 0;
+    border: solid black;
+
+}
+.form-group button:hover {
+    background-color: black;
+    color: white;
+    border: unset;
+}
+
+.ms-mega-menu .ms-container > .ms-flex-container {
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.ms-mega-menu .contact-form {
+    transition: .2s;
+    transform: translateX(0%);
+    margin-left: 2.5rem; 
+}
+
+.move-right{
+
+    transform: translateX(150%) !important;
+}
+
