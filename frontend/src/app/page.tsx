@@ -25,7 +25,7 @@ export default function Home() {
           {/* 3 */}
           <div className="ms-v-flex-container">
             <FlexSquare label="Experience"/>
-            <FlexSquare label="Contact"/>
+            <FlexSquare label="Portfolio"/>
           </div>
         </div>
         <footer className="footer">Mark Sweitzer | &copy; All Rights Reserved 2024 </footer>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./grid.css";
 import Provider from './Provider';
 import Link from "next/link";
 

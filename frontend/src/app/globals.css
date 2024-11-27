@@ -158,4 +158,47 @@ a {
   position: relative;
   min-height: 50rem;
 }
+/* PORTFOLIO */
+
+.portfolio  .ms-flex-container  {
+  height: inherit;
+  align-items: center;
+}
+
+.portfolio-layout {
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 100%;
+
+ }
+
+.instagrid {
+  aspect-ratio: 9 / 16;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+
+}
+
+.instagrid div {
+  display: flex;
+  border: var(--border-style);
+  aspect-ratio: 1 / 1;
+}
+
+.instagrid > div:first-child {
+  width: 100%;
+
+}
+.instagrid > div:not(:first-child) {
+  width: 50%;
+}
+.instagrid:nth-child(2) > .item-1 {
+  order: 3;
+}
+
+
 

@@ -30,7 +30,6 @@ const ContactForm = ( props ) => {
     }
 
     const lastNameValidation = () => {
-
         const pattern = /^[A-Za-z]{1,15}$/;    
         const isValid = pattern.test(lastNameRef.current.value);
         formDispatch({type: "UPDATE_LAST_NAME", payload: {isValid : isValid, isUpdated : true}})
