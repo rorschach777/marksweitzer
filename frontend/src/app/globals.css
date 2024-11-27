@@ -170,7 +170,7 @@ a {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 95%;
     max-width: 100%;
 
  }
@@ -198,6 +198,14 @@ a {
 }
 .instagrid:nth-child(2) > .item-1 {
   order: 3;
+}
+@media only screen and (max-width: 76.8rem){
+  .portfolio-layout {
+    flex-direction: column;
+  }
+  .portfolio .ms-full-screen-container {
+    overflow: visible;
+  }
 }
 
 

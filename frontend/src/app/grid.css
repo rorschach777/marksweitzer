@@ -17,8 +17,9 @@
     width: 100%;
     height: 100vh;
     max-height: 100vh;
+    min-height: 100vh;
     position: relative;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .ms-flex-container {
