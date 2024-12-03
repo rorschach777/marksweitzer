@@ -44,6 +44,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
+  min-height: 100vh;
 }
 
 * {
@@ -93,7 +94,7 @@ a {
   
 } 
 .ms-heading {
-  height: 50vh;
+  height: 35vh;
 }
 
 
@@ -117,7 +118,7 @@ a {
   font-weight: 700;
   letter-spacing: -0.17rem;
   position: absolute;
-  top: 28rem;
+  top: 18rem;
   left: 2rem;
   font-size: 3rem;
 
@@ -132,10 +133,10 @@ a {
   top: 28rem;
 }
 .page-title-left {
-  top: 30rem;
+  top: 20rem;
 }
 .page-title-right {
-  top: 35rem;
+  top: 25rem;
   left: -21rem;
 }
 
@@ -159,6 +160,14 @@ a {
   min-height: 50rem;
 }
 /* PORTFOLIO */
+
+.portfolio {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+}
 
 .portfolio  .ms-flex-container  {
   height: inherit;
@@ -199,14 +208,40 @@ a {
 .instagrid:nth-child(2) > .item-1 {
   order: 3;
 }
-@media only screen and (max-width: 76.8rem){
+@media only screen and (max-width: 48rem){
   .portfolio-layout {
     flex-direction: column;
   }
   .portfolio .ms-full-screen-container {
     overflow: visible;
   }
+  .instagrid:nth-child(2) > .item-3 {
+    order: 1;
+  }
+ 
+
 }
 
+.portfolio-item {
+  overflow:  hidden;
+}
+.portfolio-item img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
+.portfolio-item  > div:first-child, .portfolio-item  > div:first-child > div, .portfolio-item  > div:first-child > img{
+  border: unset;
+  border-radius: unset;
+  width: 100%;
+  overflow: inherit;
+}
+
+.portfolio button {
+  color: white;
+}
+.portfolio-item-blurred  > div:first-child > img {
+  filter:blur(2rem);
+  transform: scale(1.2)
+}
 

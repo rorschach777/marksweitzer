@@ -1,5 +1,10 @@
 import Header from '../components/Header';
+import {Accordion, AccordionItem} from "@nextui-org/react";
+
+
+
 export default function Page(){
+    
     return (
         <>
             <Header/>
@@ -21,6 +26,7 @@ export default function Page(){
                 </div>
                 <div className="ms-container">
                     <div className="ms-scrollable-content">
+        
                         <section>
                                 <h3>Enough room for your ideas</h3>
                                 <p>

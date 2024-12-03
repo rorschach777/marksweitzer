@@ -22,11 +22,12 @@ const Header = () => {
                     <div className="ms-flex-container">
                         <nav >
                             <ul >
-                                <li>Home</li>
-                                <a onClick={formDisplayHandler}>
-                                    <li>Contact</li>
-                                </a>
-                                <li>Studios</li>
+                                <li className="header-link">
+                                    <Link href="/">Home</Link>
+                                </li>
+                                <li onClick={formDisplayHandler} className="header-link">Contact</li>
+                               
+                                <li className="header-link">Studios</li>
                             </ul>
                         </nav>
                         <ContactForm hidden={`${hideForm ? 'move-right' : ''}`}/>

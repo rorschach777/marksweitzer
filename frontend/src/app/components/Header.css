@@ -3,14 +3,20 @@ header {
     background-color: white;
 }
 
-header ul li {
+li.header-link {
     color: black;
     font-family: var(--ms-font);
     font-weight: 700;
     font-size: 4.5rem;
     letter-spacing: -0.17rem;
     line-height: 5rem;
+    cursor: pointer;
 
+}
+li.header-link > a {
+    font-size: inherit !important;
+    color: inherit;
+    cursor: inherit;
 }
 
 header nav ul {
