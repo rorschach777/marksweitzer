@@ -27,19 +27,19 @@ export default function Page(){
                             <div className={`portfolio-item item-1 ${isBlurred ? 'portfolio-item-blurred' : ''}`}>
                                 <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                    src="/portfolio/item-3.webp"
                                     />
                             </div>
                             <div className="portfolio-item item-2">
                                 <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                    src="/portfolio/item-2.webp"
                                     />
                             </div>
                             <div className="portfolio-item item-3">
                                 <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                    src="/portfolio/item-9.webp"
                                     />
                             </div>
                         </div>
@@ -47,19 +47,19 @@ export default function Page(){
                             <div className="portfolio-item item-1">
                                 <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                    src="/portfolio/item-11.webp"
                                     />
                             </div>
                             <div className="portfolio-item item-2">
                                 <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                        src="/portfolio/item-1.webp"
                                 />
                             </div>
                             <div className="portfolio-item item-3">
                                 <Image
                                 alt="NextUI Fruit Image with Zoom"
-                                src="https://nextui.org/images/fruit-1.jpeg"
+                                   src="/portfolio/item-4.webp"
                                 />
                             </div>
                         </div>
@@ -67,19 +67,19 @@ export default function Page(){
                             <div className="portfolio-item item-1">
                                  <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                    src="/portfolio/item-5.webp"
                                     />
                             </div>
                             <div className="portfolio-item item-2">
                                  <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                       src="/portfolio/item-6.webp"
                                     />
                             </div>
                             <div className="portfolio-item item-3">
                                  <Image
                                     alt="NextUI Fruit Image with Zoom"
-                                    src="https://nextui.org/images/fruit-1.jpeg"
+                                       src="/portfolio/item-10.webp"
                                     />
                             </div>
                         </div>

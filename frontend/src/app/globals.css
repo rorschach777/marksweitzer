@@ -22,6 +22,10 @@ html {
   --ms-font-weight: 700;
   --cropped-content-offset-y: -16rem;
   --cropped-content-offset-x: -10rem;
+  --breakpoint-mobile: 48rem;
+  --breakpoint-tablet: 76.8rem;
+  --breakpoint-main:  var(--breakpoint-mobile);
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,11 +149,12 @@ a {
   box-sizing: border-box;
 }
 
-.ms-scrollable-content h3 {
+.ms-scrollable-content h3, .text-large {
   font-size: 2.7rem;
   font-family: var(--ms-font);
   font-weight: 700;
   letter-spacing: -0.17rem;
+  color: white;
 }
 
 .ms-scrollable-content p {
@@ -245,3 +250,32 @@ a {
   transform: scale(1.2)
 }
 
+hr {
+  background-color:rgba(255,255,255,.5) !important;
+}
+.experience h2 {
+  margin: .5rem 0;
+}
+.experience {
+  width: 81rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.experience h4 {
+  font-size: 2rem;
+  font-family: var(--ms-font);
+  font-weight: 700;
+  letter-spacing: -0.17rem;
+  color: white;
+}
+
+.experience-points {
+  margin: 1.5rem 0;
+}
+.experience-points li{
+  list-style: outside;
+  color: white;
+  
+}

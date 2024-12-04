@@ -71,7 +71,7 @@
 }
 
 
-@media only screen and (max-width: 76rem) {
+@media only screen and (var(--breakpoint-main)) {
     .ms-home .ms-h-flex-container {
         flex-direction: row;
         flex-wrap: wrap;
