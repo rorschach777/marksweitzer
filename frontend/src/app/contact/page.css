@@ -1,0 +1,41 @@
+.contact-page {
+
+}
+.contact-form {
+    width: 50%;
+}
+.contact-page form .form-group label {
+    color: white;
+}
+
+.contact-page .ms-container .ms-flex-container {
+    justify-content: space-between;
+}
+
+.contact-page .ms-container .ms-flex-container div {
+    flex: 1;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.contact-page h4, .contact-page h5, form .form-title {
+    font-size: 2.8rem;
+    color: white;
+    letter-spacing: -0.17rem;
+    font-family: var(--ms-font);
+    font-weight: 700;
+  }
+  
+  .contact-page form {
+    min-width: 100%;
+  }
+
+  @media only screen  and (max-width: 48rem) {
+    .contact-page .ms-container .ms-flex-container {
+        flex-direction: column;
+    }
+  }
+
+  .ms-container .ms-flex-container div p {
+    margin: 1.5rem 0;
+  }

@@ -26,8 +26,10 @@ const Header = () => {
                                     <Link href="/">Home</Link>
                                 </li>
                                 <li onClick={formDisplayHandler} className="header-link">Contact</li>
-                               
-                                <li className="header-link">Studios</li>
+                                <li className="header-link">Profile</li>
+                                <li className="header-link">Experience</li>
+                                <li className="header-link">Portfolio</li>
+
                             </ul>
                         </nav>
                         <ContactForm hidden={`${hideForm ? 'move-right' : ''}`}/>
