@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import {Accordion, AccordionItem} from "@nextui-org/react";
 import Experience from '../components/Experience';
-
+import PageHeading from '../components/PageHeading'
 
 export default function Page(){
     
@@ -9,23 +9,9 @@ export default function Page(){
         <>
             <Header/>
             <div className="page">
+                <PageHeading title="Experience" />
                 <div className="ms-container">
-                    <div className="ms-flex-container ms-heading">
-                        <div className="column">
-                            <h1 className="page-title-main">Experience</h1>
-                            <span className="page-title page-title-left">Experience</span>
-                        </div>
-                        <div className="column">
-                            <span className="page-title page-title-right">Experience</span>
-                        </div>
-                        <div className="column"></div>
-                        <div className="column"></div>
-                    </div>
-                </div>
-                <div className="ms-container">
-                    <div className="ms-scrollable-content">
-                        <Experience />
-                    </div>
+                    <Experience />
                 </div>
             </div>
         </>

@@ -1,0 +1,45 @@
+
+.page-title-main {
+    font-family: var(--ms-font);
+    font-weight: 700;
+    letter-spacing: -0.17rem;
+    position: absolute;
+    top: 18rem;
+    left: 2rem;
+    font-size: 3rem;
+  
+  }
+  
+  .page-title {
+    font-family: var(--ms-font);
+    font-size: 10rem;
+    font-weight: 700;
+    letter-spacing: -0.17rem;
+    position: absolute;
+    top: 28rem;
+    z-index: 5;
+  }
+  .page-title-left {
+    top: 20rem;
+  }
+  .page-title-right {
+    top: 25rem;
+    left: -21rem;
+  }
+
+
+  @media only screen  and (max-width: 76.8rem ) {
+
+ 
+    .page-title {
+        font-size: 4.5rem !important;
+    }
+    .page-title-left {
+        top: 22rem;
+      }
+
+    .page-title-right {
+        top: 25rem;
+        left: -15rem;
+    }
+  }

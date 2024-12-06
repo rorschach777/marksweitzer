@@ -1,0 +1,14 @@
+.nextui-slider label,  .nextui-slider output{
+    font-size: 1.5rem;
+    margin: .5rem 0;
+}
+
+
+.nextui-slider output {
+    font-size: 2.8rem;
+    font-family: var(--ms-font);
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.17rem;
+
+}
