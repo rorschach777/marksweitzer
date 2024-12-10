@@ -1,3 +1,7 @@
+.ms-heading {
+  height: 35vh;
+}
+
 
 .page-title-main {
     font-family: var(--ms-font);
@@ -7,8 +11,9 @@
     top: 18rem;
     left: 2rem;
     font-size: 3rem;
+    z-index: 3;
   
-  }
+ }
   
   .page-title {
     font-family: var(--ms-font);
@@ -17,7 +22,7 @@
     letter-spacing: -0.17rem;
     position: absolute;
     top: 28rem;
-    z-index: 5;
+    z-index: inherit;
   }
   .page-title-left {
     top: 20rem;
@@ -28,12 +33,20 @@
   }
 
 
-  @media only screen  and (max-width: 76.8rem ) {
-
+  @media screen and (max-width: 480px) {
+    .ms-heading {
+      height: 25vh !important;
+      font-size: 5rem !important;
+    }
  
     .page-title {
-        font-size: 4.5rem !important;
+
+     
     }
+    .page-title-main {
+      font-size: 4rem !important;
+      left: 1.5rem ;
+  }
     .page-title-left {
         top: 22rem;
       }

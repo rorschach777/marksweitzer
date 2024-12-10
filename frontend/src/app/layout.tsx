@@ -33,9 +33,11 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/ewr3rhx.css" />
       </head>
       <body >
+      <div className="root-container ms-home">
         <Provider>
           {children}
         </Provider>
+        </div>
       </body>
     </html>
   );

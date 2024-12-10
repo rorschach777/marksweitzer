@@ -8,7 +8,7 @@ import FlexSquare from './components/FlexSquare';
 
 export default function Home() {
   return (
-    <div className="root-container ms-home">
+
       <div className="ms-full-screen-container">
         <Header/>
         <div className="ms-h-flex-container ms-home-screen ">
@@ -31,6 +31,6 @@ export default function Home() {
         <footer className="footer">Mark Sweitzer | &copy; All Rights Reserved 2024 </footer>
       </div>
 
-    </div>
+
   );
 }

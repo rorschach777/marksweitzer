@@ -171,7 +171,6 @@ export default function Page(){
                 </div>
             </div>
         </div>
-        
         <NextUIModal
             isOpen={isBlurred}
             toggleModal={clickHandler}
