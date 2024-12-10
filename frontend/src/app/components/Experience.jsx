@@ -1,6 +1,6 @@
 "use client"
 
-import './Experience.css';
+
 import NextUiSlider from './NextUiSlider';
 import {useState} from "react" 
 import {Accordion, AccordionItem, slider} from "@nextui-org/react";

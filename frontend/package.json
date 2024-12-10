@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "sass-dev": "sass --watch --update --style=expanded src/app/components/index.scss:src/app/main.css",
-    "sass-prod": "sass --no-source-map --style=compressed src/app/components/index.scss:src/app/main.css",
+    "sass-dev": "sass --watch --update --style=expanded src/app/main.scss:src/app/main.css",
+    "sass-prod": "sass --no-source-map --style=compressed src/app/main.scss:src/app/main.css",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

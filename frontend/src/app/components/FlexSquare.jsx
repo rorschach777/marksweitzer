@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import {Link} from '@nextui-org/link'
-import './FlexSquare.css';
+
 const FlexSquare = ( props ) => {
     const [croppedContentIndex, setcroppedContentIndex] = useState(0);
     useEffect(()=>{

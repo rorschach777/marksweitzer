@@ -1,0 +1,19 @@
+// Base Css
+@import './grid';
+@import './globals';
+
+// Components
+@import './components/ContactForm';
+@import './components/Experience';
+@import './components/FlexSquare';
+@import './components/Header';
+@import './components/NextUISlider';
+@import './components/PageHeading';
+
+// Page Specific 
+@import './contact/page.css';
+
+
+
+
+

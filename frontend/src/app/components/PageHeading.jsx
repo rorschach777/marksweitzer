@@ -1,4 +1,4 @@
-import './PageHeading.css';
+
 const PageHeading = ( props ) => {
     return (
         <div className="ms-container">

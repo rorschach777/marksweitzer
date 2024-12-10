@@ -1,5 +1,5 @@
 import {Slider} from "@nextui-org/react";
-import './NextUISlider.css';
+
 const NextUiSlider = (props) => {
 
     return(

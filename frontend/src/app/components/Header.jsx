@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import {Link} from "@nextui-org/link";
-import './Header.css';
+
 import ContactForm from './ContactForm';
 
 const Header = () => {

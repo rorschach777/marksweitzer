@@ -2,9 +2,10 @@
 import styles from "./page.module.css";
 import {Button} from "@nextui-org/button";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react"
-import './grid.css';
+
 import Header from './components/Header';
 import FlexSquare from './components/FlexSquare';
+
 
 export default function Home() {
   return (

@@ -3,7 +3,7 @@
 import {Button} from "@nextui-org/button";
 import {useReducer, useRef, useEffect, useState } from "react";
 import {formReducer, formInitialState} from '../reducers/form-reducer';
-import './ContactForm.css';
+
 const ContactForm = ( props ) => {
 
     const [formCompleted, setFormCompleted] = useState(false);
