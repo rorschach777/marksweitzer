@@ -4,7 +4,7 @@ import {Link} from "@nextui-org/link";
 const HeaderLink = (props) => {
     return(
         <li className="header-link">
-            <Link href={`/${props.destination.toLowerCase()}`} >{ props.destination}</Link>
+            <Link href={`/${props.destination === "Home" ? "" : props.destination.toLowerCase()}`} >{ props.destination}</Link>
         </li>
     );
 }
