@@ -1,5 +1,6 @@
 .ms-heading {
   height: 35vh;
+  transition: .5s;
 }
 
 
@@ -31,7 +32,13 @@
     top: 25rem;
     left: -21rem;
   }
-
+  .page-title-left, .page-title-right {
+    transition: .5s;
+  }
+  .page-title-left:hover, .page-title-right:hover {
+    filter:blur(1.5rem);
+    opacity: .7;
+  }
 
   @media screen and (max-width: 480px) {
     .ms-heading {
@@ -39,10 +46,7 @@
       font-size: 5rem !important;
     }
  
-    .page-title {
 
-     
-    }
     .page-title-main {
       font-size: 4rem !important;
       left: 1.5rem ;

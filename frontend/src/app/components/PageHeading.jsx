@@ -5,7 +5,6 @@ const PageHeading = ( props ) => {
         <h1 className="page-title-main">{props.title}</h1>
         <div className="ms-flex-container ms-heading">
             <div className="column">
-          
                 <span className="page-title page-title-left">{props.title}</span>
             </div>
             <div className="column">
