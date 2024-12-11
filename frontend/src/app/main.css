@@ -255,12 +255,14 @@ a {
 
 /* PORTFOLIO */
 .portfolio {
+  position: relative;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 5rem auto;
+  z-index: 5;
 }
 
 .portfolio .ms-flex-container {
@@ -658,7 +660,7 @@ hr {
   margin: 25px auto;
   width: 200px;
   cursor: pointer;
-  z-index: 6;
+  z-index: 999;
 }
 
 .ms-mega-menu {
@@ -666,7 +668,7 @@ hr {
   height: var(--header-height);
   top: calc(var(--header-height) * -1);
   animation-timing-function: ease-in-out;
-  z-index: 5;
+  z-index: 7;
   background-color: white;
   width: 100%;
   opacity: 0;

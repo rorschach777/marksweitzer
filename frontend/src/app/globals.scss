@@ -140,12 +140,14 @@ a {
 /* PORTFOLIO */
 
 .portfolio {
+  position: relative;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 5rem auto;
+  z-index: 5;
 }
 
 .portfolio  .ms-flex-container  {

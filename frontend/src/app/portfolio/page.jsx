@@ -96,7 +96,6 @@ export default function Page(){
             </div>
           
             <div className="ms-flex-container">
-            
                 <div className="portfolio-layout">
                     <div className="instagrid">
                         <div className={`portfolio-item item-1 ${isBlurred ? 'portfolio-item-blurred' : ''}`}>
