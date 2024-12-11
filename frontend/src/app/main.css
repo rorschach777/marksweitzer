@@ -767,6 +767,7 @@ header a {
   position: absolute;
   top: 28rem;
   z-index: inherit;
+  opacity: 0;
 }
 
 .page-title-left {

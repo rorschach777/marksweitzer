@@ -30,7 +30,7 @@ const Header = () => {
         if(headerOpen) {
             tl.current.play();
         } else {
-            tl.current.timeScale(3);
+            tl.current.timeScale(2)
             tl.current.reverse();
    
 
