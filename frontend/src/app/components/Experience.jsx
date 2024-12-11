@@ -2,7 +2,7 @@
 
 
 import NextUiSlider from './NextUiSlider';
-import {useState} from "react" 
+import {useEffect, useState} from "react" 
 import {Accordion, AccordionItem, slider} from "@nextui-org/react";
 import {resumeData} from "../data/resume"
 
@@ -13,17 +13,30 @@ const Experience = () => {
     const year = new Date().getFullYear();
     const [sliderIndex, setSliderIndex] = useState(2022)
 
+    const updateOutputText = () => {
+        const outputEl = document.getElementsByTagName("output");
+        const updatedText =  outputEl[0].innerText.split(" ")[0];
+        outputEl[0].innerText = updatedText;
+       
+
+    }
+
     const onChangeHandler = (value) => {
         setSliderIndex(value);
+   
     }
     const filteredJobs = resumeData.filter( j => {
-   
-
         let matchedByYear =  (sliderIndex >= j.yearStart && sliderIndex <= j.yearEnd) ? true : false;
         if(matchedByYear){
             return j;
         }
     });
+    useEffect(()=>{
+        updateOutputText();
+    },[])
+    useEffect(()=>{
+        updateOutputText();
+    },[sliderIndex])
     console.log(filteredJobs)
     return(
         <div className="experience">
