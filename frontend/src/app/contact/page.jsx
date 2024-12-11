@@ -16,13 +16,11 @@ export default function Page(){
                     <div className="ms-flex-container">
                    
                         <div>
-                            <h4>Contact</h4>
+                            <h4>Lets Connect!</h4>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Let’s connect! If you’re interested in collaborating on a project or have a role in frontend development that aligns with my expertise, feel free to fill out the form. I’m always happy to schedule a time to chat and explore opportunities to create outstanding digital experiences together.
                             </p>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
+                           
                         </div>
                         <div>
                             <ContactForm />
