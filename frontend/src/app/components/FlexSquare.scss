@@ -12,26 +12,27 @@
     height: 100%;
     z-index: 2;
     cursor: pointer;
-}
-.ms-flex-square::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
     background-color: black;
-    opacity: 1;
-    transition: all .5s;
-    z-index: 1;
 }
-.ms-home-screen .ms-v-flex-container:first-child .ms-flex-square:hover:after, 
-.ms-home-screen .ms-v-flex-container:last-child .ms-flex-square:hover:after
-{
-    transform: translateX(100%);
-    animation-timing-function: ease-in-out;
-}
+// .ms-flex-square::after {
+//     position: absolute;
+//     content: "";
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: black;
+//     opacity: 1;
+//     transition: all .5s;
+//     z-index: 1;
+// }
+// .ms-home-screen .ms-v-flex-container:first-child .ms-flex-square:hover:after, 
+// .ms-home-screen .ms-v-flex-container:last-child .ms-flex-square:hover:after
+// {
+//     transform: translateX(100%);
+//     animation-timing-function: ease-in-out;
+// }
 .ms-flex-square .label {
     font-size: 1.8rem;
     color: white;
@@ -40,15 +41,21 @@
     font-family: var(--ms-font);
     text-transform: uppercase;
     font-weight: var(--ms-font-weight);
+    transition: .5s ease-in-out;
 
 }
-.ms-flex-square .label::after {
-    width: 100%;
-    height: .3rem;
-    content: '';
-    display: block;
-    background-color: white;
+.ms-flex-square .label:hover {
+    letter-spacing: 1.5rem;
+    transform: scale(1.5);
+
 }
+// .ms-flex-square .label::after {
+//     width: 100%;
+//     height: .3rem;
+//     content: '';
+//     display: block;
+//     background-color: white;
+// }
 
 .ms-flex-square-panel {
     overflow: hidden;
