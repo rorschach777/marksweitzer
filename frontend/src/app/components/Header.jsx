@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState, useRef } from "react";
-import {Link} from "@nextui-org/link";
+import HeaderLink from './HeaderLink';
 import gsap from "gsap";
 
 import ContactForm from './ContactForm';
@@ -13,7 +13,9 @@ const Header = () => {
 
     const menuHandler = (e) => {
         setHeaderOpen(!headerOpen);
+    
 
+          
     }
     const formDisplayHandler = () => {
   
@@ -37,6 +39,7 @@ const Header = () => {
         }
     },[headerOpen])
 
+    const headerLinks = ["Home", "Contact", "Profile", "Experience", "Portfolio"];
 
     return(
         <>
@@ -45,15 +48,8 @@ const Header = () => {
                 <div className="ms-container">
                     <div className="ms-flex-container">
                         <nav >
-                            <ul >
-                                <li className="header-link">
-                                    <Link href="/">Home</Link>
-                                </li>
-                                <li onClick={formDisplayHandler} className="header-link">Contact</li>
-                                <li className="header-link">Profile</li>
-                                <li className="header-link">Experience</li>
-                                <li className="header-link">Portfolio</li>
-
+                            <ul>
+                                { headerLinks.map((c,i)=> <HeaderLink key={`header-link-${i}`} destination={c} />) }
                             </ul>
                         </nav>
                         <ContactForm hidden={`${hideForm ? 'move-right' : ''}`}/>
