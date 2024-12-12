@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@next/third-parties": "^15.0.3",
     "@nextui-org/button": "^2.0.38",
     "@nextui-org/card": "^2.0.34",
@@ -19,6 +20,7 @@
     "@nextui-org/system": "^2.2.6",
     "@nextui-org/theme": "^2.2.11",
     "@sanity/image-url": "^1.0.2",
+    "@studio-freight/react-lenis": "^0.0.47",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.11.1",
     "gsap": "^3.12.5",

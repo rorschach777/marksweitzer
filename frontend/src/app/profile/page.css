@@ -1,0 +1,82 @@
+.profile {
+
+    position: relative;
+    width: 80rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+ 
+
+    
+
+}
+.profile-content 
+{
+    width: inherit;
+    width: 100%;
+    left: 0;
+    
+}
+
+
+.profile-content-p {
+    margin: 15rem 0;
+    color: #e7e7e7;
+    font-size: 1.7rem;
+    line-height: 2.8rem;
+    
+}
+
+.profile-content-p:not(:first-of-type){
+    opacity: 0;
+}
+
+.spacer {
+    height: 10rem;
+}
+
+.bottom-element {
+    width: 25rem;
+    height: 25rem;
+    background-color: red;
+}
+
+
+.profile-callout {
+    font-family: var(--ms-font);
+    font-weight: 700;
+    letter-spacing: -0.17rem;
+    margin: 2.5rem 0;
+    display: block;
+}
+
+.profile-callout-reg {
+    font-size: 3.5rem;
+}
+
+.profile-callout-xl {
+    font-size: 5.5rem;
+}
+
+.profile-callout-2xl {
+    font-size: 7.5rem;
+}
+.profile-callout-3xl {
+    font-size: 10.5rem;
+}
+
+/* span.char{
+    position: relative;
+    display: inline-block;
+    transform: translateY(200px);
+    margin: 0 2.5rem;
+}
+span.char-space {
+    margin-right: .5rem !important;
+} */
+
+.profile-callout{
+    position: absolute;
+    left: -50rem;
+    top: 0;
+}

@@ -1,7 +1,7 @@
 import Header from '../components/Header';
-import Experience from '../components/Experience';
 import PageHeading from '../components/PageHeading';
-
+import SmoothScrolling from '../components/SmoothScrolling';
+import ProfileContent from '../components/ProfileContent'
 export default function Page(){
     
     return (
@@ -10,7 +10,7 @@ export default function Page(){
             <div className="profile-page page">
                 <PageHeading title="Profile" />
                 <div className="ms-container">
-      
+                    <ProfileContent/>
                 </div>
             </div>
         </>

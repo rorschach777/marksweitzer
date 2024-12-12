@@ -86,7 +86,7 @@ a {
 
 /* content */
 .page {
-  background-color: black;
+  // background-color: black;
   width: 100%;
   position: relative;
 }
@@ -162,3 +162,29 @@ hr {
   position: relative;
   z-index: 3;
 }
+
+// Scrollbar
+
+// /* width */
+// ::-webkit-scrollbar {
+//   width: .5rem;
+
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: #888;
+//   border-radius: .5rem;
+//   margin: .5rem;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
