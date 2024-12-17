@@ -28,39 +28,50 @@ const ProfileContent = () => {
         const tl1 = gsap.timeline({
             scrollTrigger: {
                 trigger: '#profile-content-1',
-                start: '-10% center',
-                end: '20% center',
+                start: '25% center',
+                end: 'bottom center',
                 scrub: true,
-                markers: true
+                markers: false
             }
         })
+        tl1.to('#profile-callout-start', {opacity: 0, filter: 'blur(0px)', duration: 2})
+        tl1.to('#profile-callout-1', {opacity: 1, y : 125, filter: 'blur(0px)', duration: 2})
+        tl1.to('#profile-callout-2', {opacity: .05, y : 175, filter: 'blur(0px)', duration: 2})
+        tl1.to('#profile-callout-3', {opacity: .05, y : 175, filter: 'blur(0px)', duration: 3})
+  
         tl1.to('#profile-content-1', {y: -150, opacity: 0})
-        tl1.to('#profile-content-2', {y: -400, opacity: 1})
+        tl1.to('#profile-content-2', {y: 0, opacity: 1})
+     
  
         const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: '#profile-content-2',
-                start: '-170% center',
-                end: '-130% center',
+                start: '10% center',
+                end: 'bottom center',
                 scrub: true,
-                markers: true
+                markers: false
             }
-        })
-        tl2.to('#profile-content-2', {y: -550, opacity: 0})
-        tl2.to('#profile-content-3', {y: -700, opacity: 1})
+        });
+        tl2.to('#profile-callout-4', {opacity: .03, y : 520, filter: 'blur(0px)', duration: 6})
+        tl2.to('#profile-callout-5', {opacity: .02, y : 600, filter: 'blur(0px)', duration: 1})
+ 
 
+        tl2.to('#profile-content-2', {y: -150, opacity: 0})
+        tl2.to('#profile-content-3', {y: 0, opacity: 1})
+        tl2.to('#profile-callout-6', {opacity: .02, y : 675, filter: 'blur(0px)', duration: 5})
         const tl3 = gsap.timeline({
             scrollTrigger: {
                 trigger: '#profile-content-3',
-                start: '-350% center',
-                end: '-300% center',
+                start: 'top center',
+                end: 'bottom center',
                 scrub: true,
-                markers: true
+                markers: false
             }
-        })
-        tl3.to('#profile-content-3', {y: -1850, opacity: 0})
-        tl3.to('#profile-content-4', {y: -1170, opacity: 1})
-        
+        });
+        tl3.to('#profile-callout-7', {opacity: 1, y : 1000, filter: 'blur(0px)', duration: 3})
+        tl3.to('#profile-content-3', {y: -450, opacity: 0})
+        tl3.to('#profile-content-4', {y: 175, opacity: 1})
+
  
     });
     // useGSAP(()=>{
@@ -73,31 +84,7 @@ const ProfileContent = () => {
     return(
         <div className="profile"  >
             <div className="profile-content" >
-                <span className="profile-callout profile-callout-reg">
-                    <span className="char">O</span>
-                    <span className="char">v</span>
-                    <span className="char">e</span>
-                    <span className="char char-space">r </span>
-                    <span className="char char-space">a </span>
-                    <span className="char">D</span>
-                    <span className="char">e</span>
-                    <span className="char">c</span>
-                    <span className="char">a</span>
-                    <span className="char">d</span>
-                    <span className="char char-space">e </span>
-                    <span className="char">o</span>
-                    <span className="char char-space">f </span>
-                    <span className="char">E</span>
-                    <span className="char">x</span>
-                    <span className="char">p</span>
-                    <span className="char">e</span>
-                    <span className="char">r</span>
-                    <span className="char">i</span>
-                    <span className="char">e</span>
-                    <span className="char">n</span>
-                    <span className="char">c</span>
-                    <span className="char">e</span>
-                </span>
+      
                 {/* <span className="profile-callout profile-callout-reg">Frontend Development</span>
                 <span className="profile-callout profile-callout-2xl">React</span>
                 <span className="profile-callout profile-callout-2xl">Next.js</span> */}
@@ -117,11 +104,18 @@ const ProfileContent = () => {
                 <p  id="profile-content-4" className="profile-content-p">
                     Let’s connect! If you’re interested in collaborating on a project or have a role in frontend development that aligns with my expertise, feel free to fill out the form below. I’m always happy to schedule a time to chat and explore opportunities to create outstanding digital experiences together.
                 </p>
-
-                <span className="profile-callout profile-callout-reg">React</span>
-                <span className="profile-callout profile-callout-reg">Vue.js</span>
-                <span className="profile-callout profile-callout-2xl">E-Commerce</span>
-                <span className="profile-callout profile-callout-3xl">UI|UX</span>
+               
+                <span id="profile-callout-start" className="profile-callout  ">Professional Profile</span>
+                <span id="profile-callout-1" className="profile-callout  ">Seasoned Frontend Developer </span>
+                <span  id="profile-callout-2" className="profile-callout ">React | Next.js | JavaScript</span>
+                <span id="profile-callout-3" className="profile-callout ">UI|UX</span>
+               {/* Second Set of Callouts */}
+                <span id="profile-callout-4"  className="profile-callout ">Full Stack Development</span>
+                <span id="profile-callout-5" className="profile-callout">Technical Acumen and Mentorship</span>
+           
+                <span  id="profile-callout-6"  className="profile-callout ">Impactful<br/> Solutions</span>
+                <span  id="profile-callout-7"  className="profile-callout">Let's Connect</span>
+            
             </div>
          
            
