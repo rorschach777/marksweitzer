@@ -60,6 +60,16 @@
     margin: 0 auto;
     text-align: center;
 
+
+}
+
+@keyframes continuousBlur {
+    from {
+        filter: blur(0)
+    }
+    to {
+        filter: blur(1rem);
+    }
 }
 
 .profile-callout-left{
@@ -84,11 +94,13 @@
     opacity: 1;
     filter: unset;
     font-size: 5.5rem;
-    top: 125px
+    top: 125px;
+
 }
 
 #profile-callout-1, #profile-callout-start {
     font-size: 3.5rem;
+   
 
 }
 #profile-callout-2{
