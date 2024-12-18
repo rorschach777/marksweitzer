@@ -4,7 +4,8 @@ export const resumeData = [
         company: "Tech Elevator",
         title: "Full Stack Instructor",
         yearStart: 2022,
-        yearEnd: 2023,
+        yearEnd: 2024,
+        displayYears: "2021-2022",
         duties:  [
             "Taught skills necessary for OOP in Java (Spring Boot), database design (PostGres SQL), and  frontend development (Vue.js)",
             "Lead daily remote classes to provide instruction for students entering the IT field as junior developers",
@@ -14,6 +15,7 @@ export const resumeData = [
     {
         company: "ClearPath Direct",
         title: "Senior Web Developer",
+        displayYears: "2017-2022",
         yearStart: 2017,
         yearEnd: 2022,
         duties:  [
@@ -25,6 +27,7 @@ export const resumeData = [
     {
         company: "Seraphim Software | Blackbaud Software",
         title: "UI/UX & Media Master",
+        displayYears: "2016-2017",
         yearStart: 2016,
         yearEnd: 2017,
         duties:  [
@@ -37,6 +40,7 @@ export const resumeData = [
     {
         company: "ClearPath Direct",
         title: "Web Developer",
+        displayYears: "2012-2016",
         yearStart: 2012,
         yearEnd: 2016,
         duties:  [
@@ -49,11 +53,23 @@ export const resumeData = [
     {
         company: "USA Today",
         title: "Graphic Designer",
+        displayYears: "2011-2012",
         yearStart: 2011,
         yearEnd: 2012,
         duties:  [
             "Redesign of the Readership Program section of usatodaycollege.com",
             "Designed sales collateral for regional sales team for sales meetings and events"
+        ]
+    },
+    {
+        company: "Finch Brands",
+        title: "Creative Intern",
+        displayYears: "2009-2010",
+        yearStart: 2009,
+        yearEnd: 2010,
+        duties:  [
+            "Collaborated with a team of Graphic Designers to create packaging, print ads, and web marketing collateral",
+            "Created client case-studies to showcase the company’s industry expertise"
         ]
     }
 ]

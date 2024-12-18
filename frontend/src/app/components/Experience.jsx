@@ -11,19 +11,21 @@ import {resumeData} from "../data/resume"
 
 const Experience = () => {
     const year = new Date().getFullYear();
-    const [sliderIndex, setSliderIndex] = useState(2022)
-
+    const [sliderIndex, setSliderIndex] = useState(2022);
+    const [hideLabel, setHideLabel] = useState(false);
     const updateOutputText = () => {
         const outputEl = document.getElementsByTagName("output");
+        outputEl[0].classList.add("hide")
         const updatedText =  outputEl[0].innerText.split(" ")[0];
         outputEl[0].innerText = updatedText;
-       
-
+        window.setTimeout(()=>{
+            outputEl[0].classList.remove("hide");
+            outputEl[0].classList.add("show")
+        }, 500)
     }
 
     const onChangeHandler = (value) => {
         setSliderIndex(value);
-   
     }
     const filteredJobs = resumeData.filter( j => {
         let matchedByYear =  (sliderIndex >= j.yearStart && sliderIndex <= j.yearEnd) ? true : false;
@@ -43,24 +45,25 @@ const Experience = () => {
             <div className="experience-left">
                 <div className="experience-controls">
                     <NextUiSlider 
+                    minValue={year - 15}
                     maxValue={year}
-                    defaultValue={2022}
-                    minValue={year - 14}
+                    defaultValue={2024}
                     label="Experience Timeline"
                     onChange={onChangeHandler}
                     />
+                    <span className="slider-output">{sliderIndex}</span>
                 </div>
                 {  filteredJobs.map((filteredJob, filteredJobIdx)=>{
                     return(
-                            <section key={`filteredJob-${filteredJobIdx}`}>
-                            <h4>{filteredJob.title} </h4>
-                            <h5>{filteredJob.company} | {filteredJob.yearStart}-{filteredJob.yearEnd}</h5>
-                                <ul key={`${filteredJob}-duty-${filteredJobIdx}}`}>
-                                    {filteredJob.duties.map((d,i)=>{
-                                        return <li key={`duty-${i}`}>{d}</li>
-                                    })}
-                                </ul>
-                            </section>
+                        <section key={`filteredJob-${filteredJobIdx}`}>
+                        <h4>{filteredJob.title} </h4>
+                        <h5>{filteredJob.company} | {filteredJob.displayYears}</h5>
+                            <ul key={`${filteredJob}-duty-${filteredJobIdx}}`}>
+                                {filteredJob.duties.map((d,i)=>{
+                                    return <li key={`duty-${i}`}>{d}</li>
+                                })}
+                            </ul>
+                        </section>
                     )
                 })}   
         </div>

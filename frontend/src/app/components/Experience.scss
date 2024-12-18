@@ -25,13 +25,14 @@
   
 .experience-controls {
   display: flex;
+  position: relative;
 }
 
 .experience h2 {
    margin: .5rem 0;
 }
  
-.experience h4, .experience h5 {
+.experience h4, .experience h5, .slider-output {
   font-family: var(--ms-font);
   font-weight: 700;
 }
@@ -56,3 +57,18 @@
   list-style: disc;
   list-style-position: outside;
 }
+
+output {
+  transition: .2s ease-out;
+  display: none;
+} 
+
+
+.slider-output {
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+  font-size: 2.8rem;
+  letter-spacing: -0.17rem;
+}
+
