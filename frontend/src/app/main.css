@@ -236,6 +236,11 @@ a {
   box-sizing: border-box;
 }
 
+.ms-scrollable-content h3, .text-large, .portfolio div h2, button {
+  font-family: var(--ms-font);
+  font-weight: 700;
+}
+
 .ms-scrollable-content h3, .text-large, .portfolio div h2 {
   font-size: 2.7rem;
   font-family: var(--ms-font);
@@ -275,6 +280,13 @@ hr {
   z-index: 3;
 }
 
+button {
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.5rem !important;
+  color: white !important;
+}
+
 .form-title {
   font-family: var(--ms-font);
   letter-spacing: -0.17rem;
@@ -285,7 +297,6 @@ hr {
 
 .contact-form {
   position: relative;
-  padding: 1.5rem;
   width: 40rem;
   right: 0;
 }
@@ -446,7 +457,7 @@ output {
 }
 
 .ms-flex-square .label:hover {
-  letter-spacing: 1.5rem;
+  letter-spacing: 0.5rem;
   transform: scale(1.5);
 }
 

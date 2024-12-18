@@ -3,7 +3,7 @@
 
 import NextUiSlider from './NextUiSlider';
 import {useEffect, useState} from "react" 
-import {Accordion, AccordionItem, slider} from "@nextui-org/react";
+import {Accordion, AccordionItem, Button} from "@nextui-org/react";
 import {resumeData} from "../data/resume"
 
 
@@ -66,6 +66,7 @@ const Experience = () => {
                         </section>
                     )
                 })}   
+                <Button variant='bordered'>Download Resume</Button>
         </div>
             <div className="experience-right">
             <Accordion selectionMode="multiple"
