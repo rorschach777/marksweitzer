@@ -9,8 +9,8 @@
     font-weight: 700;
     letter-spacing: -0.17rem;
     position: absolute;
-    top: 18rem;
-    left: 2rem;
+    top: 18.5rem;
+    left: 2.5rem;
     font-size: 3rem;
     z-index: 3;
   
@@ -42,7 +42,7 @@
     opacity: .7;
   }
 
-  @media screen and (max-width: 480px) {
+  @media only screen and (max-width: 48rem) {
     .ms-heading {
       height: 25vh !important;
       font-size: 5rem !important;
@@ -50,7 +50,7 @@
  
 
     .page-title-main {
-      font-size: 4rem !important;
+      font-size: 7rem !important;
       left: 1.5rem ;
     }
     .page-title-left {

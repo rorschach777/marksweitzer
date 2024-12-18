@@ -16,9 +16,14 @@ export default function Page(){
                     <div className="ms-flex-container">
                    
                         <div>
-                            <h4>Lets Connect!</h4>
-                            <p>
-                            Let’s connect! If you’re interested in collaborating on a project or have a role in frontend development that aligns with my expertise, feel free to fill out the form. I’m always happy to schedule a time to chat and explore opportunities to create outstanding digital experiences together.
+                            <h4>
+                                Let’s Connect & Build Something Great!
+                            </h4>
+                        <p>
+                        I’m always excited to collaborate on innovative projects and explore new opportunities. Whether you’re looking for a frontend developer to bring your design vision to life, or you have a role that matches my skills, I’d love to hear from you. My goal is to create seamless, engaging, and responsive web experiences that not only meet but exceed user expectations. Let’s discuss how we can turn your ideas into reality.
+                        </p>
+                        <p>
+                        Whether you’re looking to develop a new web application, redesign an existing website, or create interactive features, I bring a passion for clean code, user-centric design, and modern technologies. I’m always open to new challenges and thrive in environments where collaboration and creativity come together to solve real-world problems. Fill out the form, and let’s chat about how we can work together to create exceptional digital products that stand out.
                             </p>
                            
                         </div>
