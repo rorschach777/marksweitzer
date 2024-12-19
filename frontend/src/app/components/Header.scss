@@ -11,7 +11,7 @@
 }
 
 .ms-mega-menu {
-    position: fixed;
+    position: absolute;
     height: var(--header-height);
     top: calc(var(--header-height) * -1);
     animation-timing-function: ease-in-out;
@@ -58,7 +58,7 @@ header nav ul {
 
 
 
-.menu span {
+.menu > span {
     width: 25px;
     display: block;
     border: solid 1px #ccc;
@@ -81,4 +81,9 @@ header nav ul {
 
 header a {
     cursor: pointer;
+}
+
+header .logo-outer-container {
+    margin-right: 2.5rem;
+    transform: scale(.5);
 }

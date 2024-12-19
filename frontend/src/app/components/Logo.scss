@@ -1,0 +1,160 @@
+.logo-outer-container {
+    position: relative;
+    width: calc(var(--logo-dimension) + 1.5rem);
+    height:  calc(var(--logo-dimension) + 1.5rem);
+}
+.logo-side-label {
+    font-family: var(--ms-font);
+    font-weight: 700;
+    letter-spacing: -0.17rem;
+    font-size: 2.5rem;
+    color: black;
+    margin: 1.5rem auto;
+    text-align: center;
+    width: 100%;
+    display: block;
+    
+}
+
+.logo {
+    width: var(--logo-dimension);
+    height: var(--logo-dimension);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color:black;
+}
+
+
+.logo, .logo-container > *, .logo > *, .logo-item > * {
+    padding: 0px !important;
+}
+
+.logo-container {
+    width: calc(var(--logo-dimension) / 2);
+    height: var(--logo-dimension);
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo .logo-container:first-of-type{
+    border-right: solid 1px white;
+}
+
+.logo-item:nth-child(odd){
+    border-bottom: solid 1px white;
+}
+
+.logo-item {
+    width: calc(var(--logo-dimension) / 2);
+    height: calc(var(--logo-dimension) / 2);
+    position: relative;
+    overflow: hidden;
+    transition:  all .2s ease-in-out;
+}
+
+.logo-item span {
+    font-family: var(--ms-font);
+    font-weight: 700;
+    letter-spacing: -0.17rem;
+    font-size: var(--logo-font-size);
+    line-height:  var(--logo-font-size);
+    position: absolute;
+}
+
+
+.bottom-left > span, .bottom-right > span{
+    top: var(--offset-increment);
+
+}
+.top-left > span, .top-right > span {
+    bottom: var(--offset-increment);
+
+}
+
+
+.top-left > span.logo-item-m, .bottom-left > span.logo-item-m {
+    right: var(--offset-increment);
+
+}
+.top-right > span.logo-item-m, .bottom-right > span.logo-item-m {
+    left: var(--offset-increment);
+
+}
+
+
+.top-left > span.logo-item-s, .bottom-left > span.logo-item-s {
+    /* right: var(--offset-increment); */
+    right: var(--s-x-offset);
+}
+.top-right > span.logo-item-s, .bottom-right > span.logo-item-s {
+    /* left: var(--offset-increment); */
+    left: var(--s-x-offset);
+}
+
+
+.top-left > span.logo-item-m {
+    animation: topLeftM var(--animation-duration) infinite ease-in-out ;
+}
+
+.top-right > span.logo-item-m {
+    animation: topRightM var(--animation-duration) infinite ease-in-out ;
+}
+.bottom-left > span.logo-item-m {
+    animation: bottomLeftM var(--animation-duration) infinite ease-in-out ;
+}
+
+.bottom-right > span.logo-item-m {
+    animation: bottomRightM var(--animation-duration) infinite ease-in-out ;
+}
+
+
+.top-left > span.logo-item-s {
+    animation: topLeftS var(--animation-duration) infinite ease-in-out ;
+}
+
+.top-right > span.logo-item-s {
+    animation: topRightS var(--animation-duration) infinite ease-in-out ;
+}
+.bottom-left > span.logo-item-s {
+    animation: bottomLeftS var(--animation-duration) infinite ease-in-out ;
+}
+
+.bottom-right > span.logo-item-s {
+    animation: bottomRightS var(--animation-duration) infinite ease-in-out ;
+}
+
+
+
+@mixin logo-item-animation($name, $prop, $start, $end){
+    @keyframes #{$name}{
+        0% {
+            #{$prop}: $start;
+        }
+        20% {
+            #{$prop}: $end;
+        }
+        80% {
+            #{$prop}: $end;
+        }
+        100% {
+            #{$prop} : $start;
+        }
+    }
+}
+
+@include logo-item-animation(topLeftS, bottom, var(--offset-vertical), var(--offset-increment));
+@include logo-item-animation(bottomRightS, top, var(--offset-vertical), var(--offset-increment));
+@include logo-item-animation(topRightS, left, var(--offset-vertical), var(--s-x-offset));
+@include logo-item-animation(bottomLeftS, right, var(--offset-vertical), var(--s-x-offset));
+
+
+
+@include logo-item-animation(topLeftM, bottom, var(--offset-vertical), var(--offset-increment));
+@include logo-item-animation(bottomRightM, top, var(--offset-vertical), var(--offset-increment));
+@include logo-item-animation(topRightM, left, var(--offset-vertical), var(--offset-increment));
+@include logo-item-animation(bottomLeftM, right, var(--offset-vertical), var(--offset-increment));
+

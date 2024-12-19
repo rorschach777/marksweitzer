@@ -26,6 +26,19 @@ html {
   --breakpoint-tablet: 76.8rem;
   --breakpoint-main:  var(--breakpoint-mobile);
   --nextui-secondary: #df125d !important;
+  // Logo
+  --logo-dimension: 20rem;
+  --logo-font-size: 10rem;
+
+  --offset-base: 5rem;
+  --offset-increment: calc(var(--offset-base) * -1);
+  --offset-logo-item: calc(var(--offset-base) * 6);
+  --offset-vertical: calc(var(--offset-logo-item) * -1);
+  --offset-horizontal: calc(var(--offset-logo-item) * -1);
+  --animation-duration: 6.5s;
+  // X offsets
+  --m-x-offset: var(var(--offset-increment));
+  --s-x-offset: -3.5rem;
 
 }
 

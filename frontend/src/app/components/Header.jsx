@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import HeaderLink from './HeaderLink';
 import gsap from "gsap";
 
-import ContactForm from './ContactForm';
+import Logo from './Logo';
 
 const Header = () => {
     const [headerOpen, setHeaderOpen ] = useState(false);
@@ -52,15 +52,18 @@ const Header = () => {
                                 { headerLinks.map((c,i)=> <HeaderLink key={`header-link-${i}`} destination={c} />) }
                             </ul>
                         </nav>
-                        <ContactForm hidden={`${hideForm ? 'move-right' : ''}`}/>
+                        <Logo/>
                     </div>
+                  
                 </div>
             </div>
+  
             </header>
             <div className={`menu ${headerOpen ? 'menu-open' : 'menu-closed'}`} onClick={menuHandler}>
                 <span></span>
                 <span></span>
             </div>
+       
         </>
     );
 }

@@ -117,7 +117,6 @@ const ProfileContent = () => {
                 <span  id="profile-callout-7"  className="profile-callout">Let's Connect</span>
             
             </div>
-         
            
         </div>
     );

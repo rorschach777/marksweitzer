@@ -150,6 +150,16 @@ html {
   --breakpoint-tablet: 76.8rem;
   --breakpoint-main: var(--breakpoint-mobile);
   --nextui-secondary: #df125d !important;
+  --logo-dimension: 20rem;
+  --logo-font-size: 10rem;
+  --offset-base: 5rem;
+  --offset-increment: calc(var(--offset-base) * -1);
+  --offset-logo-item: calc(var(--offset-base) * 6);
+  --offset-vertical: calc(var(--offset-logo-item) * -1);
+  --offset-horizontal: calc(var(--offset-logo-item) * -1);
+  --animation-duration: 6.5s;
+  --m-x-offset: var(var(--offset-increment));
+  --s-x-offset: -3.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -577,7 +587,7 @@ output {
 }
 
 .ms-mega-menu {
-  position: fixed;
+  position: absolute;
   height: var(--header-height);
   top: calc(var(--header-height) * -1);
   animation-timing-function: ease-in-out;
@@ -619,7 +629,7 @@ header nav ul {
   box-sizing: border-box;
 }
 
-.menu span {
+.menu > span {
   width: 25px;
   display: block;
   border: solid 1px #ccc;
@@ -643,6 +653,11 @@ header nav ul {
 
 header a {
   cursor: pointer;
+}
+
+header .logo-outer-container {
+  margin-right: 2.5rem;
+  transform: scale(0.5);
 }
 
 .nextui-slider label, .nextui-slider output {
@@ -718,6 +733,242 @@ header a {
   .page-title-right {
     top: 25rem;
     left: -15rem;
+  }
+}
+.logo-outer-container {
+  position: relative;
+  width: calc(var(--logo-dimension) + 1.5rem);
+  height: calc(var(--logo-dimension) + 1.5rem);
+}
+
+.logo-side-label {
+  font-family: var(--ms-font);
+  font-weight: 700;
+  letter-spacing: -0.17rem;
+  font-size: 2.5rem;
+  color: black;
+  margin: 1.5rem auto;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.logo {
+  width: var(--logo-dimension);
+  height: var(--logo-dimension);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: black;
+}
+
+.logo, .logo-container > *, .logo > *, .logo-item > * {
+  padding: 0px !important;
+}
+
+.logo-container {
+  width: calc(var(--logo-dimension) / 2);
+  height: var(--logo-dimension);
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo .logo-container:first-of-type {
+  border-right: solid 1px white;
+}
+
+.logo-item:nth-child(odd) {
+  border-bottom: solid 1px white;
+}
+
+.logo-item {
+  width: calc(var(--logo-dimension) / 2);
+  height: calc(var(--logo-dimension) / 2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.logo-item span {
+  font-family: var(--ms-font);
+  font-weight: 700;
+  letter-spacing: -0.17rem;
+  font-size: var(--logo-font-size);
+  line-height: var(--logo-font-size);
+  position: absolute;
+}
+
+.bottom-left > span, .bottom-right > span {
+  top: var(--offset-increment);
+}
+
+.top-left > span, .top-right > span {
+  bottom: var(--offset-increment);
+}
+
+.top-left > span.logo-item-m, .bottom-left > span.logo-item-m {
+  right: var(--offset-increment);
+}
+
+.top-right > span.logo-item-m, .bottom-right > span.logo-item-m {
+  left: var(--offset-increment);
+}
+
+.top-left > span.logo-item-s, .bottom-left > span.logo-item-s {
+  /* right: var(--offset-increment); */
+  right: var(--s-x-offset);
+}
+
+.top-right > span.logo-item-s, .bottom-right > span.logo-item-s {
+  /* left: var(--offset-increment); */
+  left: var(--s-x-offset);
+}
+
+.top-left > span.logo-item-m {
+  animation: topLeftM var(--animation-duration) infinite ease-in-out;
+}
+
+.top-right > span.logo-item-m {
+  animation: topRightM var(--animation-duration) infinite ease-in-out;
+}
+
+.bottom-left > span.logo-item-m {
+  animation: bottomLeftM var(--animation-duration) infinite ease-in-out;
+}
+
+.bottom-right > span.logo-item-m {
+  animation: bottomRightM var(--animation-duration) infinite ease-in-out;
+}
+
+.top-left > span.logo-item-s {
+  animation: topLeftS var(--animation-duration) infinite ease-in-out;
+}
+
+.top-right > span.logo-item-s {
+  animation: topRightS var(--animation-duration) infinite ease-in-out;
+}
+
+.bottom-left > span.logo-item-s {
+  animation: bottomLeftS var(--animation-duration) infinite ease-in-out;
+}
+
+.bottom-right > span.logo-item-s {
+  animation: bottomRightS var(--animation-duration) infinite ease-in-out;
+}
+
+@keyframes topLeftS {
+  0% {
+    bottom: var(--offset-vertical);
+  }
+  20% {
+    bottom: var(--offset-increment);
+  }
+  80% {
+    bottom: var(--offset-increment);
+  }
+  100% {
+    bottom: var(--offset-vertical);
+  }
+}
+@keyframes bottomRightS {
+  0% {
+    top: var(--offset-vertical);
+  }
+  20% {
+    top: var(--offset-increment);
+  }
+  80% {
+    top: var(--offset-increment);
+  }
+  100% {
+    top: var(--offset-vertical);
+  }
+}
+@keyframes topRightS {
+  0% {
+    left: var(--offset-vertical);
+  }
+  20% {
+    left: var(--s-x-offset);
+  }
+  80% {
+    left: var(--s-x-offset);
+  }
+  100% {
+    left: var(--offset-vertical);
+  }
+}
+@keyframes bottomLeftS {
+  0% {
+    right: var(--offset-vertical);
+  }
+  20% {
+    right: var(--s-x-offset);
+  }
+  80% {
+    right: var(--s-x-offset);
+  }
+  100% {
+    right: var(--offset-vertical);
+  }
+}
+@keyframes topLeftM {
+  0% {
+    bottom: var(--offset-vertical);
+  }
+  20% {
+    bottom: var(--offset-increment);
+  }
+  80% {
+    bottom: var(--offset-increment);
+  }
+  100% {
+    bottom: var(--offset-vertical);
+  }
+}
+@keyframes bottomRightM {
+  0% {
+    top: var(--offset-vertical);
+  }
+  20% {
+    top: var(--offset-increment);
+  }
+  80% {
+    top: var(--offset-increment);
+  }
+  100% {
+    top: var(--offset-vertical);
+  }
+}
+@keyframes topRightM {
+  0% {
+    left: var(--offset-vertical);
+  }
+  20% {
+    left: var(--offset-increment);
+  }
+  80% {
+    left: var(--offset-increment);
+  }
+  100% {
+    left: var(--offset-vertical);
+  }
+}
+@keyframes bottomLeftM {
+  0% {
+    right: var(--offset-vertical);
+  }
+  20% {
+    right: var(--offset-increment);
+  }
+  80% {
+    right: var(--offset-increment);
+  }
+  100% {
+    right: var(--offset-vertical);
   }
 }
 /* PORTFOLIO */
