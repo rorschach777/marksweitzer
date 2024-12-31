@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import {Image} from "@nextui-org/react";
 import { useEffect, useState } from 'react';
 import NextUIModal from '../components/NextUIModal';
-
+import {portfolioData} from '../data/portfolio';
 
 
 export default function Page(){ 
@@ -13,64 +13,7 @@ export default function Page(){
     const [portfolioItem, setPortfolioItem] = useState({ name: '', description: '', image: '', title: ''});
     useEffect(()=>{},[portfolioItem])
 
-    const portfolioData = [
-
-        {
-            name: 'item1',
-            title: 'Seraphim Identity' ,
-            description: "Lorem Ipsum", 
-            image: "item-3.webp"
-        },
-        {
-            name: 'item2',
-            title: 'UI|UX',
-            description: "Lorem Ipsum", 
-            image: "item-2.webp"
-        },
-        {
-            name: 'item3',
-            title: 'UI|UX',
-            description: "Item 2 Description", 
-            image: "item-9.webp"
-        },
-        {
-            name: 'item4',
-            title: 'UI|UX',
-            description: "Item 2 Description", 
-            image: "item-11.webp"
-        },
-        {
-            name: 'item5',
-            title: 'UI|UX',
-            description: "Item 2 Description", 
-            image: "item-1.webp"
-        },
-        {
-            name: 'item6',
-            title: 'UI|UX',
-            description: "Item 2 Description", 
-            image: "item-4.webp"
-        },
-        {
-            name: 'item7',
-            description: "Item 7 Description", 
-            title: '',
-            image: "item-5.webp"
-        },
-        {
-            name: 'item8',
-            title: '',
-            description: "Item 2 Description", 
-            image: "item-6.webp"
-        }, 
-        {
-            name: 'item9',
-            title: '',
-            description: "Item 2 Description", 
-            image: "item-10.webp"
-        }, 
-        
-    ];
+  
 
     const selectPortfolioItem = (portfolioItem) => {
         const output = portfolioData.filter(cur => cur.name === portfolioItem)[0];
@@ -177,6 +120,7 @@ export default function Page(){
                     children 
                     title={`${portfolioItem.title}`}
                     description={`${portfolioItem.description}`}
+                    ba
                     >
                         <Image
                         alt="NextUI Fruit Image with Zoom"

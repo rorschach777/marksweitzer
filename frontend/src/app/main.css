@@ -1062,5 +1062,8 @@ header .logo-outer-container {
     order: 1;
   }
 }
+.bg-content1 {
+  background-color: #333 !important;
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -1,15 +1,27 @@
 export const resumeData = [
     {
+        company: "Personal Leave & Non-Profit Initiatives",
+        title: "Full Stack Instructor",
+        yearStart: 2023,
+        yearEnd: 2024,
+        displayYears: "2023-Present",
+        duties:  [
+            "Took a planned career pause following the passing of a close family member to provide family support. ",
+            "Founded and began developing a non-profit organization focused on Acute Myeloid Leukemia (AML) awareness.",
+            "Coordinated early-stage strategic planning, fundraising efforts, and outreach initiatives to establish the organization’s mission and services."
+        ]
+    },
+    {
 
         company: "Tech Elevator",
-        title: "Full Stack Instructor",
+        title: "Full Stack Instructor (Remote)",
         yearStart: 2022,
         yearEnd: 2024,
         displayYears: "2021-2022",
         duties:  [
-            "Taught skills necessary for OOP in Java (Spring Boot), database design (PostGres SQL), and  frontend development (Vue.js)",
-            "Lead daily remote classes to provide instruction for students entering the IT field as junior developers",
-            "Mentored students in one-on-one meetings to address any challenges they had with projects and course work",
+            "Led comprehensive classes on JavaScript, React, and backend fundamentals, preparing students for junior developer roles.",
+            "Delivered in-depth instruction on object-oriented programming, RESTful APIs, and database design.",
+            "Provided one-on-one mentorship to improve technical skills and problem-solving capabilities."
         ]
     },
     {
@@ -19,9 +31,9 @@ export const resumeData = [
         yearStart: 2017,
         yearEnd: 2022,
         duties:  [
-            "Developed reusable React components and integrated APIs for dynamic web applications",
-            "Implemented backend and frontend logic on a variety of .Net projects for eCommerce and real-estate industries",
-            "Programmed eCommerce order form and checkout logic to fit client’s needs and pricing strategy"
+            "Developed and maintained React-based frontends integrated with C# Razor Pages and decoupled APIs.",
+            "Engineered responsive, accessible UI components, optimizing user engagement and improving campaign ROI.",
+            "Spearheaded web solutions for the company’s largest account, including projects tied to Lori Grenier of Shark Tank."
         ]
     },
     {
@@ -31,10 +43,9 @@ export const resumeData = [
         yearStart: 2016,
         yearEnd: 2017,
         duties:  [
-            "Spearheaded the development of a consistent visual brand for software solutions, improving brand recognition.",
-            "UI design of current and future software solutions",
-            "Managed company’s Wordpress website ",
-            "Managed the company’s WordPress site and coordinated marketing materials for trade shows, boosting leads by 15%."
+            "Designed intuitive interfaces aligned with user-centric design principles for new software features.",
+            "Established branding guidelines and maintained the company’s WordPress-based website.",
+            "Coordinated trade show exhibits and created marketing collateral to drive brand awareness."
         ]
     },
     {
@@ -57,8 +68,9 @@ export const resumeData = [
         yearStart: 2011,
         yearEnd: 2012,
         duties:  [
-            "Redesign of the Readership Program section of usatodaycollege.com",
-            "Designed sales collateral for regional sales team for sales meetings and events"
+            "Developed eCommerce websites & HTML emails",
+            "Programmed websites with A | B offers to support social & television media",
+            "Utilized Google Tag Manager to monitor site performance and conversion rates"
         ]
     },
     {
