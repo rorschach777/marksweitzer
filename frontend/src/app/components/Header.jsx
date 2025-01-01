@@ -1,11 +1,13 @@
 "use client"
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef} from "react";
 import HeaderLink from './HeaderLink';
 import gsap from "gsap";
 
 import Logo from './Logo';
 
 const Header = () => {
+   
+
     const [headerOpen, setHeaderOpen ] = useState(false);
     const [hideForm, setHideForm] = useState(true);
     const tl =  useRef(null);
@@ -14,11 +16,8 @@ const Header = () => {
     const menuHandler = (e) => {
         setHeaderOpen(!headerOpen);
     
-
-          
     }
     const formDisplayHandler = () => {
-  
         setHideForm(!hideForm);
     }
     
@@ -44,26 +43,23 @@ const Header = () => {
     return(
         <>
             <header className={`ms-mega-menu`}>
-            <div>
-                <div className="ms-container">
-                    <div className="ms-flex-container">
-                        <nav >
-                            <ul>
-                                { headerLinks.map((c,i)=> <HeaderLink key={`header-link-${i}`} destination={c} />) }
-                            </ul>
-                        </nav>
-                        <Logo/>
+                <div>
+                    <div className="ms-container">
+                        <div className="ms-flex-container">
+                            <nav >
+                                <ul>
+                                    { headerLinks.map((c,i)=> <HeaderLink key={`header-link-${i}`} destination={c} />) }
+                                </ul>
+                            </nav>
+                            <Logo/>
+                        </div>
                     </div>
-                  
                 </div>
-            </div>
-  
             </header>
             <div className={`menu ${headerOpen ? 'menu-open' : 'menu-closed'}`} onClick={menuHandler}>
                 <span></span>
                 <span></span>
             </div>
-       
         </>
     );
 }

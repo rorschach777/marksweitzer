@@ -1,7 +1,7 @@
 export const resumeData = [
     {
         company: "Personal Leave & Non-Profit Initiatives",
-        title: "Full Stack Instructor",
+        title: "Non-Profit Initiatives",
         yearStart: 2023,
         yearEnd: 2024,
         displayYears: "2023-Present",

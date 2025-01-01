@@ -39,7 +39,7 @@ const Experience = () => {
     useEffect(()=>{
         updateOutputText();
     },[sliderIndex])
-    console.log(filteredJobs)
+
     return(
         <div className="experience">
             <div className="experience-left">
@@ -66,7 +66,7 @@ const Experience = () => {
                         </section>
                     )
                 })}   
-                <Button variant='bordered'>Download Resume</Button>
+            
         </div>
             <div className="experience-right">
             <Accordion selectionMode="multiple"
@@ -99,6 +99,9 @@ const Experience = () => {
 
                 </AccordionItem>
             </Accordion>
+            {/* <Button 
+            href="./resume/ms-resume.pages"
+            variant='bordered'>Download Resume</Button> */}
             </div>
         </div>
 

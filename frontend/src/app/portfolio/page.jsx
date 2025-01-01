@@ -11,8 +11,6 @@ export default function Page(){
 
     const [isBlurred, setIsBlurred ] = useState(false);
     const [portfolioItem, setPortfolioItem] = useState({ name: '', description: '', image: '', title: ''});
-    useEffect(()=>{},[portfolioItem])
-
   
 
     const selectPortfolioItem = (portfolioItem) => {
