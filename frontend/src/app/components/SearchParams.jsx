@@ -63,13 +63,6 @@ const SearchParams =  (props) => {
     }
 
   },[])
-
-
-    // // Setting the context
-    // if(jobTitleState.jobTitle === ""){
-    //     dispatchJobTitle({type : "UPDATE_JOB", payload: {jobTitle : 'X'}})
-    // }
-
   return <>{ props.children }</>;
 }
 export default SearchParams;
