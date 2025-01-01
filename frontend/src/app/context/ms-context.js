@@ -7,7 +7,7 @@ import { createContext, useContext, useState} from 'react';
 const MsContext = createContext();
 
 export const MsContextProvider = ( props ) => {
-    const [jobTitle, setJobTitle] = useState("X");
+    const [jobTitle, setJobTitle] = useState("");
 
     return (
         <MsContext.Provider value={{ jobTitle : jobTitle, setJobTitle : setJobTitle}}>

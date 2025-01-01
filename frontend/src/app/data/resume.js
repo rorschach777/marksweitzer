@@ -2,14 +2,15 @@ export const resumeData = [
     {
         company: "Personal Leave & Non-Profit Initiatives",
         title: "Non-Profit Initiatives",
-        yearStart: 2023,
+        yearStart: 2022,
         yearEnd: 2024,
         displayYears: "2023-Present",
         duties:  [
             "Took a planned career pause following the passing of a close family member to provide family support. ",
             "Founded and began developing a non-profit organization focused on Acute Myeloid Leukemia (AML) awareness.",
             "Coordinated early-stage strategic planning, fundraising efforts, and outreach initiatives to establish the organization’s mission and services."
-        ]
+        ],
+        jobTitle: 'fe'
     },
     {
 
@@ -22,7 +23,8 @@ export const resumeData = [
             "Led comprehensive classes on JavaScript, React, and backend fundamentals, preparing students for junior developer roles.",
             "Delivered in-depth instruction on object-oriented programming, RESTful APIs, and database design.",
             "Provided one-on-one mentorship to improve technical skills and problem-solving capabilities."
-        ]
+        ],
+        jobTitle: 'fe'
     },
     {
         company: "ClearPath Direct",
@@ -34,7 +36,8 @@ export const resumeData = [
             "Developed and maintained React-based frontends integrated with C# Razor Pages and decoupled APIs.",
             "Engineered responsive, accessible UI components, optimizing user engagement and improving campaign ROI.",
             "Spearheaded web solutions for the company’s largest account, including projects tied to Lori Grenier of Shark Tank."
-        ]
+        ],
+        jobTitle: 'fe'
     },
     {
         company: "Seraphim Software | Blackbaud Software",
@@ -46,7 +49,8 @@ export const resumeData = [
             "Designed intuitive interfaces aligned with user-centric design principles for new software features.",
             "Established branding guidelines and maintained the company’s WordPress-based website.",
             "Coordinated trade show exhibits and created marketing collateral to drive brand awareness."
-        ]
+        ],
+        jobTitle: 'fe'
     },
     {
         company: "ClearPath Direct",
@@ -59,7 +63,8 @@ export const resumeData = [
             "UI design of current and future software solutions",
             "Managed company’s Wordpress website ",
             "Managed the company’s WordPress site and coordinated marketing materials for trade shows, boosting leads by 15%."
-        ]
+        ],
+        jobTitle: 'fe'
     },
     {
         company: "USA Today",
@@ -71,7 +76,8 @@ export const resumeData = [
             "Developed eCommerce websites & HTML emails",
             "Programmed websites with A | B offers to support social & television media",
             "Utilized Google Tag Manager to monitor site performance and conversion rates"
-        ]
+        ],
+        jobTitle: 'fe'
     },
     {
         company: "Finch Brands",
@@ -82,6 +88,7 @@ export const resumeData = [
         duties:  [
             "Collaborated with a team of Graphic Designers to create packaging, print ads, and web marketing collateral",
             "Created client case-studies to showcase the company’s industry expertise"
-        ]
+        ],
+        jobTitle: 'fe'
     }
 ]

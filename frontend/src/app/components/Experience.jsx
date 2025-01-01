@@ -4,16 +4,35 @@
 import NextUiSlider from './NextUiSlider';
 import {useEffect, useState} from "react" 
 import {Accordion, AccordionItem, Button} from "@nextui-org/react";
-import {resumeData} from "../data/resume"
+import { resumeData } from "../data/resume"
 
 
 import { useMsContext } from '../context/ms-context';
 
-const Experience = () => {
+const filterResumeContent = (jobTitle, sliderIndex) => {
+    console.log("job title " + jobTitle)
+    let filteredJobTitleJobs = resumeData;
+    // if cookie has been set not defaulted
+    if(jobTitle !== ""){
+        filteredJobTitleJobs = resumeData.filter(j => j.jobTitle === jobTitle);
+    }
+    const filteredJobs = filteredJobTitleJobs.filter( j => {
+        let matchedByYear =  (sliderIndex >= j.yearStart && sliderIndex <= j.yearEnd) ? true : false;
+        if(matchedByYear){
+            return j;
+        }
+    });
+  
+    return filteredJobs;
+}
+
+const Experience =  () => {
+    const {jobTitle} = useMsContext();
+
     const year = new Date().getFullYear();
     const [sliderIndex, setSliderIndex] = useState(2022);
-    const [hideLabel, setHideLabel] = useState(false);
-    const {jobTitle} = useMsContext();
+
+
     const updateOutputText = () => {
         const outputEl = document.getElementsByTagName("output");
         outputEl[0].classList.add("hide")
@@ -28,23 +47,23 @@ const Experience = () => {
     const onChangeHandler = (value) => {
         setSliderIndex(value);
     }
-    const filteredJobs = resumeData.filter( j => {
-        let matchedByYear =  (sliderIndex >= j.yearStart && sliderIndex <= j.yearEnd) ? true : false;
-        if(matchedByYear){
-            return j;
-        }
-    });
+    const [filteredJobs, setFilteredJobs] = useState([])
     useEffect(()=>{
         updateOutputText();
+        setFilteredJobs(filterResumeContent(jobTitle, sliderIndex));
     },[])
     useEffect(()=>{
+        setFilteredJobs(filterResumeContent(jobTitle, sliderIndex));
+    },[jobTitle])
+
+    useEffect(()=>{
+        setFilteredJobs(filterResumeContent(jobTitle, sliderIndex));
         updateOutputText();
     },[sliderIndex])
-
+    console.log(filteredJobs.length + "2")
     return(
         <div className="experience">
             <div className="experience-left">
-                {jobTitle}
                 <div className="experience-controls">
                     <NextUiSlider 
                     minValue={year - 15}
@@ -55,6 +74,7 @@ const Experience = () => {
                     />
                     <span className="slider-output">{sliderIndex}</span>
                 </div>
+        
                 {  filteredJobs.map((filteredJob, filteredJobIdx)=>{
                     return(
                         <section key={`filteredJob-${filteredJobIdx}`}>
