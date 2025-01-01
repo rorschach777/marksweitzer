@@ -10,7 +10,7 @@ import { resumeData } from "../data/resume"
 import { useMsContext } from '../context/ms-context';
 
 const filterResumeContent = (jobTitle, sliderIndex) => {
-    console.log("job title " + jobTitle)
+
     let filteredJobTitleJobs = resumeData;
     // if cookie has been set not defaulted
     if(jobTitle !== ""){
@@ -30,7 +30,7 @@ const Experience =  () => {
     const {jobTitle} = useMsContext();
 
     const year = new Date().getFullYear();
-    const [sliderIndex, setSliderIndex] = useState(2022);
+    const [sliderIndex, setSliderIndex] = useState(2023);
 
 
     const updateOutputText = () => {
@@ -60,7 +60,7 @@ const Experience =  () => {
         setFilteredJobs(filterResumeContent(jobTitle, sliderIndex));
         updateOutputText();
     },[sliderIndex])
-    console.log(filteredJobs.length + "2")
+
     return(
         <div className="experience">
             <div className="experience-left">

@@ -2,8 +2,8 @@ export const resumeData = [
     {
         company: "Personal Leave & Non-Profit Initiatives",
         title: "Non-Profit Initiatives",
-        yearStart: 2022,
-        yearEnd: 2024,
+        yearStart: 2023,
+        yearEnd: 2025,
         displayYears: "2023-Present",
         duties:  [
             "Took a planned career pause following the passing of a close family member to provide family support. ",
@@ -16,8 +16,8 @@ export const resumeData = [
 
         company: "Tech Elevator",
         title: "Full Stack Instructor (Remote)",
-        yearStart: 2022,
-        yearEnd: 2024,
+        yearStart: 2023,
+        yearEnd: 2025,
         displayYears: "2021-2022",
         duties:  [
             "Led comprehensive classes on JavaScript, React, and backend fundamentals, preparing students for junior developer roles.",

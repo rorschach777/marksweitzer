@@ -15,17 +15,14 @@ export  async function POST( req : NextRequest){
       if (jobTitle !== null){
         // Set Cookie if not null
         cookieStore.set("jobTitle", jobTitle, { secure: false});
-        console.log(`job title from url: ${jobTitle}`)
-      } else {
-        console.log("Job title wasn't specified");
       }
-    } catch (error : any){
-
-    }
+    } 
+    finally{
+      return Response.json(
+        {},
+        { status: 200 }
+      );
+    } 
    
 
-    return Response.json(
-      {},
-      { status: 200 }
-    );
 }

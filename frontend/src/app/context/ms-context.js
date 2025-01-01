@@ -2,8 +2,6 @@
 
 import { createContext, useContext, useState} from 'react';
 
-
-
 const MsContext = createContext();
 
 export const MsContextProvider = ( props ) => {
