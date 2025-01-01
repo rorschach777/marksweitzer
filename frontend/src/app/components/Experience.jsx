@@ -7,12 +7,13 @@ import {Accordion, AccordionItem, Button} from "@nextui-org/react";
 import {resumeData} from "../data/resume"
 
 
-
+import { useMsContext } from '../context/ms-context';
 
 const Experience = () => {
     const year = new Date().getFullYear();
     const [sliderIndex, setSliderIndex] = useState(2022);
     const [hideLabel, setHideLabel] = useState(false);
+    const {jobTitle} = useMsContext();
     const updateOutputText = () => {
         const outputEl = document.getElementsByTagName("output");
         outputEl[0].classList.add("hide")
@@ -43,6 +44,7 @@ const Experience = () => {
     return(
         <div className="experience">
             <div className="experience-left">
+                {jobTitle}
                 <div className="experience-controls">
                     <NextUiSlider 
                     minValue={year - 15}

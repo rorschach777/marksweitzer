@@ -2,6 +2,7 @@
  
 import { useSearchParams } from 'next/navigation';
 import { useReducer, useEffect, useContext } from 'react';
+import { useMsContext } from '../context/ms-context';
 
 
 
@@ -41,6 +42,8 @@ import { useReducer, useEffect, useContext } from 'react';
 
 const SearchParams =  (props) => {
   const searchParams = useSearchParams();
+  const { setJobTitle }  = useMsContext();
+
   console.log(searchParams)
   // 2. Get query parameter. 
   const searchParamJobTitle=  searchParams.get('jt');
@@ -53,7 +56,12 @@ const SearchParams =  (props) => {
     // 4. if it does exist, and not equal to what is stored in cookie, not equal to default... Then update it. 
     if(searchParamJobTitle !== null && (searchParamJobTitle !== props.cookieJobTitle)){
       fetch("/api/title", { method: "POST", body :  JSON.stringify( { jobTitle: searchParamJobTitle} )});
+      setJobTitle(searchParamJobTitle);
+    } 
+    else {
+      setJobTitle(props.cookieJobTitle)
     }
+
   },[])
 
 

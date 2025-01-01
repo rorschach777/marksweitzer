@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { MsContextProvider } from './context/ms-context';
 
 import localFont from "next/font/local";
 import SmoothScrolling from './components/SmoothScrolling';
@@ -57,15 +57,19 @@ export default async function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/ewr3rhx.css" />
       </head>
       <body >
+      <MsContextProvider>
       <SearchParams cookieJobTitle={jobTitle}/>
-      <div className="root-container ms-home">
-        <Provider>
-          <SmoothScrolling>
-          {children}
-          </SmoothScrolling>
-        </Provider>
+
+        <div className="root-container ms-home">
+          <Provider>
+            <SmoothScrolling>
+            {children}
+            </SmoothScrolling>
+          </Provider>
         </div>
+        </MsContextProvider>
       </body>
+    
     </html>
     </>
   );
