@@ -7,33 +7,42 @@
     box-sizing: border-box;
     max-width: 100%;
 }
+
 .profile-content 
 {
     width: inherit;
     width: 100%;
     left: 0;
-    
+    padding: 5rem 0 35rem 0;
+
 }
 
-
 .profile-content-p {
-    margin: 5rem 0;
+    margin: 7rem 0;
     color: #e7e7e7;
     font-size: 1.7rem;
     line-height: 2.8rem;
+    opacity: .2;
+  
     
 }
-.profile-content-p:nth-of-type(1) {
-    margin-top: 20rem;
+
+
+
+
+.profile-content-p {
+    margin: 7rem 0;
+    color: #e7e7e7;
+    font-size: 1.7rem;
+    line-height: 2.8rem;
+    opacity: .2;
+    
 }
 
-.profile-content-p:nth-of-type(4) {
-    margin-bottom: 80rem;
+.profile-content-section:nth-of-type(1) .profile-content-p{
+   opacity: .6;
 }
 
-.profile-content-p:not(:first-of-type){
-    opacity: .1;
-}
 
 .spacer {
     height: 10rem;
@@ -46,23 +55,38 @@
 }
 
 
-.profile-callout {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+.profile-content-section {
+    position: relative;
+}
+
+.profile-callout, .top-title {
     font-family: var(--ms-font);
     font-weight: 700;
     letter-spacing: -0.17rem;
-    margin: 2.5rem 0;
-    display: block;
-    opacity: 0;
-    filter: blur(2rem);
-    margin: 0 auto;
-    text-align: center;
+}
 
+.top-title {
+    font-size: 5rem;
+    letter-spacing: -0.2rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.profile-callout {
+    position: absolute;
+    font-size: 3rem;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    text-align: center;
+    top: 50%;
+    height: auto;
 
 }
+
 
 @keyframes continuousBlur {
     from {
@@ -89,43 +113,4 @@
 
 .profile-callout-right{
     right: 0;
-
 }
-#profile-callout-start {
-    opacity: 1;
-    filter: unset;
-    font-size: 5.5rem;
-    top: 125px;
-
-}
-
-#profile-callout-1, #profile-callout-start {
-    font-size: 3.5rem;
-   
-
-}
-#profile-callout-2{
-    font-size: 4rem;
-}
-#profile-callout-3{
-    font-size: 25rem;
-}
-#profile-callout-4{
-    font-size: 6.5rem;
-    border-top: solid #e7e7e7 1px;
-}
-#profile-callout-5{
-    font-size: 4.5rem;
-    border-bottom: solid #e7e7e7 1px;
-}
-#profile-callout-6{
-    font-size: 16rem;
-    line-height: 15rem;
-}
-#profile-callout-7{
-    font-size: 5.5rem;
-    border-top: solid #e7e7e7 1px;
-    border-bottom: solid #e7e7e7 1px;
-
-}
-
