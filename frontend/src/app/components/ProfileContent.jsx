@@ -130,7 +130,7 @@ const ProfileContent = ( props ) => {
     return(
         <div className="profile"  >
            <div className="profile-content" >
-                {jobTitle}
+        
                  <span id="top-title" className="top-title">Professional Profile </span>
                   <div className="profile-content-section">
                       <span id="profile-callout-1" className="profile-callout" > {loaded && job.sectionOne.title}</span>
