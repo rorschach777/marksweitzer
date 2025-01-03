@@ -8,6 +8,7 @@ import './main.css'
 import Provider from './Provider';
 import SearchParams from "./components/SearchParams";
 import { cookies } from "next/headers";
+import Footer from './components/Footer';
 
 
 const geistSans = localFont({
@@ -68,8 +69,9 @@ export default async function RootLayout({
           </Provider>
         </div>
         </MsContextProvider>
+        <Footer/>
       </body>
-    
+
     </html>
     </>
   );

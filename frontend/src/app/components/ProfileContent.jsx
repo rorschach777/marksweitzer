@@ -1,25 +1,12 @@
 "use client";
-import { useRef, useEffect, useState} from 'react';
+import {  useEffect, useState} from 'react';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMsContext } from '../context/ms-context';
-import { jobs } from '../data/profileContent';
+import {getJob} from '../utilities/job-logic';
 import { Spinner } from '@nextui-org/react';
 
-const getJob = ( jobTitle ) => {
-    let output = jobs[0];
-    console.log("job title - Get Job :" + jobTitle)
-    let filteredJob = jobs.filter(j=> j.cookieValue.toLowerCase() === jobTitle.toLowerCase());
-    console.log("Filtered Job")
-    console.log(filteredJob)
-    if(filteredJob.length > 0) {
-        output =  filteredJob[0];
-        console.log("Content Updated: ")
-        console.log(output)
-    }
-    return output;
-}
 
 const ProfileContent = ( props ) => {
     const [loaded, setLoaded] = useState(false);

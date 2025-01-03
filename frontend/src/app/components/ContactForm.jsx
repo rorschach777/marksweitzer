@@ -72,9 +72,7 @@ const ContactForm = ( props ) => {
 
     return(
         <form className={`contact-form ${props.hidden}`}>
-            <div className="form-title">
-                Contact Me! {props.hidden }
-            </div>
+   
             <div className="form-group">
                 <label>First Name</label>
                 <input type="text" ref={firstNameRef} onBlur={firstNameValidation}/> 

@@ -1,34 +1,8 @@
 
-import Header from './components/Header';
-import FlexSquare from './components/FlexSquare';
-import {create} from './actions/actions';
+import HomeContent from './components/HomeContent';
 
 export default function Home() {
-
   return (
-
-      <div className="ms-full-screen-container">
-        <Header/>
-        <div className="ms-h-flex-container ms-home-screen ">
-          {/* 1 */}
-          <div className="ms-v-flex-container">
-            <FlexSquare label="Profile"/>
-            <FlexSquare label="Contact"/>
-          </div>
-          {/* 2 */}
-          <div className="ms-v-flex-container">
-            <FlexSquare croppedContent={["M", "S"]}/>
-            <FlexSquare croppedContent={["M", "S"]}/>
-          </div>
-          {/* 3 */}
-          <div className="ms-v-flex-container">
-            <FlexSquare label="Experience"/>
-            <FlexSquare label="Portfolio"/>
-          </div>
-        </div>
-        <footer className="footer">Mark Sweitzer | &copy; All Rights Reserved 2024 </footer>
-      </div>
-
-
+    <HomeContent/>
   );
 }
