@@ -79,6 +79,9 @@
   
 
   @media only screen and (max-width: 48rem){
+    .portfolio {
+      padding: 10rem 0;
+    }
     .portfolio-layout {
       flex-direction: column;
     }

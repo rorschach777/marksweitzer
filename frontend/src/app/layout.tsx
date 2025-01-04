@@ -57,10 +57,9 @@ export default async function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/ewr3rhx.css" />
       </head>
-      <body >
+      <body>
       <MsContextProvider>
       <SearchParams cookieJobTitle={jobTitle}/>
-
         <div className="root-container ms-home">
           <Provider>
             <SmoothScrolling>
