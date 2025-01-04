@@ -20,20 +20,26 @@ const HomeContent = () => {
             { isValidJob && (<Header/>)}
             <div className="ms-h-flex-container ms-home-screen ">
                 {/* 1 */}
+                { isValidJob && (
                 <div className="ms-v-flex-container">
                     <FlexSquare label="Profile"  isValidJob={isValidJob}/>
                     <FlexSquare label="Contact"  isValidJob={isValidJob}/>
                 </div>
+                )}
+              
                 {/* 2 */}
-                <div className="ms-v-flex-container">
+                <div className={`ms-v-flex-container ${isValidJob === false ? 'logo-flex-container' : ''}`}>
                     <FlexSquare croppedContent={["M", "S"]}/>
                     <FlexSquare croppedContent={["M", "S"]}/>
                 </div>
                 {/* 3 */}
-                <div className="ms-v-flex-container">
-                    <FlexSquare label="Experience" isValidJob={isValidJob}/>
-                    <FlexSquare label="Portfolio" isValidJob={isValidJob}/>
-                </div>
+                { isValidJob && (
+                    <div className="ms-v-flex-container" >
+                      <FlexSquare label="Experience" isValidJob={isValidJob}/>
+                      <FlexSquare label="Portfolio" isValidJob={isValidJob}/>
+                    </div>
+                )}
+              
             </div>
         </div>
 

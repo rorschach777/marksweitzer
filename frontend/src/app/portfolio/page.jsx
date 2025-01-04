@@ -5,7 +5,7 @@ import {Image} from "@nextui-org/react";
 import { useEffect, useState } from 'react';
 import NextUIModal from '../components/NextUIModal';
 import {portfolioData} from '../data/portfolio';
-
+import Footer from '../components/Footer';
 
 export default function Page(){ 
 
@@ -34,9 +34,7 @@ export default function Page(){
                 <div className="portfolio">
                     <div className="portfolio-heading">
                         <h2>Portfolio</h2>
-                        <p>Lorem Ipsum</p>
                     </div>
-                
                     <div className="ms-flex-container">
                         <div className="portfolio-layout">
                             <div className="instagrid">
@@ -126,6 +124,7 @@ export default function Page(){
                         />
                 </NextUIModal>
             </div>
+            <Footer/>
        </>
 
     ); 

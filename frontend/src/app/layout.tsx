@@ -68,9 +68,7 @@ export default async function RootLayout({
           </Provider>
         </div>
         </MsContextProvider>
-        <Footer/>
       </body>
-
     </html>
     </>
   );

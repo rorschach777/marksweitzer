@@ -4,6 +4,7 @@ import Experience from '../components/Experience';
 import PageHeading from '../components/PageHeading'
 import ContactForm from '../components/ContactForm';
 import Logo from '../components/Logo';
+import Footer from '../components/Footer';
 
 
 export default function Page(){
@@ -37,6 +38,7 @@ export default function Page(){
                   
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }
