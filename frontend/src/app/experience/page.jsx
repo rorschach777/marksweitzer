@@ -14,7 +14,6 @@ export default async function Page(){
             <div className="page">
                 <PageHeading title="Experience" />
                 <div className="ms-container">
-                    
                     <Experience />
                 </div>
             </div>

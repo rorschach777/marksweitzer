@@ -26,7 +26,6 @@ export default function Page(){
         } 
         setIsBlurred(!isBlurred);
     }
-
     return (
         <>        
             <Header/>

@@ -25,17 +25,11 @@ const ProfileContent = ( props ) => {
     },[jobTitle]);
 
     useEffect(()=>{
-        
         setLoaded(true);
     }, [])
     
     
-    useEffect(()=>{
 
-    
-    
-
-    },[loaded])
 
 
 
