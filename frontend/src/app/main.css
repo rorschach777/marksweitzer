@@ -340,13 +340,13 @@ button {
   color: black;
   font-size: 1.4rem;
   width: 20rem;
-  margin: 2rem 0;
-  border: solid black;
+  display: flex;
+  align-items: center;
 }
 
 .form-group button:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black !important;
   border: unset;
 }
 

@@ -55,7 +55,5 @@ export const filterResumeContent = (sliderIndex, resume) => {
             }
         });
     }
-
-  
     return output;
 }
