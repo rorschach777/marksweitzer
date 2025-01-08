@@ -1,6 +1,6 @@
 
-const te = "te";
+const fe = "fe";
 const tw = "tw";
 const ui = "ui";
 
-export const jobTitles = [te, tw, ui];
+export const jobTitles = [fe, tw, ui];

@@ -5,7 +5,6 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMsContext } from '../context/ms-context';
 import {getJob} from '../utilities/job-logic';
-import { Spinner } from '@nextui-org/react';
 
 
 const ProfileContent = ( props ) => {
@@ -27,12 +26,7 @@ const ProfileContent = ( props ) => {
     useEffect(()=>{
         setLoaded(true);
     }, [])
-    
-    
-
-
-
-
+  
     useGSAP(()=>{
     
         const offsets = {
@@ -50,7 +44,7 @@ const ProfileContent = ( props ) => {
                 start: '-10% center',
                 end: '50px center',
                 scrub: true,
-                markers: true
+                markers: false
             }
         })
 
@@ -67,7 +61,7 @@ const ProfileContent = ( props ) => {
                 start: '-50% center',
                 end: '10% center',
                 scrub: true,
-                markers: true
+                markers: false
             }
         });
         // tl2.to('#profile-callout-4', {opacity: .03, y : 520, filter: 'blur(0px)', duration: 6})
@@ -84,7 +78,7 @@ const ProfileContent = ( props ) => {
                 start: '-100% center',
                 end: '-50% center',
                 scrub: true,
-                markers: true
+                markers: false
             }
         });
         // tl3.to('#profile-callout-7', {opacity: 1, y : 1000, filter: 'blur(0px)', duration: 3})
@@ -97,7 +91,7 @@ const ProfileContent = ( props ) => {
                 start: '-300% center',
                 end: '-250% center',
                 scrub: true,
-                markers: true
+                markers: false
             }
         });
         // tl3.to('#profile-callout-7', {opacity: 1, y : 1000, filter: 'blur(0px)', duration: 3})

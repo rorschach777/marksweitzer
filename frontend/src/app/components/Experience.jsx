@@ -20,13 +20,16 @@ const Experience =  () => {
 
     const updateOutputText = () => {
         const outputEl = document.getElementsByTagName("output");
-        outputEl[0].classList.add("hide")
-        const updatedText =  outputEl[0].innerText.split(" ")[0];
-        outputEl[0].innerText = updatedText;
-        window.setTimeout(()=>{
-            outputEl[0].classList.remove("hide");
-            outputEl[0].classList.add("show")
-        }, 500)
+        if(outputEl !== undefined){
+            outputEl[0].classList.add("hide")
+            const updatedText =  outputEl[0].innerText.split(" ")[0];
+            outputEl[0].innerText = updatedText;
+            window.setTimeout(()=>{
+                outputEl[0].classList.remove("hide");
+                outputEl[0].classList.add("show")
+            }, 500)
+        }
+    
     }
 
     const onChangeHandler = (value) => {

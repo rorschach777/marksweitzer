@@ -11,7 +11,6 @@ export const MsContextProvider = ( props ) => {
     const [isValidJob, setIsValid] = useState(false);
 
     const setupFilteredJob = (jt) => {
- 
         const filteredJob = getJob(jt);
         const isValid = validJob(jt);
         setIsValid(isValid);
