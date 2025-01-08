@@ -1,8 +1,6 @@
 import { NextRequest } from "next/server";
 import { cookies } from "next/headers";
-type Payload = {
-  value: string;
-}
+
 export  async function POST( req : NextRequest){
 
     // Query parameter passed in 

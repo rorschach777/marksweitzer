@@ -13,7 +13,7 @@ const Header = () => {
     const tl =  useRef(null);
 
 
-    const menuHandler = (e) => {
+    const menuHandler = () => {
         setHeaderOpen(!headerOpen);
     
     }

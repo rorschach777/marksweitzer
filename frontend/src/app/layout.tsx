@@ -8,7 +8,7 @@ import './main.css'
 import Provider from './Provider';
 import SearchParams from "./components/SearchParams";
 import { cookies } from "next/headers";
-import {validJob} from './utilities/job-logic'
+
 
 
 

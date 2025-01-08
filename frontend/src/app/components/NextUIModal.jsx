@@ -9,12 +9,6 @@ const NextUIModal = ( props ) => {
   const [size, setSize] = React.useState('5xl')
 
 
-  const handleOpen = (size) => {
-    setSize(size)
-    onOpen();
-  }
-
-
   const handleClose = () => {
     onClose();
     props.toggleModal();
@@ -31,7 +25,7 @@ const NextUIModal = ( props ) => {
         className="next-ui-modal"
       >
         <ModalContent>
-          {(handleClose) => (
+          {() => (
             <>
               <ModalHeader className="flex flex-col gap-1">{props.title}</ModalHeader>
               <ModalBody>
