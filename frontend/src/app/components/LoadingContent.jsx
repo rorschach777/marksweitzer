@@ -3,13 +3,12 @@
 import {Spinner} from "@nextui-org/react";
 import { useMsContext } from "../context/ms-context";
 import { useEffect } from "react";
-
+import { usePathname } from "next/navigation";
 
 const loadingScreen = () => {
     return(
         <div className="loading-container">
             <div className="loading-message">
-           
                 <Spinner color="white"/>
                 <span>Loading</span>
             </div>
@@ -20,15 +19,20 @@ const loadingScreen = () => {
 }
 
 
+
+
 const LoadingContent = (props) => {
     const {setupFilteredJob, jobTitle, isValidJob } = useMsContext();
+    const pathName = usePathname();
+
+
     useEffect(()=>{
         setupFilteredJob(jobTitle);
     },[jobTitle])
 
     return (
         <>
-            { isValidJob ? props.children : loadingScreen()}
+            { isValidJob || pathName === "/" ? props.children : loadingScreen()}
         </>
     );
 }
