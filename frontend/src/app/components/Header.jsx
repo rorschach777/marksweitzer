@@ -17,9 +17,7 @@ const Header = () => {
         setHeaderOpen(!headerOpen);
     
     }
-    const formDisplayHandler = () => {
-        setHideForm(!hideForm);
-    }
+ 
     
     useEffect(()=>{
         tl.current = gsap.timeline({paused: true})

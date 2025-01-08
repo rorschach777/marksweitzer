@@ -5,9 +5,7 @@ import React from "react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
 
 const NextUIModal = ( props ) => {
-  const { onOpen, onClose} = useDisclosure();
-  const [size, setSize] = React.useState('5xl')
-
+  const { onClose} = useDisclosure();
 
   const handleClose = () => {
     onClose();
@@ -18,7 +16,7 @@ const NextUIModal = ( props ) => {
     <>
 
       <Modal 
-        size={size} 
+        size={'5xl'} 
         isOpen={props.isOpen} 
         onClose={handleClose} 
         backdrop="blur"
