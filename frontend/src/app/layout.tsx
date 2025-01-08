@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MsContextProvider } from './context/ms-context';
 import { headers } from "next/headers";
+import LoadingContent from './components/LoadingContent';
 import localFont from "next/font/local";
 import SmoothScrolling from './components/SmoothScrolling';
 import './main.css'
@@ -8,10 +9,8 @@ import './main.css'
 import Provider from './Provider';
 import SearchParams from "./components/SearchParams";
 import { cookies } from "next/headers";
-import HomeRedirect from './components/HomeRedirect'
+import {validJob} from './utilities/job-logic'
 
-import Footer from './components/Footer';
-import path from "path";
 
 
 const geistSans = localFont({
@@ -58,7 +57,7 @@ export default async function RootLayout({
 }>) {
 
   const jobTitle  = await getCookieData();
-
+  const jobIsValid = validJob(jobTitle);
   return (
     <>
     <html lang="en">
@@ -70,11 +69,13 @@ export default async function RootLayout({
 
       <SearchParams cookieJobTitle={jobTitle}/>
         <div className="root-container ms-home">
-          <Provider>
-            <SmoothScrolling>
-            {children}
-            </SmoothScrolling>
-          </Provider>
+            <Provider>
+              <SmoothScrolling>
+              <LoadingContent>
+              {children}
+              </LoadingContent>
+              </SmoothScrolling>
+            </Provider>
         </div>
         </MsContextProvider>
 

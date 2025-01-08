@@ -11,6 +11,7 @@ const HomeContent = () => {
     const {setupFilteredJob, jobTitle, isValidJob } = useMsContext();
     
     useEffect(()=>{
+        console.log('Change to job title')
         setupFilteredJob(jobTitle);
     },[jobTitle])
 
