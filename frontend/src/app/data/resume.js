@@ -108,7 +108,8 @@ const frontEndDeveloper = {
             ],
     
         },
-        usaToday
+        usaToday, 
+        finch
     ],
     skills: {
         displayName: "Technical Skills",
@@ -179,7 +180,8 @@ const technicalWriter = {
             ],
     
         },
-        usaToday
+        usaToday, 
+        finch
     ],
     skills: {
         displayName: "Key Skills",
@@ -255,7 +257,8 @@ const uiux = {
             ],
     
         },
-        usaToday
+        usaToday,
+        finch
     ],
     skills: {
         displayName: "Languages & Technologies",

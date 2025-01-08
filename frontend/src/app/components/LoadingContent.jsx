@@ -24,11 +24,9 @@ const loadingScreen = () => {
 const LoadingContent = (props) => {
     const {setupFilteredJob, jobTitle, isValidJob } = useMsContext();
     const pathName = usePathname();
-
-
     useEffect(()=>{
         setupFilteredJob(jobTitle);
-    },[jobTitle])
+    },[setupFilteredJob, jobTitle])
 
     return (
         <>

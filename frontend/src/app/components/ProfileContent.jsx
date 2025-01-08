@@ -7,7 +7,7 @@ import { useMsContext } from '../context/ms-context';
 import {getJob} from '../utilities/job-logic';
 
 
-const ProfileContent = ( props ) => {
+const ProfileContent = (  ) => {
     const [loaded, setLoaded] = useState(false);
     const [job, setJob] = useState({});
 

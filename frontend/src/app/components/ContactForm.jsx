@@ -53,7 +53,9 @@ const ContactForm = ( props ) => {
                     "Content-Type" : "application/json0"
                 }
             };
-            const response = await fetch('/api/send', options);
+            // const response = await fetch('/api/send', options);
+            await fetch('/api/send', options);
+    
         }
         catch(err){
             console.log(err.message)

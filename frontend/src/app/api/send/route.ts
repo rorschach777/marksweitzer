@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
-type Payload = {
+interface IPayload {
   firstName: string,
   lastName: string,
   email : string,
@@ -12,7 +12,7 @@ type Payload = {
 }
 
 export  async function POST(req: NextRequest) {
-  const formData: Payload = await req.json();;
+  const formData: IPayload = await req.json();;
   try {
   const { data, error } = await resend.emails.send({
     from: 'Acme <onboarding@resend.dev>',

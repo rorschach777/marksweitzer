@@ -3,8 +3,8 @@
 
 import NextUiSlider from './NextUiSlider';
 import {useEffect, useState} from "react" 
-import {Accordion, AccordionItem, Button} from "@nextui-org/react";
-import { resumes } from "../data/resume"
+import {Accordion, AccordionItem} from "@nextui-org/react";
+
 
 import { useMsContext } from '../context/ms-context';
 import { filterResumeContent, getApplicableResume } from '../utilities/job-logic';
@@ -16,7 +16,6 @@ const Experience =  () => {
     const [sliderIndex, setSliderIndex] = useState(2025);
     const [filteredJobs, setFilteredJobs] = useState([]);
     const [resume, setResume] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
 
     const updateOutputText = () => {
         const outputEl = document.getElementsByTagName("output");

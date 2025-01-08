@@ -1,7 +1,7 @@
 'use client'
  
 import { useSearchParams, usePathname } from 'next/navigation';
-import { useReducer, useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import { useMsContext } from '../context/ms-context';
 import { useRouter } from 'next/navigation'
 import {validJob} from '../utilities/job-logic';

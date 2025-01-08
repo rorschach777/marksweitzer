@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import {Link} from '@nextui-org/link';
-import { useMsContext } from '../context/ms-context';
-import { getJob } from '../utilities/job-logic';
+
 
 
 
@@ -12,7 +11,6 @@ const FlexSquare = ( props ) => {
         let increment =  croppedContentIndex;
         if(props.croppedContent){
             setTimeout(()=>{
-            
                 increment = increment === props.croppedContent.length - 1 ? 0 : increment += 1;
                 setCroppedContentIndex(increment);
             },6000)

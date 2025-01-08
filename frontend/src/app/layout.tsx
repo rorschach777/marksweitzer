@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { MsContextProvider } from './context/ms-context';
-import { headers } from "next/headers";
 import LoadingContent from './components/LoadingContent';
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import SmoothScrolling from './components/SmoothScrolling';
 import './main.css'
 
@@ -13,16 +12,16 @@ import {validJob} from './utilities/job-logic'
 
 
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,10 +32,6 @@ interface ICookie  {
   name: string, 
   value: string
 }
-
-
-
-
 
 const getCookieData = async () => {
   const cookieStore = await cookies();
@@ -49,7 +44,6 @@ const getCookieData = async () => {
 }
 
 
-
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -57,7 +51,7 @@ export default async function RootLayout({
 }>) {
 
   const jobTitle  = await getCookieData();
-  const jobIsValid = validJob(jobTitle);
+  // const jobIsValid = validJob(jobTitle);
   return (
     <>
     <html lang="en">

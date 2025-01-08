@@ -1,11 +1,11 @@
 
 "use client";
 
-import React, { useEffect } from "react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import React from "react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
 
 const NextUIModal = ( props ) => {
-  const {isOpen, onOpen, onClose} = useDisclosure();
+  const { onOpen, onClose} = useDisclosure();
   const [size, setSize] = React.useState('5xl')
 
 
