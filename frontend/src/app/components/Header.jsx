@@ -9,7 +9,6 @@ const Header = () => {
    
 
     const [headerOpen, setHeaderOpen ] = useState(false);
-    const [hideForm, setHideForm] = useState(true);
     const tl =  useRef(null);
 
 

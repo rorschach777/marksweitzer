@@ -112,7 +112,6 @@ export default function Page(){
                 <NextUIModal
                     isOpen={isBlurred}
                     toggleModal={clickHandler}
-                    children 
                     title={`${portfolioItem.title}`}
                     description={`${portfolioItem.description}`}
                     ba
