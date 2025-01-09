@@ -150,6 +150,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  cursor: pointer;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -187,12 +191,6 @@ html {
   --s-x-offset: -3.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
-  }
-}
 html,
 body {
   max-width: 100vw;
@@ -221,11 +219,6 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
 /* Containers */
 .ms-container {
   width: 108rem;
@@ -321,6 +314,31 @@ button {
   padding: 1.5rem;
   font-size: 1.5rem !important;
   color: white !important;
+}
+
+body {
+  background: #010101;
+  overflow: hidden;
+  cursor: none;
+}
+
+#main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+}
+
+.arrow {
+  padding: 10px;
+}
+
+#main-container:hover {
+  background-color: red;
 }
 
 .form-title {
@@ -492,18 +510,18 @@ output {
   background-color: black;
 }
 
-.ms-flex-square .label {
+.ms-flex-square .link-title {
+  position: absolute;
   font-size: 1.8rem;
   color: white;
-  position: absolute;
   z-index: 4;
   font-family: var(--ms-font);
   text-transform: uppercase;
   font-weight: var(--ms-font-weight);
-  transition: 0.5s ease-in-out;
+  transition: 0.5s ease;
 }
 
-.ms-flex-square .label:hover {
+.ms-flex-square .link-title:hover {
   letter-spacing: 0.5rem;
   transform: scale(1.5);
 }
@@ -612,6 +630,35 @@ output {
     right: -50rem;
   }
 }
+.ms-flex-square-uncropped::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: clip-path 1s;
+  clip-path: circle(1.8% at 50% 50%);
+}
+
+.ms-flex-square-uncropped:hover::before {
+  z-index: 98;
+  clip-path: circle(70.7% at 50% 50%);
+}
+
+.ms-flex-square-uncropped:hover > div, .ms-flex-square:hover, .ms-home-screen > .ms-v-flex-container:nth-child(odd):hover {
+  background: transparent;
+}
+
+.ms-flex-square-uncropped:hover .link-title {
+  transition: 0.5s;
+  z-index: 99;
+  color: black;
+  opacity: 1;
+}
+
 .menu {
   position: absolute;
   left: 0;

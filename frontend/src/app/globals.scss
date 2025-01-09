@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: pointer;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -42,12 +46,12 @@ html {
 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #000000;
+//     --foreground: #ededed;
+//   }
+// }
 
 html,
 body {
@@ -77,11 +81,11 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+// }
 
 
 /* Containers */
@@ -215,3 +219,4 @@ button {
 // ::-webkit-scrollbar-thumb:hover {
 //   background: #555;
 // }
+
