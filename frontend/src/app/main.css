@@ -1075,7 +1075,7 @@ header .logo-outer-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 55rem;
+  height: 60rem;
   overflow: hidden;
 }
 
@@ -1272,7 +1272,7 @@ header .logo-outer-container {
     padding: 0px;
   }
   .hero-text {
-    transform: scale(0.8) translateX(-50%);
+    transform: scale(0.8) translateX(-10%);
     opacity: 0.1;
   }
   .profile-content-section:first-of-type {

@@ -54,7 +54,7 @@ const frontEndDeveloper = {
 const uiux = {
     cookieValue: 'ui',
     jobTitle : "UI Prototyping / Designer", 
-    mainMessage: "Lets Make Awesome UI|UX",
+    mainMessage: "Awesome User Interface Experiences",
     sectionOne: {
         hero: {
             main: "Build",
@@ -128,7 +128,7 @@ const technicalWriter = {
             }
         },
         title: "API Documentation and Software Manuals", 
-        secondaryTitle: "Documenting Complex Concepts in Technical and Basic Language",
+        secondaryTitle: "Translating Complex Concepts into clear language",
         content: "While my background is rooted in development, I’ve often been the go-to resource for documenting software workflows, API integrations, and end-user guides. My work on API integrations for eCommerce platforms involved not just implementation but also ensuring that stakeholders—developers and non-technical users—had the resources they needed to succeed. This experience has honed my ability to tailor documentation to diverse audiences, making technical details accessible and actionable."
     },
     sectionThree: {
