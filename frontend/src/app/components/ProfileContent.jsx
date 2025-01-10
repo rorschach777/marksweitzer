@@ -5,8 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMsContext } from '../context/ms-context';
 import {getJob} from '../utilities/job-logic';
-import { easeOut } from 'framer-motion';
-import { get } from 'http';
+
 
 
 const initialState = {
@@ -54,12 +53,9 @@ const profileReducer = (state, action) => {
 
 const ProfileContent = (  ) => {
     const [loaded, setLoaded] = useState(false);
-    const [job, setJob] = useState(null);
-    const [step, setStep] = useState(1);
     const container = useRef();
     const [profileState, profileDispatch] = useReducer(profileReducer, initialState);
-    const nextButtonRef = useRef(null);
-    const backButtonRef = useRef(null);
+ 
 
 
     gsap.registerPlugin(ScrollTrigger);

@@ -34,7 +34,6 @@ const AnimatedBackground = () => {
         
                 const a = x - (rect.x + rect.width / 2);
                 const b = y - (rect.y + rect.height / 2);
-                const c = Math.sqrt((a * a) + (b * b));
         
                 const angle = Math.atan2(b, a) - Math.PI / 4;
                 gsap.to(arrow, {
