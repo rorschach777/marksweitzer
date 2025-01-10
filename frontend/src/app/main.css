@@ -317,6 +317,10 @@ button {
   color: white !important;
 }
 
+.u-transparent {
+  opacity: 0;
+}
+
 body {
   background: #010101;
   overflow: hidden;
@@ -1055,6 +1059,240 @@ header .logo-outer-container {
   }
   100% {
     right: var(--offset-vertical);
+  }
+}
+:root {
+  --color-1: purple;
+  --color-2: yellow;
+  --color-3: blue;
+}
+
+.profile-content {
+  padding: 0px;
+  width: 108rem;
+  max-width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 55rem;
+  overflow: hidden;
+}
+
+.profile-content-section {
+  flex: 1;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.profile-content, .profile-content-section {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.profile-content-section:first-of-type {
+  background-color: black;
+  flex: 0.75;
+}
+
+.profile-content-section:nth-of-type(2) {
+  background-color: black;
+  border: solid 1px #e7e7e7;
+}
+
+.profile-content-indicator {
+  position: absolute;
+  width: 8.5rem;
+  height: 4.8rem;
+  bottom: 0;
+  overflow: hidden;
+  background-color: black;
+  padding-top: 0.5rem;
+}
+
+.profile-content-indicator-container {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  box-sizing: border-box;
+}
+
+.profile-content-indicator span,
+.profile-content-description-text span,
+.profile-content-description-title span,
+.hero .hero-text,
+.profile-content-headline {
+  font-family: var(--ms-font);
+  letter-spacing: -0.17rem;
+  font-weight: 700;
+}
+
+.profile-content-indicator .counter-container {
+  font-size: 4.5rem;
+  line-height: 4.5rem !important;
+  letter-spacing: -0.5rem;
+  display: block;
+  margin-right: 0.5rem;
+  width: 75%;
+  height: 100%;
+}
+
+.profile-content-indicator .counter-container span {
+  display: block;
+  margin: 0;
+}
+
+.profile-content-indicator .total-steps {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+}
+
+.profile-content-description, .progress-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-content-description div {
+  flex: 1;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.profile-content-description div:nth-of-type(2) {
+  flex: 2;
+}
+
+.profile-content-description-title span {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+.profile-content-description-text {
+  position: relative;
+}
+
+.profile-content-description-text span {
+  font-size: 2rem;
+}
+
+.progress-navigation {
+  width: 15rem;
+  height: 4rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  box-sizing: border-box;
+}
+
+.progress-button {
+  position: absolute;
+  width: 50%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-button-back {
+  left: 0;
+}
+
+.progress-button-next {
+  right: 0;
+}
+
+.progress-navigation {
+  background-color: #333;
+}
+
+.progress-navigation-container {
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+
+.hero {
+  position: absolute;
+  top: 3.5rem;
+}
+
+.hero-text {
+  text-transform: uppercase;
+  font-size: 15.5rem;
+  letter-spacing: -1.2rem !important;
+  line-height: 15rem;
+  position: absolute;
+  top: 10rem;
+}
+
+.profile-content-headline {
+  background-color: rgb(223, 16, 158);
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.profile-content-headline span {
+  display: block;
+}
+
+.profile-content-headline span {
+  font-size: 3.5rem;
+  line-height: 3rem;
+  box-sizing: border-box;
+}
+
+.description-text-section {
+  position: absolute;
+  top: 0;
+}
+
+.description-text-section-two {
+  opacity: 0;
+}
+
+@media screen and (max-width: 48rem) {
+  .profile-content {
+    min-height: 70vh;
+  }
+  .profile-content-section {
+    flex-direction: column;
+  }
+  .profile-content-headline {
+    width: 100%;
+  }
+  .profile-content-description:first-of-type div {
+    padding: 0px;
+  }
+  .hero-text {
+    transform: scale(0.8) translateX(-50%);
+    opacity: 0.1;
+  }
+  .profile-content-section:first-of-type {
+    background-color: black;
+    padding: 0;
+    flex: 0.35;
+  }
+  .profile-content-headline {
+    padding: 0.75rem;
+  }
+  .profile-content-headline span, .profile-content-description-title span {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+  .profile-content-description-title {
+    max-height: 6rem;
+  }
+  .profile-content-description div {
+    margin: unset;
+    padding: unset;
   }
 }
 /* PORTFOLIO */
