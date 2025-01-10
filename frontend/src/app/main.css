@@ -1278,7 +1278,7 @@ header .logo-outer-container {
   .profile-content-section:first-of-type {
     background-color: black;
     padding: 0;
-    flex: 0.35;
+    flex: 0.45;
   }
   .profile-content-headline {
     padding: 0.75rem;
