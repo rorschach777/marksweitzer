@@ -55,8 +55,6 @@ const ProfileContent = (  ) => {
     const [loaded, setLoaded] = useState(false);
     const container = useRef();
     const [profileState, profileDispatch] = useReducer(profileReducer, initialState);
- 
-
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(useGSAP);
@@ -108,7 +106,6 @@ const ProfileContent = (  ) => {
     useGSAP(()=>{
        
         if(loaded === false){
-            alert('gsap')
             return;
         }
 
