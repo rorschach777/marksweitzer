@@ -119,8 +119,12 @@
     .portfolio-heading {
       flex: .5;
     }
-    .portfolio, .ms-flex-container {
+    .portfolio, .portfolio .ms-flex-container {
       display: block;
       margin: 0 auto;
+    }
+    .portfolio {
+      min-height: unset;
+      height: unset;
     }
   }

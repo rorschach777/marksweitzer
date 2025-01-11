@@ -1400,9 +1400,13 @@ header .logo-outer-container {
   .portfolio-heading {
     flex: 0.5;
   }
-  .portfolio, .ms-flex-container {
+  .portfolio, .portfolio .ms-flex-container {
     display: block;
     margin: 0 auto;
+  }
+  .portfolio {
+    min-height: unset;
+    height: unset;
   }
 }
 
