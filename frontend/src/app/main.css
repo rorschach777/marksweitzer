@@ -1292,7 +1292,7 @@ header .logo-outer-container {
 .portfolio .ms-flex-container {
   height: inherit;
   align-items: center;
-  width: 98%;
+  width: 95%;
 }
 
 .portfolio-layout {
@@ -1357,6 +1357,8 @@ header .logo-outer-container {
 
 .portfolio-heading {
   margin: 2.5rem 0;
+  width: 100%;
+  text-align: center;
 }
 
 @media only screen and (max-width: 48rem) {
