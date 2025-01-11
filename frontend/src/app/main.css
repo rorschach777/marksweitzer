@@ -722,6 +722,7 @@ header a {
 header .logo-outer-container {
   margin-right: 2.5rem;
   transform: scale(0.5);
+  right: 1rem;
 }
 
 .nextui-slider label, .nextui-slider output {
