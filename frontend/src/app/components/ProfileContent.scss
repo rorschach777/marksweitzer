@@ -207,8 +207,11 @@ justify-content: center;
 
 
 @media screen and (max-width: 48rem) {
+    .profile {
+        padding: unset;
+    }
     .profile-content{
-        min-height:70vh;
+        min-height:75vh;
     }
     .profile-content-section {
         flex-direction: column;
@@ -238,7 +241,7 @@ justify-content: center;
         line-height: 2.5rem;
     }
     .profile-content-description-title {
-        max-height: 6rem;
+        max-height: 4rem;
     }
 
     .profile-content-description div {
