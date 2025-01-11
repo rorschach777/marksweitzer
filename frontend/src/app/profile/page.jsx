@@ -7,12 +7,10 @@ export default function Page(){
     return (
         <>
             <Header/>
-            <div className="profile-page page">
-                <PageHeading title="Profile" />
-                <div className="ms-container">
+                <div className="profile-page page">
+                    <PageHeading title="Profile" />
                     <ProfileContent />
                 </div>
-            </div>
             <Footer/>
         </>
     );

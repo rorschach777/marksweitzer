@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: pointer;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -42,12 +46,12 @@ html {
 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #000000;
+//     --foreground: #ededed;
+//   }
+// }
 
 html,
 body {
@@ -64,6 +68,7 @@ body {
   font-size: 1.6rem ;
   min-height: 100vh;
   position: relative;
+  color: #ededed;
 }
 
 * {
@@ -77,11 +82,11 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+// }
 
 
 /* Containers */
@@ -190,6 +195,10 @@ button {
   color: white !important;
 }
 
+.u-transparent {
+  opacity: 0;
+}
+
 // Scrollbar
 
 // /* width */
@@ -215,3 +224,4 @@ button {
 // ::-webkit-scrollbar-thumb:hover {
 //   background: #555;
 // }
+
