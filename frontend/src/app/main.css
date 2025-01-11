@@ -695,6 +695,7 @@ header a {
 header .logo-outer-container {
   margin-right: 2.5rem;
   transform: scale(0.5);
+  right: 1rem;
 }
 
 .nextui-slider label, .nextui-slider output {
@@ -1024,6 +1025,7 @@ header .logo-outer-container {
 .portfolio .ms-flex-container {
   height: inherit;
   align-items: center;
+  width: 98%;
 }
 
 .portfolio-layout {
@@ -1033,6 +1035,7 @@ header .logo-outer-container {
   justify-content: center;
   width: 95%;
   max-width: 100%;
+  width: inherit;
 }
 
 .instagrid {
@@ -1105,6 +1108,13 @@ header .logo-outer-container {
 }
 .bg-content1 {
   background-color: #333 !important;
+}
+
+@media screen and (max-width: 480px) {
+  li.header-link {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

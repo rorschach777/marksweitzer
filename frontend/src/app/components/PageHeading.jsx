@@ -11,7 +11,6 @@ const PageHeading = ( props ) => {
         tl.current = gsap.timeline({paused: true});
         tl.current.to('.page-title', { opacity: 1, duration: 5, filter: "blur(0.75rem)", stagger: .5, repeat: 2, yoyo: true}).to('.page-title', { filter: 'blur(0px)'});
         tl.current.play();
-
     },[]);
     return (
         <div className="ms-container">
