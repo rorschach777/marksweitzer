@@ -228,7 +228,7 @@ justify-content: center;
     .profile-content-section:first-of-type {
         background-color: black;
         padding: 0;
-        flex: 0.45;
+        flex: 0.35;
     }
     .profile-content-headline {
         padding: .75rem;
@@ -247,4 +247,11 @@ justify-content: center;
         padding: unset; 
      
     }
+    .profile-content-description-text span {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
 }
