@@ -166,7 +166,7 @@ html {
 }
 
 :root {
-  --background: #171717;
+  --background: #000000;
   --foreground:#ffffff;
   --header-height: 45vh;
   --header-height-mobile: 100vh;
@@ -1254,7 +1254,7 @@ header .logo-outer-container {
   .profile-content-section:first-of-type {
     background-color: black;
     padding: 0;
-    flex: 0.45;
+    flex: 0.35;
   }
   .profile-content-headline {
     padding: 0.75rem;
@@ -1269,6 +1269,12 @@ header .logo-outer-container {
   .profile-content-description div {
     margin: unset;
     padding: unset;
+  }
+  .profile-content-description-text span {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
   }
 }
 /* PORTFOLIO */
