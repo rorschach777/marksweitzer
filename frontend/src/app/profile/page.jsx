@@ -7,11 +7,11 @@ export default function Page(){
     return (
         <>
             <Header/>
-                <div className="profile-page page">
-                    <PageHeading title="Profile" />
-                    <ProfileContent />
-                </div>
-            <Footer/>
+            <div className="profile-page page">
+                <PageHeading title="Profile" />
+                <ProfileContent />
+            </div>
+ 
         </>
     );
 }

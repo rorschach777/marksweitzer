@@ -116,4 +116,11 @@
     .contact-page form .form-group {
       max-width: 98%;
     }
+    .portfolio-heading {
+      flex: .5;
+    }
+    .portfolio, .ms-flex-container {
+      display: block;
+      margin: 0 auto;
+    }
   }
