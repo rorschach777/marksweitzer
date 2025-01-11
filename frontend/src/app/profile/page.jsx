@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import PageHeading from '../components/PageHeading';
 import ProfileContent from '../components/ProfileContent';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 
 export default function Page(){
     return (
