@@ -166,8 +166,8 @@ html {
 }
 
 :root {
-  --background: #171717;
-  --foreground:#ffffff;
+  --background: #ffffff;
+  --foreground: #171717;
   --header-height: 45vh;
   --header-height-mobile: 100vh;
   --border-style: 1px solid #424242;
@@ -319,31 +319,6 @@ button {
 
 .u-transparent {
   opacity: 0;
-}
-
-body {
-  background: #010101;
-  overflow: hidden;
-  cursor: none;
-}
-
-#main-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-}
-
-.arrow {
-  padding: 10px;
-}
-
-#main-container:hover {
-  background-color: red;
 }
 
 .form-title {
@@ -1310,6 +1285,7 @@ header .logo-outer-container {
 .portfolio .ms-flex-container {
   height: inherit;
   align-items: center;
+  width: 98%;
 }
 
 .portfolio-layout {
@@ -1319,6 +1295,7 @@ header .logo-outer-container {
   justify-content: center;
   width: 95%;
   max-width: 100%;
+  width: inherit;
 }
 
 .instagrid {
@@ -1391,6 +1368,13 @@ header .logo-outer-container {
 }
 .bg-content1 {
   background-color: #333 !important;
+}
+
+@media screen and (max-width: 480px) {
+  li.header-link {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
