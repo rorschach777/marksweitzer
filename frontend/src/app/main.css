@@ -1,9 +1,9 @@
 /* Error: Can't find stylesheet to import.
- *   ,
- * 6 | @import './components/AnimatedBackground';
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src/app/main.scss 6:9  root stylesheet */
+ *    ,
+ * 14 | @import './components/ProfileContent';
+ *    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   src/app/main.scss 14:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 6 \2502  @import './components/AnimatedBackground';\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/app/main.scss 6:9  root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 14 \2502  @import './components/ProfileContent';\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   src/app/main.scss 14:9  root stylesheet";
 }
