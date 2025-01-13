@@ -107,6 +107,12 @@
 
 
   @media screen and (max-width: 48rem){
+    .page {
+      width: 100%;
+      position: relative;
+      display: flex
+;     flex-direction: column;
+    }
     .portfolio-layout {
       flex-direction: column;
     }
@@ -137,8 +143,8 @@
       margin: 0 auto;
     }
     .portfolio {
-      min-height: unset;
-      height: unset;
+      min-height: unset !important;
+      height: auto;
       margin-bottom: 5rem;
     }
   }
