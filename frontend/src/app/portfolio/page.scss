@@ -5,7 +5,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
     z-index: 5;
@@ -78,13 +78,34 @@
     margin: 2.5rem 0;
     width: 100%;
     text-align: center;
+    width: 100%;
+    font-size: 2.7rem;
+    font-family: var(--ms-font);
+    font-weight: 700;
+    letter-spacing: -0.17rem;
+    color: white;
+    position: relative;
+    height: 25rem
+  }
+  .portfolio-heading h2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35%;
   }
   
 
   @media only screen and (max-width: 48rem){
-    .portfolio {
-      padding: 10rem 0;
-    }
+
+  }
+  
+  .bg-content1{
+    background-color: #333 !important ;
+  }
+
+
+
+  @media screen and (max-width: 48rem){
     .portfolio-layout {
       flex-direction: column;
     }
@@ -94,13 +115,6 @@
     .instagrid:nth-child(2) > .item-3 {
       order: 1;
     }
-  }
-  
-  .bg-content1{
-    background-color: #333 !important ;
-  }
-
-  @media screen and (max-width: 480px){
     li.header-link {
         font-size: 4rem;
         line-height: 4rem;
@@ -126,5 +140,6 @@
     .portfolio {
       min-height: unset;
       height: unset;
+      margin-bottom: 5rem;
     }
   }
