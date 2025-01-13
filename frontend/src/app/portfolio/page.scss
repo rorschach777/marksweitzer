@@ -24,7 +24,7 @@
       justify-content: center;
       width: 95%;
       max-width: 100%;
-      width: inherit;
+
   
    }
   
@@ -115,6 +115,7 @@
     }
     .portfolio-layout {
       flex-direction: column;
+      width: 95%;
     }
     .portfolio .ms-full-screen-container {
       overflow: visible;
@@ -146,5 +147,6 @@
       min-height: unset !important;
       height: auto;
       margin-bottom: 5rem;
+      width: 95%;
     }
   }
