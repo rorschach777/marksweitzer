@@ -30,7 +30,7 @@ export default function Page(){
         <>        
             <Header/>
             <div className="page">
-            <div className="portfolio-heading">
+                <div className="portfolio-heading">
                         <h2>Portfolio</h2>
                 </div>
                 <div className="portfolio">
