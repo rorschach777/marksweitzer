@@ -209,6 +209,7 @@ justify-content: center;
 @media screen and (max-width: 48rem) {
     .profile {
         padding: unset;
+        margin-bottom: 5rem;
     }
     .profile-content{
         min-height:75vh;
@@ -245,8 +246,7 @@ justify-content: center;
     }
 
     .profile-content-description div {
-
-        margin: unset; 
+    margin: unset; 
         padding: unset; 
      
     }

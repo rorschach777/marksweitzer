@@ -69,3 +69,16 @@
     transform: translateX(250%) !important;
 }
 
+.user-feedback {
+    background-color: #c1c1c1;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    color: black;
+    text-align: center;
+}
+.success-message {
+    background-color: rgb(192, 210, 165);
+}
+.failure-message{
+    background-color: rgb(206, 181, 155);
+}

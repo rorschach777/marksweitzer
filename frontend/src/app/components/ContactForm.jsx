@@ -7,6 +7,7 @@ import {formReducer, formInitialState} from '../reducers/form-reducer';
 const ContactForm = ( props ) => {
 
     const [formCompleted, setFormCompleted] = useState(false);
+    const [sent, setSent] = useState(false);
 
     const firstNameRef = useRef("");
     const lastNameRef = useRef("");
@@ -54,18 +55,23 @@ const ContactForm = ( props ) => {
                 }
             };
             // const response = await fetch('/api/send', options);
-            await fetch('/api/send', options);
-    
+            const response = await fetch('/api/send', options);
+            if(response.ok){
+                setSent(true);
+            }
         }
         catch(err){
+            console.log(err)
             console.log(err.message)
         }
         finally {
+            console.log('sent message')
             setFormCompleted(true)
         }
     }
    
     const sendHandler = (e) => {
+        console.log('form')
         e.preventDefault();
         send();
     }
@@ -105,8 +111,14 @@ const ContactForm = ( props ) => {
                     Send
                 </Button>
             </div>
+        
             {formCompleted && (
-                <div>Thank you</div>
+                <div className={`user-feedback ${sent === true ? 'sent-message' : 'failure-message'}`}>
+                    <span className="">
+                        {sent === true && ('Thank you for reaching out and will get back to you as soon as possible.')}
+                        {sent === false && ('Oops it looks like something went wrong. Please try again.')}
+                    </span>
+                </div>
             )}
         </form>
     );
