@@ -1,7 +1,7 @@
 const frontEndDeveloper = {
     cookieValue: 'fe',
     jobTitle : "Frontend Developer", 
-    mainMessage: "Lets Build Awesome Web Experiences",
+    mainMessage: "Lets Build Awesome Websites",
     sectionOne: {
         hero: {
             subheadline: {
@@ -10,8 +10,8 @@ const frontEndDeveloper = {
              }
         },
         title: "React, Next.js, Vue", 
-        secondaryTitle: "Crafting responsive applications using modern frameworks",
-        content: "As a seasoned frontend developer with over a decade of experience, I am deeply passionate about creating seamless and visually engaging web experiences. My expertise lies in crafting responsive applications using modern frameworks such as React, Next.js, and Vue, where I focus on merging elegant design with functional precision. With a background in UI/UX design, I bring a keen eye for detail to every project, ensuring that user interfaces are not only visually appealing but also intuitive and accessible. I enjoy working with JavaScript to build dynamic and interactive features, and my adaptable skillset allows me to extend beyond the frontend to tackle backend tasks when needed."
+        secondaryTitle: "Responsive applications and modern frameworks",
+        content: "As a seasoned frontend developer with over a decade of experience, I am deeply passionate about creating seamless and visually engaging web experiences. My expertise lies in crafting responsive applications using modern frameworks such as React, Next.js, and Vue, where I focus on merging elegant design with functional precision. With a background in UI/UX design, I bring a keen eye for detail to every project, ensuring that user interfaces are not only visually appealing but also intuitive and accessible."
     },
     sectionTwo: {
         hero: {
@@ -22,7 +22,7 @@ const frontEndDeveloper = {
         },
         title: " Full Stack Development", 
         secondaryTitle: "Equipping Aspiring Developers Skills",
-        content: "Throughout my career, I have thrived in roles that require both technical acumen and mentorship. As a Full Stack Instructor at Tech Elevator, I delivered comprehensive training on Java (Spring Boot), PostgreSQL, and Vue.js, equipping aspiring developers with the skills necessary to launch their careers. Mentoring students and guiding them through capstone projects was particularly fulfilling, as it allowed me to foster growth and share my industry insights. This collaborative approach has been a cornerstone of my work philosophy, whether mentoring junior developers or collaborating with cross-functional teams to deliver impactful solutions."
+        content: "Throughout my career, I have thrived in roles that require both technical acumen and mentorship. As a Full Stack Instructor at Tech Elevator, I delivered comprehensive training on Java (Spring Boot), PostgreSQL, and Vue.js, equipping aspiring developers with the skills necessary to launch their careers. Mentoring students and guiding them through capstone projects was particularly fulfilling, as it allowed me to foster growth and share my industry insights."
     },
     sectionThree: {
         hero: {
@@ -34,7 +34,7 @@ const frontEndDeveloper = {
         },
         title: "Impactful Solutions",
         secondaryTitle: "Delivering Results", 
-        content: "My professional journey has also included significant contributions to eCommerce and branding projects, where I’ve programmed complex order forms, integrated APIs, and optimized site performance to meet diverse client needs. Whether designing a consistent visual brand for software solutions or implementing data-driven improvements using tools like Google Tag Manager, I take pride in delivering results that align with both user and business objectives. Ultimately, I find joy in solving problems, learning new technologies, and creating digital experiences that leave a lasting impression. "
+        content: "My professional journey has also included significant contributions to eCommerce and branding projects, where I’ve programmed complex order forms, integrated APIs, and optimized site performance to meet diverse client needs. Whether designing a consistent visual brand for software solutions or implementing data-driven improvements using tools like Google Tag Manager, I take pride in delivering results that align with both user and business objectives.  "
     }, 
     sectionFour: {
         hero: {

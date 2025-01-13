@@ -282,6 +282,7 @@ a {
 
 .ms-scrollable-content h3, .text-large, .portfolio div h2 {
   font-size: 2.7rem;
+  line-height: 3.2rem;
   font-family: var(--ms-font);
   font-weight: 700;
   letter-spacing: -0.17rem;
@@ -1369,7 +1370,6 @@ header .logo-outer-container {
 }
 
 .portfolio-heading {
-  margin: 2.5rem 0;
   width: 100%;
   text-align: center;
   width: 100%;
