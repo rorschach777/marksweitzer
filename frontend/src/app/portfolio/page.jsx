@@ -30,10 +30,11 @@ export default function Page(){
         <>        
             <Header/>
             <div className="page">
-                <div className="portfolio">
-                    <div className="portfolio-heading">
+                <div className="portfolio-heading">
                         <h2>Portfolio</h2>
-                    </div>
+                </div>
+                <div className="portfolio">
+       
                     <div className="ms-flex-container">
                         <div className="portfolio-layout">
                             <div className="instagrid">

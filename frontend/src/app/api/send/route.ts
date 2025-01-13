@@ -17,10 +17,13 @@ export  async function POST(req: NextRequest) {
   const { data, error } = await resend.emails.send({
     from: 'Acme <onboarding@resend.dev>',
     to: ['delivered@resend.dev'],
-    subject: 'Email from Testy McTesterson',
+    subject: 'Email from MarkSweitzer.io',
     react: EmailTemplate({ 
       firstName: formData.firstName, 
-      lastName: formData.lastName }),
+      lastName: formData.lastName,
+      email: formData.email,
+      message: formData.message
+    }),
   });
 
     if (error) {
