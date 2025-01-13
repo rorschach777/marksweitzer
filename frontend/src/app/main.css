@@ -97,6 +97,15 @@
     flex-basis: 100%;
     height: 100vh !important;
   }
+  .ms-v-flex-container {
+    border: unset !important;
+  }
+  .ms-v-flex-container:nth-of-type(1) {
+    border-right: var(--border-style) !important;
+  }
+  .ms-v-flex-container:nth-of-type(1), .ms-v-flex-container:nth-of-type(3) {
+    border-top: var(--border-style) !important;
+  }
 }
 .footer {
   position: absolute;
@@ -273,6 +282,7 @@ a {
 
 .ms-scrollable-content h3, .text-large, .portfolio div h2 {
   font-size: 2.7rem;
+  line-height: 3.2rem;
   font-family: var(--ms-font);
   font-weight: 700;
   letter-spacing: -0.17rem;
@@ -1235,8 +1245,12 @@ header .logo-outer-container {
 }
 
 @media screen and (max-width: 48rem) {
+  .profile {
+    padding: unset;
+    margin-bottom: 5rem;
+  }
   .profile-content {
-    min-height: 70vh;
+    min-height: 75vh;
   }
   .profile-content-section {
     flex-direction: column;
@@ -1264,7 +1278,7 @@ header .logo-outer-container {
     line-height: 2.5rem;
   }
   .profile-content-description-title {
-    max-height: 6rem;
+    max-height: 4rem;
   }
   .profile-content-description div {
     margin: unset;
@@ -1283,7 +1297,7 @@ header .logo-outer-container {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
   z-index: 5;
@@ -1356,15 +1370,30 @@ header .logo-outer-container {
 }
 
 .portfolio-heading {
-  margin: 2.5rem 0;
   width: 100%;
   text-align: center;
+  width: 100%;
+  font-size: 2.7rem;
+  font-family: var(--ms-font);
+  font-weight: 700;
+  letter-spacing: -0.17rem;
+  color: white;
+  position: relative;
+  height: 25rem;
 }
 
-@media only screen and (max-width: 48rem) {
-  .portfolio {
-    padding: 10rem 0;
-  }
+.portfolio-heading h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+}
+
+.bg-content1 {
+  background-color: #333 !important;
+}
+
+@media screen and (max-width: 48rem) {
   .portfolio-layout {
     flex-direction: column;
   }
@@ -1374,15 +1403,31 @@ header .logo-outer-container {
   .instagrid:nth-child(2) > .item-3 {
     order: 1;
   }
-}
-.bg-content1 {
-  background-color: #333 !important;
-}
-
-@media screen and (max-width: 480px) {
   li.header-link {
     font-size: 4rem;
     line-height: 4rem;
+  }
+  .contact-page form {
+    min-width: 100%;
+    margin-bottom: 50px;
+  }
+  .contact-form-container {
+    padding: 0px !important;
+  }
+  .contact-page form .form-group {
+    max-width: 98%;
+  }
+  .portfolio-heading {
+    flex: 0.5;
+  }
+  .portfolio, .portfolio .ms-flex-container {
+    display: block;
+    margin: 0 auto;
+  }
+  .portfolio {
+    min-height: unset;
+    height: unset;
+    margin-bottom: 5rem;
   }
 }
 
