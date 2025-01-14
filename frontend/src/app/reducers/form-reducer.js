@@ -1,5 +1,6 @@
    
     export const formInitialState = {
+        formIsValid: false,
         firstName : {
             value: '',
             isValid: false,
@@ -17,12 +18,19 @@
         },
         message : {
             value: '',
-            isValid: false,
+            isValid: true,
             isUpdated: false
         }
     }
 
+
 export const formReducer = (state, action) => {
+    if(action.type === "UPDATE_FORM_VALIDITY"){
+        return{
+            ...state,
+            formIsValid : action.payload.value
+        };
+    }
     if(action.type === "UPDATE_FIRST_NAME"){
         return{
             ...state,
@@ -52,6 +60,16 @@ export const formReducer = (state, action) => {
                 ...state.email,
                 value: action.payload.value,
                 isValid: action.payload.isValid,
+                isUpdated: action.payload.isUpdated
+            }
+        }
+    }
+    if(action.type === "UPDATE_MESSAGE"){
+        return{
+            ...state,
+            message : {
+                ...state.message,
+                value: action.payload.value,
                 isUpdated: action.payload.isUpdated
             }
         }
