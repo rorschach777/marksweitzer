@@ -17,7 +17,7 @@ export  async function POST(req: NextRequest) {
   try {
     const requestData : Payload = await req.json();
     console.log(requestData);
-    const { data, error } = await resend.emails.send({
+    await resend.emails.send({
       from: `${process.env.NEXT_RESEND_FROM}`,
       to: [`${process.env.NEXT_RESEND_TO}`],
       subject: 'Email from MarkSweitzer.io',
