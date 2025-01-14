@@ -1,7 +1,7 @@
 import  { NextRequest, NextResponse} from 'next/server';
 import { EmailTemplate } from '../../components/EmailTemplate';
 import { Resend } from 'resend';
-import Error from 'next/error';
+
 
 const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
