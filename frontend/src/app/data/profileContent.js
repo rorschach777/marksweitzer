@@ -1,7 +1,7 @@
 const frontEndDeveloper = {
     cookieValue: 'fe',
     jobTitle : "Frontend Developer", 
-    mainMessage: "Lets Build Awesome Websites",
+    mainMessage: "Lets Build Awesome Experiences",
     sectionOne: {
         hero: {
             subheadline: {
@@ -10,8 +10,8 @@ const frontEndDeveloper = {
              }
         },
         title: "React, Next.js, Vue", 
-        secondaryTitle: "Responsive applications and modern frameworks",
-        content: "As a seasoned frontend developer with over a decade of experience, I am deeply passionate about creating seamless and visually engaging web experiences. My expertise lies in crafting responsive applications using modern frameworks such as React, Next.js, and Vue, where I focus on merging elegant design with functional precision. With a background in UI/UX design, I bring a keen eye for detail to every project, ensuring that user interfaces are not only visually appealing but also intuitive and accessible."
+        secondaryTitle: "Scalable Web Applications",
+        content: "Experienced Web Developer with over 10 years in frontend and full-stack development, specializing in creating dynamic, user-focused interfaces and leveraging modern JavaScript frameworks like React and Vue. Skilled in backend technologies, including Java and Spring Boot, to deliver robust, scalable web applications."
     },
     sectionTwo: {
         hero: {
@@ -20,7 +20,7 @@ const frontEndDeveloper = {
                 bottom: "For Every Device Screen"
             }
         },
-        title: " Full Stack Development", 
+        title: " Full-stack development", 
         secondaryTitle: "Equipping Aspiring Developers Skills",
         content: "Throughout my career, I have thrived in roles that require both technical acumen and mentorship. As a Full Stack Instructor at Tech Elevator, I delivered comprehensive training on Java (Spring Boot), PostgreSQL, and Vue.js, equipping aspiring developers with the skills necessary to launch their careers. Mentoring students and guiding them through capstone projects was particularly fulfilling, as it allowed me to foster growth and share my industry insights."
     },
@@ -32,7 +32,7 @@ const frontEndDeveloper = {
                 bottom: "Clean-Efficient Code"
             }
         },
-        title: "Impactful Solutions",
+        title: "Impactful solutions",
         secondaryTitle: "Delivering Results", 
         content: "My professional journey has also included significant contributions to eCommerce and branding projects, where I’ve programmed complex order forms, integrated APIs, and optimized site performance to meet diverse client needs. Whether designing a consistent visual brand for software solutions or implementing data-driven improvements using tools like Google Tag Manager, I take pride in delivering results that align with both user and business objectives.  "
     }, 
@@ -45,8 +45,8 @@ const frontEndDeveloper = {
             }
         },
         title: "Let's Connect", 
-        secondaryTitle: "Explore opportunities to create outstanding digital experiences ",
-        content: "If you’re interested in collaborating on a project or have a role in frontend development that aligns with my expertise, feel free to fill out the form below. I’m always happy to schedule a time to chat and explore opportunities to create outstanding digital experiences together."
+        secondaryTitle: "Lets create awesome digital experiences",
+        content: "If you&#39;re interested in collaborating on a project or have a role in frontend development that aligns with my expertise, let’s get in touch. I&#39;m always happy to connect and discuss how we can create outstanding digital experiences together."
     }
 }
 
