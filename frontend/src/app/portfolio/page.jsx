@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Header from '../components/Header';
 import {Image} from "@nextui-org/react";
@@ -6,6 +6,8 @@ import {  useState } from 'react';
 import NextUIModal from '../components/NextUIModal';
 import {portfolioData} from '../data/portfolio';
 import Footer from '../components/Footer';
+
+
 
 export default function Page(){ 
 

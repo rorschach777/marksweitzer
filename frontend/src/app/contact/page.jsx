@@ -3,7 +3,11 @@ import PageHeading from '../components/PageHeading'
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 
-
+export const metadata = {
+    title: 'Mark Sweitzer | Contact',
+    description:
+      'Crafting exceptional web experiences through innovation and expertise.',
+  };
 export default function Page(){
     
     return (

@@ -3,7 +3,11 @@ import Header from '../components/Header';
 import Experience from '../components/Experience';
 import PageHeading from '../components/PageHeading';
 
-
+export const metadata = {
+    title: 'Mark Sweitzer | Experience',
+    description:
+      'Crafting exceptional web experiences through innovation and expertise.',
+  };
 
 export default async function Page(){
 
