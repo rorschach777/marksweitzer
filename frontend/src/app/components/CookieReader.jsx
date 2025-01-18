@@ -88,7 +88,6 @@ const CookieReader = ( props ) => {
 
   return (
     <>
-      {props.children}
     </>
   );
 }
