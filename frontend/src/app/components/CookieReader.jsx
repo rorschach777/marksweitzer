@@ -2,7 +2,7 @@
 
 import { getCookie, setCookie } from 'cookies-next';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { validJob } from '../utilities/job-logic';
 import { useMsContext } from '../context/ms-context';
 import { useRouter } from 'next/navigation'
@@ -87,10 +87,8 @@ const CookieReader = () => {
 
 
   return (
-    <Suspense>
-      <>
-      </>
-    </Suspense>
+    <>
+    </>
   );
 }
 

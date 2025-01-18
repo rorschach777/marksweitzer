@@ -7,6 +7,7 @@ import './main.css'
 
 import Provider from './Provider';
 import CookieReader from "./components/CookieReader";
+import { Suspense } from "react";
 
 
 
@@ -44,7 +45,10 @@ export default async function RootLayout({
       </head>
       <body>
       <MsContextProvider>
-      <CookieReader />
+      <Suspense fallback={<div></div>}>
+        <CookieReader />
+      </Suspense>
+
         <div className="root-container ms-home">
             <Provider>
               <SmoothScrolling>
