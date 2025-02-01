@@ -21,7 +21,6 @@ const usaToday =  {
         "Collaborated with a team of Graphic Designers to create packaging, print ads, and web marketing collateral",
         "Created client case-studies to showcase the company’s industry expertise"
     ],
-
 }
 
 const finch = {
@@ -206,8 +205,8 @@ const clearPathOneUi = {
     
     company: "ClearPath Direct",
     title: "Web Developer",
-    yearStart: 2023,
-    yearEnd: 2025,
+    yearStart: 2017,
+    yearEnd: 2022,
     displayYears: "2017-2022",
     duties:  [
         "Developed eCommerce websites & HTML emails",
@@ -235,7 +234,7 @@ const frontEndDeveloper = {
     skills: {
         displayName: "Technical Skills",
         values: [
-           " Frontend: JavaScript (ES6+), React, Next.js, Redux, Vue, TypeScript, HTML5, CSS3, SCSS",
+           "Frontend: JavaScript (ES6+), React, Next.js, Redux, Vue, TypeScript, HTML5, CSS3, SCSS",
             "Backend: Java, Spring Boot, C#, PHP",
             "Development Tools: Git, REST APIs, GraphQL, Webpack, Babel",
             "UI/UX: Figma, Adobe Creative Suite, Sketch Testing: Jest, Cypress, Selenium"

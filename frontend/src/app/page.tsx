@@ -1,7 +1,7 @@
 
 import HomeContent from './components/HomeContent';
 import { Metadata } from 'next';
-import { client } from "./sanity/client";
+import { client } from "../sanity/client"
 import { type SanityDocument } from "next-sanity";
 
 export const metadata: Metadata = {
@@ -16,9 +16,7 @@ const options = { next: { revalidate: 30 } };
 
 export default async function Home() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
-  console.log("Posts")
-  console.log(posts)
-
+  console.log(posts);
   return (
     <>
       <HomeContent/>
