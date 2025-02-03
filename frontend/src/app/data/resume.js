@@ -22,7 +22,6 @@ const usaToday =  {
         "Created client case-studies to showcase the company’s industry expertise"
     ],
 }
-
 const finch = {
     company: "USA Today",
     title: "Graphic Designer",
@@ -35,6 +34,7 @@ const finch = {
         "Utilized Google Tag Manager to monitor site performance and conversion rates"
     ],
 }
+
 
 // ----------------------------
 
@@ -206,8 +206,8 @@ const clearPathOneUi = {
     company: "ClearPath Direct",
     title: "Web Developer",
     yearStart: 2017,
-    yearEnd: 2022,
-    displayYears: "2017-2022",
+    yearEnd: 2020,
+    displayYears: "2017-2020",
     duties:  [
         "Developed eCommerce websites & HTML emails",
         "Programmed websites with A | B offers to support social & television media",

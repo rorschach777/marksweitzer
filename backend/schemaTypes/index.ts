@@ -1,6 +1,13 @@
-import {postType} from './postType'
-import {experience} from './experienceType'
-import {resumeType} from './resumeType'
-import {jobTitleType} from './jobTitleType'
+import {experience} from './experienceType';
+import {resumeType} from './resumeType';
+import {jobTitleType} from './jobTitleType';
+import {profileType} from './profileType';
+import {profileSectionType} from './profileSectionType';
 
-export const schemaTypes = [postType, experience, resumeType, jobTitleType]
+export const schemaTypes = [ 
+    experience, 
+    resumeType,
+    jobTitleType, 
+    profileType, 
+    profileSectionType
+];
