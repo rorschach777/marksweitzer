@@ -5,9 +5,9 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'msbackend',
+  title: 'msio',
 
-  projectId: '7teii2gf',
+  projectId: 'tjjlpfu3',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],

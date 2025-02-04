@@ -2,6 +2,8 @@ import Header from '../components/Header';
 
 import Experience from '../components/Experience';
 import PageHeading from '../components/PageHeading';
+import { sanityData } from '../utilities/sanityData';
+
 
 export const metadata = {
     title: 'Mark Sweitzer | Experience',
@@ -10,6 +12,25 @@ export const metadata = {
   };
 
 export default async function Page(){
+  const QUERY = `*[_type == "resume"]{ _id,
+  title, 
+  jobTitle -> {
+    title, 
+    cookieValue
+  },
+  experience []->{
+    title,
+    company,
+    displayTitle,
+    yearStart,
+    yearEnd,
+    displayYears,
+    duties
+  }, 
+  skillsDisplayName,
+  skills
+}`;
+const resumeData = await sanityData(QUERY)
 
 
     return (
@@ -18,7 +39,7 @@ export default async function Page(){
             <div className="page">
                 <PageHeading title="Experience" />
                 <div className="ms-container">
-                    <Experience />
+                    <Experience resumeData={resumeData} />
                 </div>
             </div>
         </>

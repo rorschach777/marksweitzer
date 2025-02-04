@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMsContext } from '../context/ms-context';
-import {getJob} from '../utilities/job-logic';
+
 
 
 
@@ -51,7 +51,7 @@ const profileReducer = (state, action) => {
 }
 
 
-const ProfileContent = (  ) => {
+const ProfileContent = (props) => {
     const [loaded, setLoaded] = useState(false);
     const container = useRef();
     const [profileState, profileDispatch] = useReducer(profileReducer, initialState);
@@ -60,28 +60,21 @@ const ProfileContent = (  ) => {
     gsap.registerPlugin(useGSAP);
     const { jobTitle } = useMsContext();
 
-    // useEffect(()=>{
-    //     const filteredJob = getJob(jobTitle);
-    //     console.log("Job Title - Use Effect: ", `${jobTitle}` )
-    //     console.log("Filtered Job")
-    //     console.log(filteredJob)
-    //     setJob(filteredJob);
-    // },[jobTitle]);
-
+ 
     const getActiveContent = (stepNumber) => {
         let output = profileState.activeContent;
         switch(stepNumber){
             case 1 : 
-                output = profileState.job.sectionOne;
+                output = profileState.job.sections[0];
                 break;
             case 2 : 
-                output = profileState.job.sectionTwo;
+                output = profileState.job.sections[1];
                 break;
             case 3 : 
-                output = profileState.job.sectionThree;
+                output = profileState.job.sections[2];
                 break;
             case 4 : 
-                output = profileState.job.sectionFour;
+                output = profileState.job.sections[3];
                 break;
     
         }
@@ -90,9 +83,11 @@ const ProfileContent = (  ) => {
     }
 
     useEffect(()=>{
-    
-        const filteredJob = getJob(jobTitle);
-        profileDispatch({type: "LOAD", payload: {job : filteredJob, activeContent: filteredJob.sectionOne }});
+        
+        // const filteredJob = getJob(jobTitle);
+        const filteredJob = props.profileData.filter(p=> p.jobTitle.cookieValue === jobTitle)[0];
+
+        profileDispatch({type: "LOAD", payload: {job : filteredJob, activeContent: filteredJob.sections[0] }});
         setLoaded(true);
     }, []);
 
@@ -126,7 +121,7 @@ const ProfileContent = (  ) => {
     
         const counterContainer = document.getElementById("counter-container");
         const contentOne = document.getElementById("description-text-section-one");
-       const handleNumber = (number, direction ) => {
+        const handleNumber = (number, direction ) => {
             return direction === "forwards" ? number * -1 : number;
         }
     
@@ -152,88 +147,11 @@ const ProfileContent = (  ) => {
             profileDispatch({type: "BACKWARDS", payload : {step: updatedStep, activeContent : getActiveContent(updatedStep)}})
             profileDispatch({type: "REMOVE_HIDDEN"})
         });
-        console.log(profileState)
+   
         
     }, { dependencies: [loaded], scope: container} );
 
-    // useEffect(()=>{
-    
-    // }, [profileState.activeContent])
-
-    // useGSAP(()=>{
-    
-    //     const offsets = {
-    //         offset1: -150,
-    //         offset2: -100,
-    //         offset3: -200,
-    //         offset4: -250,
-    //         profileContent: -25,
-    //         profileCallout: -75,
-    //         calloutOffset: -50
-    //     }
-    //     const tl1 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: '#profile-content-1',
-    //             start: '-10% center',
-    //             end: '50px center',
-    //             scrub: true,
-    //             markers: false
-    //         }
-    //     })
-
-
-    //     // tl1.to('#profile-callout-2', {opacity: .05, y : 175, filter: 'blur(0px)', duration: 2})
-    //     // tl1.to('#profile-callout-3', {opacity: .05, y : 175, filter: 'blur(0px)', duration: 3})
-    //     tl1.to('#top-title', {letterSpacing: '1rem', opacity: 0, filter: "blur(2.2rem)", y: 50});
-    //     tl1.to('#profile-callout-1', {top : offsets.profileCallout, opacity: 1});
-    //     tl1.to('#profile-content-1', {y: offsets.profileContent, opacity: 1})
- 
-    //     const tl2 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: '#profile-content-2',
-    //             start: '-50% center',
-    //             end: '10% center',
-    //             scrub: true,
-    //             markers: false
-    //         }
-    //     });
-    //     // tl2.to('#profile-callout-4', {opacity: .03, y : 520, filter: 'blur(0px)', duration: 6})
-    //     // tl2.to('#profile-callout-5', {opacity: .02, y : 600, filter: 'blur(0px)', duration: 1})
- 
-
-    //     tl2.to('#profile-callout-2', {top: offsets.profileCallout, opacity: 1});
-    //     tl2.to('#profile-content-2', {y: offsets.profileContent, opacity: 1})
-
-    //     // tl2.to('#profile-callout-6', {opacity: .02, y : 675, filter: 'blur(0px)', duration: 5})
-    //     const tl3 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: '#profile-content-3',
-    //             start: '-100% center',
-    //             end: '-50% center',
-    //             scrub: true,
-    //             markers: false
-    //         }
-    //     });
-    //     // tl3.to('#profile-callout-7', {opacity: 1, y : 1000, filter: 'blur(0px)', duration: 3})
-    //     tl3.to('#profile-callout-3', {top: offsets.profileCallout, opacity: 1});
-    //     tl3.to('#profile-content-3', {y: offsets.profileContent, opacity: 1});
-
-    //     const tl4 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: '#profile-content-4',
-    //             start: '-300% center',
-    //             end: '-250% center',
-    //             scrub: true,
-    //             markers: false
-    //         }
-    //     });
-    //     // tl3.to('#profile-callout-7', {opacity: 1, y : 1000, filter: 'blur(0px)', duration: 3})
-    //     tl4.to('#profile-callout-4', {top: offsets.profileCallout, opacity: 1});
-    //     tl4.to('#profile-content-4', {y: offsets.profileContent, opacity: 1})
-
-
-
-    // });
+   
 
     return(
         <div className="profile" ref={container}  >
@@ -257,8 +175,8 @@ const ProfileContent = (  ) => {
                     <div className="profile-content-headline" id="profile-content-headline">
                         {profileState.activeContent && (
                             <>
-                                <span>{profileState.activeContent.hero.subheadline.top}</span>
-                                <span>{profileState.activeContent.hero.subheadline.bottom}</span>
+                                <span>{profileState.activeContent.subHeadlineTop}</span>
+                                <span>{profileState.activeContent.subHeadlineBottom}</span>
                             </>
                         )}
                        
@@ -272,13 +190,13 @@ const ProfileContent = (  ) => {
                 </div>
                 <div className="profile-content-section profile-content-description">
                     <div className="profile-content-description-title">
-                        <span>{profileState.activeContent != null && profileState.activeContent.title}</span>
+                        <span>{profileState.activeContent != null && profileState.activeContent.mainTitle}</span>
                     </div>
                     <div  className={`profile-content-description-text `}>
                         <div id="description-text-section-one" className={`description-text-section   description-text-section-one `}>
                             <span>{profileState.activeContent != null && profileState.activeContent.secondaryTitle}</span>
                             <p>
-                            {profileState.activeContent != null && profileState.activeContent.content}
+                            {profileState.activeContent != null && profileState.activeContent.mainContent}
                             </p>
                         </div>
                     </div>
