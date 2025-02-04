@@ -20,7 +20,6 @@ export default async function Home() {
   const posts = sanityData(POSTS_QUERY)
   return (
     <>
-
       <HomeContent/>
     </>
 

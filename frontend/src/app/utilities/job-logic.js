@@ -41,6 +41,8 @@ export const getApplicableResume = (jobTitle) => {
 }
 
 
+
+
 /** This filters the actual jobs within a resume based on the slider index or the year */
 export const filterResumeContent = (sliderIndex, resume) => {
     // if cookie has been set not defaulted

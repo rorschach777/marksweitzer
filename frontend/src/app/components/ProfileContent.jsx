@@ -122,7 +122,7 @@ const ProfileContent = (props) => {
     
         const counterContainer = document.getElementById("counter-container");
         const contentOne = document.getElementById("description-text-section-one");
-       const handleNumber = (number, direction ) => {
+        const handleNumber = (number, direction ) => {
             return direction === "forwards" ? number * -1 : number;
         }
     
