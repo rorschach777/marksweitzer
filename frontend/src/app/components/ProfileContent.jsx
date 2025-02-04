@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMsContext } from '../context/ms-context';
-import {getJob} from '../utilities/job-logic';
+
 
 
 
