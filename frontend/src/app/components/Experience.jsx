@@ -7,7 +7,7 @@ import {Accordion, AccordionItem} from "@nextui-org/react";
 
 
 import { useMsContext } from '../context/ms-context';
-import { filterResumeContent, getApplicableResume } from '../utilities/job-logic';
+import { filterResumeContent  } from '../utilities/job-logic';
 
 const Experience =  (props) => {
 
