@@ -84,8 +84,8 @@ const Experience =  (props) => {
                 { filteredJobs !== null && (filteredJobs.map((filteredJob, filteredJobIdx)=>{
                     return(
                         <section key={`filteredJob-${filteredJobIdx}`}>
-                        <h4>{filteredJob.displayTitle} </h4>
-                        <h5>{filteredJob.company} | {filteredJob.displayYears}</h5>
+                        <h4>{filteredJob.company}</h4>
+                        <h5> {filteredJob.displayTitle} | {filteredJob.displayYears}</h5>
                             <ul key={`${filteredJob}-duty-${filteredJobIdx}}`}>
                                 {filteredJob.duties.map((d,i)=>{
                                     return <li key={`duty-${i}`}>{d}</li>
@@ -127,8 +127,6 @@ const Experience =  (props) => {
 
                 </AccordionItem>
             </Accordion>
-            RESUME DATA:
-            {props.resumeData[0].jobTitle.title}
             {/* <Button 
             href="./resume/ms-resume.pages"
             variant='bordered'>Download Resume</Button> */}

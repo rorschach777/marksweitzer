@@ -51,7 +51,7 @@ const profileReducer = (state, action) => {
 }
 
 
-const ProfileContent = (  ) => {
+const ProfileContent = (props) => {
     const [loaded, setLoaded] = useState(false);
     const container = useRef();
     const [profileState, profileDispatch] = useReducer(profileReducer, initialState);
@@ -72,16 +72,16 @@ const ProfileContent = (  ) => {
         let output = profileState.activeContent;
         switch(stepNumber){
             case 1 : 
-                output = profileState.job.sectionOne;
+                output = profileState.job.sections[0];
                 break;
             case 2 : 
-                output = profileState.job.sectionTwo;
+                output = profileState.job.sections[1];
                 break;
             case 3 : 
-                output = profileState.job.sectionThree;
+                output = profileState.job.sections[2];
                 break;
             case 4 : 
-                output = profileState.job.sectionFour;
+                output = profileState.job.sections[3];
                 break;
     
         }
@@ -90,9 +90,12 @@ const ProfileContent = (  ) => {
     }
 
     useEffect(()=>{
-    
+        
         const filteredJob = getJob(jobTitle);
-        profileDispatch({type: "LOAD", payload: {job : filteredJob, activeContent: filteredJob.sectionOne }});
+        const filteredJob2 = props.profileData.filter(p=> p.jobTitle.cookieValue === jobTitle)[0];
+        console.log("Job Title : " + jobTitle)
+        console.log(filteredJob2);
+        profileDispatch({type: "LOAD", payload: {job : filteredJob2, activeContent: filteredJob2.sections[0] }});
         setLoaded(true);
     }, []);
 
@@ -152,7 +155,7 @@ const ProfileContent = (  ) => {
             profileDispatch({type: "BACKWARDS", payload : {step: updatedStep, activeContent : getActiveContent(updatedStep)}})
             profileDispatch({type: "REMOVE_HIDDEN"})
         });
-        console.log(profileState)
+   
         
     }, { dependencies: [loaded], scope: container} );
 
@@ -257,8 +260,8 @@ const ProfileContent = (  ) => {
                     <div className="profile-content-headline" id="profile-content-headline">
                         {profileState.activeContent && (
                             <>
-                                <span>{profileState.activeContent.hero.subheadline.top}</span>
-                                <span>{profileState.activeContent.hero.subheadline.bottom}</span>
+                                <span>{profileState.activeContent.subHeadlineTop}</span>
+                                <span>{profileState.activeContent.subHeadlineBottom}</span>
                             </>
                         )}
                        
@@ -272,13 +275,13 @@ const ProfileContent = (  ) => {
                 </div>
                 <div className="profile-content-section profile-content-description">
                     <div className="profile-content-description-title">
-                        <span>{profileState.activeContent != null && profileState.activeContent.title}</span>
+                        <span>{profileState.activeContent != null && profileState.activeContent.mainTitle}</span>
                     </div>
                     <div  className={`profile-content-description-text `}>
                         <div id="description-text-section-one" className={`description-text-section   description-text-section-one `}>
                             <span>{profileState.activeContent != null && profileState.activeContent.secondaryTitle}</span>
                             <p>
-                            {profileState.activeContent != null && profileState.activeContent.content}
+                            {profileState.activeContent != null && profileState.activeContent.mainContent}
                             </p>
                         </div>
                     </div>
