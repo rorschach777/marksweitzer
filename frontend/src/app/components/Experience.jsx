@@ -9,7 +9,7 @@ import {Accordion, AccordionItem} from "@nextui-org/react";
 import { useMsContext } from '../context/ms-context';
 import { filterResumeContent, getApplicableResume } from '../utilities/job-logic';
 
-const Experience =  () => {
+const Experience =  (props) => {
 
     const { jobTitle } = useMsContext();
     const year = new Date().getFullYear();
@@ -43,10 +43,9 @@ const Experience =  () => {
 
 
     useEffect(()=>{
-        const foundResume = getApplicableResume(jobTitle);
- 
+        // const foundResume = getApplicableResume(jobTitle);
+        const foundResume = props.resumeData.filter(r=> r.jobTitle.cookieValue === jobTitle)[0];
         setResume(foundResume);
-  
         updateOutputText();
     },[jobTitle]);
 
@@ -85,7 +84,7 @@ const Experience =  () => {
                 { filteredJobs !== null && (filteredJobs.map((filteredJob, filteredJobIdx)=>{
                     return(
                         <section key={`filteredJob-${filteredJobIdx}`}>
-                        <h4>{filteredJob.title} </h4>
+                        <h4>{filteredJob.displayTitle} </h4>
                         <h5>{filteredJob.company} | {filteredJob.displayYears}</h5>
                             <ul key={`${filteredJob}-duty-${filteredJobIdx}}`}>
                                 {filteredJob.duties.map((d,i)=>{
@@ -128,6 +127,8 @@ const Experience =  () => {
 
                 </AccordionItem>
             </Accordion>
+            RESUME DATA:
+            {props.resumeData[0].jobTitle.title}
             {/* <Button 
             href="./resume/ms-resume.pages"
             variant='bordered'>Download Resume</Button> */}
