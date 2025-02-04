@@ -84,11 +84,10 @@ const ProfileContent = (props) => {
 
     useEffect(()=>{
         
-        const filteredJob = getJob(jobTitle);
-        const filteredJob2 = props.profileData.filter(p=> p.jobTitle.cookieValue === jobTitle)[0];
-        console.log("Job Title : " + jobTitle)
-        console.log(filteredJob2);
-        profileDispatch({type: "LOAD", payload: {job : filteredJob2, activeContent: filteredJob2.sections[0] }});
+        // const filteredJob = getJob(jobTitle);
+        const filteredJob = props.profileData.filter(p=> p.jobTitle.cookieValue === jobTitle)[0];
+
+        profileDispatch({type: "LOAD", payload: {job : filteredJob, activeContent: filteredJob.sections[0] }});
         setLoaded(true);
     }, []);
 
