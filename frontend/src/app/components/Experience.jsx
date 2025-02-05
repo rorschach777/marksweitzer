@@ -4,11 +4,8 @@
 import NextUiSlider from './NextUiSlider';
 import {useEffect, useState} from "react" 
 import {Accordion, AccordionItem} from "@nextui-org/react";
-
-
 import { useMsContext } from '../context/ms-context';
 import { filterResumeContent  } from '../utilities/job-logic';
-import { FallbackMode } from 'next/dist/lib/fallback';
 
 const Experience =  (props) => {
 

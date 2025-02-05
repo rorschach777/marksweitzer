@@ -4,7 +4,6 @@ import Header from './Header';
 import {Image} from "@nextui-org/react";
 import {  useEffect, useState } from 'react';
 import NextUIModal from './NextUIModal';
-import {portfolioData} from '../data/portfolio';
 import Footer from './Footer';
 
  const Portfolio = (props) => {

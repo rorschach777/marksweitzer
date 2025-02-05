@@ -80,7 +80,6 @@ const CookieReader = () => {
   },[]);
 
   useEffect(()=>{
-    const myCookie = getCookie(jobTitleParam);
   },[cookieLoaded]);
 
 
