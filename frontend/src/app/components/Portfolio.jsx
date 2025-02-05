@@ -2,29 +2,63 @@
 
 import Header from './Header';
 import {Image} from "@nextui-org/react";
-import {  useState } from 'react';
+import {  useEffect, useState } from 'react';
 import NextUIModal from './NextUIModal';
 import {portfolioData} from '../data/portfolio';
 import Footer from './Footer';
 
- const Portfolio = () => {
+ const Portfolio = (props) => {
+    console.log(props.portfolioData)
     const [isBlurred, setIsBlurred ] = useState(false);
+    const [allPortfolioData, setAllPortfolioData] = useState([]);
     const [portfolioItem, setPortfolioItem] = useState({ name: '', description: '', image: '', title: ''});
-  
-
-    const selectPortfolioItem = (portfolioItem) => {
-        const output = portfolioData.filter(cur => cur.name === portfolioItem)[0];
+    
+    
+    const limitItems = () => {
+        const output = [];
+        for (let i = 0; i < 9; i++){
+            output.push(props.portfolioData[i]);
+        }
         return output;
     }
 
-    const clickHandler = (portfolioItem) => {
-        if(portfolioItem != null){
-            const activePortfolioObj = selectPortfolioItem(portfolioItem);
+
+    useEffect(()=>{
+        const limitedPorffolioData = limitItems();
+        setAllPortfolioData(limitedPorffolioData);
+    },[])
+
+
+    const selectPortfolioItem = (itemName) => {
+        const output = allPortfolioData.filter(cur => cur.itemName === itemName)[0];
+        return output;
+    }
+
+    const clickHandler = (itemName) => {
+        if(itemName != null){
+            const activePortfolioObj = selectPortfolioItem(itemName);
             setPortfolioItem(activePortfolioObj);
 
         } 
         setIsBlurred(!isBlurred);
     }
+
+    const createPortfolioItems = (startIndex, endIndex) => {
+
+        const items = allPortfolioData.slice(startIndex, endIndex);
+        return items.map((c,i)=>{
+            return(
+                <div className={`portfolio-item item-${i+1}`} key={`portfolio-item-${i}`}>
+                    <Image
+                        alt={c.title}
+                        src={c.imageUrl}
+                        onClick={()=>clickHandler(c.itemName)}
+                        />
+                </div>
+            );
+        })
+    }
+
     return (
         <>        
             <Header/>
@@ -37,7 +71,7 @@ import Footer from './Footer';
                     <div className="ms-flex-container">
                         <div className="portfolio-layout">
                             <div className="instagrid">
-                                <div className={`portfolio-item item-1 ${isBlurred ? 'portfolio-item-blurred' : ''}`}>
+                                {/* <div className={`portfolio-item item-1 ${isBlurred ? 'portfolio-item-blurred' : ''}`}>
                                     <Image
                                         alt="NextUI Fruit Image with Zoom"
                                         src="/portfolio/item-3.webp"
@@ -58,10 +92,11 @@ import Footer from './Footer';
                                         src="/portfolio/item-9.webp"
                                         onClick={()=>clickHandler('item3')}
                                         />
-                                </div>
+                                </div> */}
+                                {createPortfolioItems(0,3)}
                             </div>
                             <div className="instagrid">
-                                <div className="portfolio-item item-1">
+                                {/* <div className="portfolio-item item-1">
                                     <Image
                                         alt="NextUI Fruit Image with Zoom"
                                         src="/portfolio/item-11.webp"
@@ -81,10 +116,12 @@ import Footer from './Footer';
                                         src="/portfolio/item-4.webp"
                                         onClick={()=>clickHandler('item6')}
                                     />
-                                </div>
+                                </div> */}
+                                {createPortfolioItems(3,6)}
                             </div>
                             <div className="instagrid">
-                                <div className="portfolio-item item-1">
+                        
+                                {/* <div className="portfolio-item item-1">
                                         <Image
                                         alt="NextUI Fruit Image with Zoom"
                                         src="/portfolio/item-5.webp"
@@ -104,7 +141,8 @@ import Footer from './Footer';
                                         src="/portfolio/item-10.webp"
                                         onClick={()=>clickHandler('item9')}
                                         />
-                                </div>
+                                </div> */}
+                                {createPortfolioItems(6,9)}
                             </div>
                         </div>
                     </div>
@@ -118,7 +156,7 @@ import Footer from './Footer';
                     >
                         <Image
                         alt="NextUI Fruit Image with Zoom"
-                        src={`/portfolio/${portfolioItem.image}`}
+                        src={portfolioItem.imageUrl}
                         />
                 </NextUIModal>
             </div>
