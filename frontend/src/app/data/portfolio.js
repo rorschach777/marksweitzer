@@ -45,18 +45,14 @@ export const portfolioData = [
     },
     {
         name: 'item8',
-
         title: 'Typography Poster B',
         description: "A continuation of Typography Poster A, this design further examined the synergy between type and image.", 
-
-   
         image: "item-6.webp"
     }, 
     {
         name: 'item9',
         title: 'Typographic Book Design',
         description: "This 30-page book project showcased the interplay between typography and photography, blending visual storytelling with design principles.", 
-
         image: "item-10.webp"
     }, 
     {
