@@ -8,6 +8,7 @@ import {Accordion, AccordionItem} from "@nextui-org/react";
 
 import { useMsContext } from '../context/ms-context';
 import { filterResumeContent  } from '../utilities/job-logic';
+import { FallbackMode } from 'next/dist/lib/fallback';
 
 const Experience =  (props) => {
 
@@ -98,28 +99,25 @@ const Experience =  (props) => {
             <Accordion selectionMode="multiple"
             defaultExpandedKeys={["1", "2", "3"]}
             >
+                {resume !== null && (
                 <AccordionItem key="1" 
                 aria-label="Accordion 1" 
-                title="Languages & Frameworks"
-                
+                title={resume.skillsDisplayName}
                 >
                     <ul>
-                        <li>C#</li> 
-                        <li>Java (Spring Boot)</li>
-                        <li>PHP</li>
-                        <li>TypeScript</li>
-                        <li>JavaScript (Vanilla, React, Next.js, Vue.js, Redux)</li>
-                        <li>HTML5, CSS, SCSS, Bootstrap, Tailwind</li>
+                        {resume.skills.map(c => <li>{c}</li>)}
                     </ul>
                 </AccordionItem>
-                <AccordionItem key="2" aria-label="Accordion 2" title="Version Control & Tools">
+                )}
+
+                {/* <AccordionItem key="2" aria-label="Accordion 2" title="Version Control & Tools">
                 <ul>
                     <li>Git</li>
                     <li>Adobe Creative Suite</li>
                     <li>Sketch</li>
                     <li>Figma</li>
                 </ul>
-                </AccordionItem>
+                </AccordionItem> */}
                 <AccordionItem key="3" aria-label="Accordion 3" title="Professional Certifications">
                 Microsoft 70-480: Programming with HTML5, CSS3, JavaScript – Enhanced expertise in frontend development, focusing on responsive and interactive web design.
 
