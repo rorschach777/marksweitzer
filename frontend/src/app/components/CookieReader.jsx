@@ -59,7 +59,6 @@ const CookieReader = () => {
   useEffect(()=>{
     // No cookie existing value exists -- set a new one based on search params. 
     const existingCookie = retrieveExistingCookie();
-    console.log('Existing cookie' + existingCookie)
     let contextJobTitle = "";
     if (existingCookie === undefined){
       // Check to see if a prop obtained is valid? 
@@ -82,7 +81,6 @@ const CookieReader = () => {
 
   useEffect(()=>{
     const myCookie = getCookie(jobTitleParam);
-    console.log(myCookie);
   },[cookieLoaded]);
 
 
