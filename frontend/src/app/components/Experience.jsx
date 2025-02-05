@@ -104,7 +104,7 @@ const Experience =  (props) => {
                 title={resume.skillsDisplayName}
                 >
                     <ul>
-                        {resume.skills.map(c => <li>{c}</li>)}
+                        {resume.skills.map((c,i)=> <li key={`resume-experience-skill-${i}`}>{c}</li>)}
                     </ul>
                 </AccordionItem>
                 )}
