@@ -51,8 +51,7 @@ const Experience =  (props) => {
     },[jobTitle]);
 
     useEffect(()=>{
-        console.log("resume found")
-        console.log(resume)
+
         updateFilteredExperience();
         updateOutputText();
     },[resume])
@@ -125,9 +124,7 @@ const Experience =  (props) => {
 
                 </AccordionItem>
             </Accordion>
-            {/* <Button 
-            href="./resume/ms-resume.pages"
-            variant='bordered'>Download Resume</Button> */}
+ 
             </div>
         </div>
 
