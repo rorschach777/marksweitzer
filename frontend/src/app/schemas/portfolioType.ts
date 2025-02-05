@@ -17,6 +17,11 @@ export const portfolioType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+        name: 'itemName',
+        type: 'string',
+        validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'publishedAt',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
