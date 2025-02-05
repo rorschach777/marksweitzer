@@ -59,9 +59,7 @@ const Experience =  (props) => {
     useEffect(()=>{
         updateFilteredExperience();
     }, [resume])
-   
-
-
+ 
     useEffect(()=>{
         updateFilteredExperience();
         updateOutputText();
