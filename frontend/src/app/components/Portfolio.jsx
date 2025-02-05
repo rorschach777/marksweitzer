@@ -8,7 +8,6 @@ import {portfolioData} from '../data/portfolio';
 import Footer from './Footer';
 
  const Portfolio = (props) => {
-    console.log(props.portfolioData)
     const [isBlurred, setIsBlurred ] = useState(false);
     const [allPortfolioData, setAllPortfolioData] = useState([]);
     const [portfolioItem, setPortfolioItem] = useState({ name: '', description: '', image: '', title: ''});
