@@ -8,7 +8,7 @@ import { useMsContext } from '../context/ms-context';
 import { useRouter } from 'next/navigation'
 
 
-const CookieReader = () => {
+const CookieReader = (props) => {
   const jobTitleParam = "jt";
   const [cookieLoaded, setCookieLoaded] = useState(false);
   const { setJobTitle }  = useMsContext();

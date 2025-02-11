@@ -8,7 +8,7 @@ import './main.css'
 import Provider from './Provider';
 import CookieReader from "./components/CookieReader";
 import { Suspense } from "react";
-
+import { sanityData } from './utilities/sanityData';
 
 
 
@@ -36,6 +36,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
+
+
+  const QUERY = `*[_type == "jobTitle"]{ _id,
+    title,
+    cookieValue
+  }`;
+  const jobTitleData = await sanityData(QUERY)
+
   // const jobIsValid = validJob(jobTitle);
   return (
     <>
@@ -46,7 +54,7 @@ export default async function RootLayout({
       <body>
       <MsContextProvider>
       <Suspense fallback={<div></div>}>
-        <CookieReader />
+        <CookieReader jobTitleData={jobTitleData}/>
       </Suspense>
 
         <div className="root-container ms-home">

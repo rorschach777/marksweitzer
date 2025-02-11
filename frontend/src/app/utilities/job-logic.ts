@@ -1,8 +1,10 @@
-import { jobTitles } from '../data/jobTitleAbreviations';
+// import { jobTitles } from '../data/jobTitleAbreviations';
 import { jobs } from '../data/profileContent';
 import {resumes} from '../data/resume';
+import { IJobTitleObj } from '../interfaces/IJobTitleObj';
+// import { ICookieJobTile } from '../interfaces/ICookieJobTile';
 
-export const getJob = ( jobTitle ) => {
+export const getJob = ( jobTitle : string ) => {
     let output = jobs[0];
     if(jobTitle !== undefined){
         let filteredJob = jobs.filter(j=> j.cookieValue.toLowerCase() === jobTitle.toLowerCase());
@@ -14,12 +16,12 @@ export const getJob = ( jobTitle ) => {
     return output;
 }
 
-export const validJob = (jobTitle) => {
+export const validJob = (jobTitle : string, jobTitleData : IJobTitleObj[]) => {
 
     let output = false;
-    const validCookieValues = jobTitles;
-    validCookieValues.forEach(t=>{
-        if(t === jobTitle){
+    const validCookieValues = jobTitleData;
+    validCookieValues.forEach(dataObj =>{
+        if(dataObj.cookieValue === jobTitle){
             output = true;
         }
     })
@@ -28,7 +30,7 @@ export const validJob = (jobTitle) => {
 
 
 /** This is gets the correct resume for the page.  */
-export const getApplicableResume = (jobTitle) => {
+export const getApplicableResume = (jobTitle :string) => {
     const copyOfResumes = resumes;
     const frontendResume = copyOfResumes[0];
   
@@ -44,7 +46,7 @@ export const getApplicableResume = (jobTitle) => {
 
 
 /** This filters the actual jobs within a resume based on the slider index or the year */
-export const filterResumeContent = (sliderIndex, resume) => {
+export const filterResumeContent = (sliderIndex : number, resume : any) => {
     // if cookie has been set not defaulted
     console.log(resume)
     let output = null;
