@@ -31,8 +31,6 @@ const LoadingContent = (props) => {
         } 
     },[isValidJob])
 
-
-
     return (
         <>
             { loaded || pathName === "/" ? props.children : loadingScreen()}

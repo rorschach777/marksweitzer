@@ -48,12 +48,7 @@ const CookieReader = (props) => {
   }
 
   const responseHandler = (receivedJobTitle) => {
-    console.log("Step 3 | responseHandler")
-    console.log(receivedJobTitle)
-    console.log(props.jobTitleData)
     setJobTitle(receivedJobTitle, props.jobTitleData);
-
-
   }
 
   //#endregion
@@ -86,11 +81,11 @@ const CookieReader = (props) => {
   },[]);
 
   useEffect(()=>{
-     console.log("Done Loading")
-     console.log(jobTitle);
-     console.log( props.resumeData)
+
      setupFilteredJob(jobTitle, props.resumeData, props.jobTitleData)
-  },[jobTitle])
+  },[jobTitle]);
+
+
 
 
  

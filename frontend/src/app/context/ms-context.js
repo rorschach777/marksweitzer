@@ -22,8 +22,7 @@ const msContextReducer = (state , action ) => {
     }    
   
     if (action.type === "SETUP_FILTERED_JOB"){
-        console.log("SETUP_FILTERED_JOB")
-        console.log(action.payload)
+
         return {
             ...state,
             jobContent: action.payload.filteredJob,
@@ -32,8 +31,6 @@ const msContextReducer = (state , action ) => {
         }
     }
 }
-
-
 
 const MsContext = createContext();
 
@@ -62,15 +59,8 @@ export const MsContextProvider = ( props ) => {
     const setupFilteredJob = (jt, resumeData, jobTitleData) => {
 
         const filteredJob = getJob(jt, resumeData);
-        console.log("Filtered Job:");
-
         let isValidJob = false;
-        console.log("setupFilteredJOb")
-        console.log(filteredJob)
-        console.log(jobTitleData);
         isValidJob = validJob(jt,jobTitleData);
-        console.log("is Valid Job: " + isValidJob)
-  
         // const isValid = true;
         msContextDispatch({type: "SETUP_FILTERED_JOB", payload: {
             filteredJob: filteredJob,

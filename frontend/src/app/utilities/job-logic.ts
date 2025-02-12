@@ -24,9 +24,6 @@ interface IResume {
 // import { ICookieJobTile } from '../interfaces/ICookieJobTile';
 
 export const getJob = ( jobTitle : string, resumeData : IResume[] ) : IResume => {
-    console.log("getJob:");
-    console.log(jobTitle)
-    console.log(resumeData)
     let output : IResume = resumeData[0];
     if(jobTitle !== undefined){
         let filteredJob = resumeData.filter(j=> j.jobTitle.cookieValue.toLowerCase() === jobTitle.toLowerCase());
@@ -40,12 +37,8 @@ export const getJob = ( jobTitle : string, resumeData : IResume[] ) : IResume =>
 
 export const validJob = (jobTitle : string, sanityJobTitles : IJobTitleObj[]) => {
     let output = false;
-    console.log("validJob");
-
     if(sanityJobTitles.length > 0){
-
         sanityJobTitles.forEach(dataObj=>{
-            console.log(jobTitle + " | " +  dataObj.cookieValue)
             if(dataObj.cookieValue === jobTitle){
                 output = true;
             }
@@ -75,7 +68,6 @@ export const getApplicableResume = (jobTitle :string) => {
 /** This filters the actual jobs within a resume based on the slider index or the year */
 export const filterResumeContent = (sliderIndex : number, resume : any) => {
     // if cookie has been set not defaulted
-    console.log(resume)
     let output = null;
     
     if(resume != null) {
