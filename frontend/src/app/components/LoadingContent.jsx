@@ -28,9 +28,12 @@ const LoadingContent = (props) => {
     useEffect(()=>{
         // console.log("Step 1: - Loading Content - Job Title" + jobTitle)
         // console.log(sanityJobTitles)
-        
-        setLoaded(true);
-        console.log("Loading Content: " + isValidJob);
+        if(isValidJob){
+            alert(isValidJob)
+            setLoaded(true);
+        }
+       
+    
     },[isValidJob])
 
 

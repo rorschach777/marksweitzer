@@ -18,6 +18,7 @@ const Experience =  (props) => {
     const updateOutputText = () => {
         const outputEl = document.getElementsByTagName("output");
         if(outputEl !== undefined){
+            
             outputEl[0].classList.add("hide")
             const updatedText =  outputEl[0].innerText.split(" ")[0];
             outputEl[0].innerText = updatedText;
