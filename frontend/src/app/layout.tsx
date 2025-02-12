@@ -60,9 +60,9 @@ export default async function RootLayout({
         <div className="root-container ms-home">
             <Provider>
               <SmoothScrolling>
-              <LoadingContent>
-              {children}
-              </LoadingContent>
+                <LoadingContent>
+                  {children}
+                </LoadingContent>
               </SmoothScrolling>
             </Provider>
         </div>

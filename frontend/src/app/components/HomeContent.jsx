@@ -7,10 +7,10 @@ import { useEffect } from 'react';
 
 const HomeContent = () => {
 
-    const {setupFilteredJob, jobTitle, isValidJob } = useMsContext();
+    const {setupFilteredJob, jobTitle, isValidJob, sanityJobTitles } = useMsContext();
     
     useEffect(()=>{
-        setupFilteredJob(jobTitle);
+        // setupFilteredJob(jobTitle, sanityJobTitles);
     },[jobTitle])
 
     return (

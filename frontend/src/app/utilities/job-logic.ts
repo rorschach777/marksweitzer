@@ -2,6 +2,7 @@
 import { jobs } from '../data/profileContent';
 import {resumes} from '../data/resume';
 import { IJobTitleObj } from '../interfaces/IJobTitleObj';
+
 // import { ICookieJobTile } from '../interfaces/ICookieJobTile';
 
 export const getJob = ( jobTitle : string ) => {
@@ -16,11 +17,13 @@ export const getJob = ( jobTitle : string ) => {
     return output;
 }
 
-export const validJob = (jobTitle : string, jobTitleData : IJobTitleObj[]) => {
+export const validJob = (jobTitle : string, sanityJobTitles : IJobTitleObj[]) => {
+    console.log(sanityJobTitles)
+
 
     let output = false;
-    const validCookieValues = jobTitleData;
-    validCookieValues.forEach(dataObj =>{
+    sanityJobTitles.forEach(dataObj=>{
+        console.log("PROPS JOB TITLE: " + dataObj.cookieValue + "|" + jobTitle  );
         if(dataObj.cookieValue === jobTitle){
             output = true;
         }

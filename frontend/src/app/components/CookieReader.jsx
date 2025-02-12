@@ -9,9 +9,11 @@ import { useRouter } from 'next/navigation'
 
 
 const CookieReader = (props) => {
+  console.log("Step 2: ");
+
+
   const jobTitleParam = "jt";
-  const [cookieLoaded, setCookieLoaded] = useState(false);
-  const { setJobTitle }  = useMsContext();
+  const { jobTitle, setJobTitle, setupFilteredJob  }  = useMsContext();
   // const pathName = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -20,12 +22,10 @@ const CookieReader = (props) => {
 
   //#region Support Methods. 
   const setCookieHandler = (existingCookie) => {
-
     let setValue = existingCookie === undefined ? searchParamJobTitle : existingCookie;
     const today = new Date();
     const expirationDate = new Date(today);
     expirationDate.setDate(today.getDate() + 2);
-
     const options = {expires: expirationDate}
     setCookie(jobTitleParam, setValue, options );
   };
@@ -38,7 +38,7 @@ const CookieReader = (props) => {
   const validateSearchParam = () => {
     let output = false;
     if(searchParamJobTitle !== null){
-      output = validJob(searchParamJobTitle);
+      output = validJob(searchParamJobTitle, props.jobTitleData);
     }
     return output;
   }
@@ -48,8 +48,12 @@ const CookieReader = (props) => {
   }
 
   const responseHandler = (receivedJobTitle) => {
-    setJobTitle(receivedJobTitle);
-    setCookieLoaded(true);
+    console.log("Step 3 | responseHandler")
+    console.log(receivedJobTitle)
+    console.log(props.jobTitleData)
+    setJobTitle(receivedJobTitle, props.jobTitleData);
+
+
   }
 
   //#endregion
@@ -66,6 +70,7 @@ const CookieReader = (props) => {
         // if so set it. 
         contextJobTitle = searchParamJobTitle;
         setCookieHandler();
+      
       } else {
         redirectBadRequest()
       }
@@ -77,11 +82,14 @@ const CookieReader = (props) => {
     }
     // loaded data accordingly 
     responseHandler(contextJobTitle);
+
   },[]);
 
   useEffect(()=>{
-  },[cookieLoaded]);
-
+     console.log("Done Loading")
+     console.log(jobTitle)
+     //setupFilteredJob(jobTitle)
+  },[jobTitle])
 
   return (
     <>

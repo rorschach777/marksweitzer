@@ -1,30 +1,31 @@
 "use client"
 
-import { createContext, useContext, useState} from 'react';
+import { createContext, useContext} from 'react';
 import { getJob, validJob } from '../utilities/job-logic';
 import { useReducer } from 'react';
 
 const initialState = {
-    jobTitle : "",
+    jobTitle : null,
     jobContent: {},
     isValidJob: false, 
-    sanityJobTitles: null
+    sanityJobTitles: []
 }
 
-const msContextReducer = (state, action) => {
+const msContextReducer = (state , action ) => {
 
     if (action.type === "SETUP_JOB_TITLE"){
         return {
             ...state,
-            jobTitle : action.payload.value,
-            sanityJobTitles: action.payload.sanityJobData
+            jobTitle : action.payload.jobTitle,
+            sanityJobTitles: action.payload.sanityJobTitles
         }
     }    
+  
     if (action.type === "SETUP_FILTERED_JOB"){
         return {
             ...state,
             jobContent: action.payload.jobContent,
-            isValid: action.payload.isValid
+            isValidJob: action.payload.isValid
             
         }
     }
@@ -43,6 +44,7 @@ export const MsContextProvider = ( props ) => {
     const [msContextState, msContextDispatch] = useReducer(msContextReducer, initialState);
 
     const setJobTitle = (jobTitle, sanityJobData) => {
+        console.log("Set the Fucking job title: " + jobTitle)
         msContextDispatch({type: "SETUP_JOB_TITLE", payload: {
             jobTitle: jobTitle,
             sanityJobTitles : sanityJobData
@@ -57,12 +59,20 @@ export const MsContextProvider = ( props ) => {
     // }
 
     const setupFilteredJob = (jt) => {
+        console.log("msContextState:")
+        console.log(msContextState)
         const filteredJob = getJob(jt);
-        const isValid = validJob(jt);
+        let isValidJob = false;
+        if(msContextState.sanityJobTitles.length > 0){
+            isValidJob = validJob(jt, msContextState.sanityJobData);
+        }
+  
+        // const isValid = true;
         msContextDispatch({type: "SETUP_FILTERED_JOB", payload: {
             filteredJob: filteredJob,
-            isValid: isValid
+            isValidJob: isValidJob
         }})
+
     }
 
     return (
@@ -71,7 +81,8 @@ export const MsContextProvider = ( props ) => {
         jobContent: msContextState.jobContent,
         isValidJob : msContextState.isValidJob,
         setJobTitle : setJobTitle, 
-        setupFilteredJob: setupFilteredJob
+        setupFilteredJob: setupFilteredJob, 
+        sanityJobTitles : msContextState.sanityJobTitles
         }}>
             {props.children}
         </MsContext.Provider>
