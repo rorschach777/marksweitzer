@@ -8,10 +8,7 @@ import { useEffect } from 'react';
 const HomeContent = () => {
 
     const {setupFilteredJob, jobTitle, isValidJob, sanityJobTitles } = useMsContext();
-    
-    useEffect(()=>{
-        alert(isValidJob)
-    },[isValidJob])
+
 
     return (
         <div className="ms-full-screen-container">

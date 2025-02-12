@@ -22,9 +22,11 @@ const msContextReducer = (state , action ) => {
     }    
   
     if (action.type === "SETUP_FILTERED_JOB"){
+        console.log("SETUP_FILTERED_JOB")
+        console.log(action.payload)
         return {
             ...state,
-            jobContent: action.payload.jobContent,
+            jobContent: action.payload.filteredJob,
             isValidJob: action.payload.isValidJob
             
         }
@@ -73,7 +75,6 @@ export const MsContextProvider = ( props ) => {
         msContextDispatch({type: "SETUP_FILTERED_JOB", payload: {
             filteredJob: filteredJob,
             isValidJob: isValidJob,
-
         }})
 
     }

@@ -28,10 +28,13 @@ const LoadingContent = (props) => {
     useEffect(()=>{
         // console.log("Step 1: - Loading Content - Job Title" + jobTitle)
         // console.log(sanityJobTitles)
-        // setupFilteredJob(jobTitle, sanityJobTitles);
+        
         setLoaded(true);
-    },[jobTitle])
-    console.log("Loading Content: " + isValidJob)
+        console.log("Loading Content: " + isValidJob);
+    },[isValidJob])
+
+
+
     return (
         <>
             { loaded || pathName === "/" ? props.children : loadingScreen()}

@@ -46,15 +46,17 @@ export default async function RootLayout({
   const RESUMEQUERY = `*[_type == "resume"]{ _id,
     title,
     jobTitle-> {
+      title,
       cookieValue
     },
     experience []->{
       _id,
+      displayTitle,
       company,
       yearStart,
       yearEnd,
       displayYears,
-      duties []->{},
+      duties,
  
     },
     skillsDisplayName,
@@ -73,12 +75,10 @@ export default async function RootLayout({
       </head>
       <body>
       <MsContextProvider>
-      <Suspense fallback={<div></div>}>
-        <CookieReader 
+      <CookieReader 
         jobTitleData={jobTitleData}
         resumeData={resumeData}
        />
-      </Suspense>
 
         <div className="root-container ms-home">
             <Provider>

@@ -40,9 +40,12 @@ export const getJob = ( jobTitle : string, resumeData : IResume[] ) : IResume =>
 
 export const validJob = (jobTitle : string, sanityJobTitles : IJobTitleObj[]) => {
     let output = false;
+    console.log("validJob");
+
     if(sanityJobTitles.length > 0){
+
         sanityJobTitles.forEach(dataObj=>{
-            console.log("PROPS JOB TITLE: " + dataObj.cookieValue + "|" + jobTitle  );
+            console.log(jobTitle + " | " +  dataObj.cookieValue)
             if(dataObj.cookieValue === jobTitle){
                 output = true;
             }

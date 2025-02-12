@@ -9,7 +9,7 @@ import { filterResumeContent  } from '../utilities/job-logic';
 
 const Experience =  (props) => {
 
-    const { jobTitle } = useMsContext();
+    const { jobTitle, jobContent } = useMsContext();
     const year = new Date().getFullYear();
     const [sliderIndex, setSliderIndex] = useState(2025);
     const [filteredJobs, setFilteredJobs] = useState([]);
@@ -38,14 +38,18 @@ const Experience =  (props) => {
         setFilteredJobs(filteredExperience);
 
     }
-
-
     useEffect(()=>{
-        // const foundResume = getApplicableResume(jobTitle);
-        const foundResume = props.resumeData.filter(r=> r.jobTitle.cookieValue === jobTitle)[0];
-        setResume(foundResume);
+        setResume(jobContent);
         updateOutputText();
-    },[jobTitle]);
+    },[jobContent]);
+    
+
+    // useEffect(()=>{
+    //     // const foundResume = getApplicableResume(jobTitle);
+    //     // const foundResume = props.resumeData.filter(r=> r.jobTitle.cookieValue === jobTitle)[0];
+    //     // setResume(foundResume);
+    //     updateOutputText();
+    // },[jobTitle]);
 
     useEffect(()=>{
 
@@ -53,14 +57,18 @@ const Experience =  (props) => {
         updateOutputText();
     },[resume])
 
-    useEffect(()=>{
-        updateFilteredExperience();
-    }, [resume])
+    // useEffect(()=>{
+    //     // updateFilteredExperience();
+    // }, [resume])
  
     useEffect(()=>{
         updateFilteredExperience();
         updateOutputText();
     },[sliderIndex])
+
+    // useEffect(()=>{
+    //     console.log(resume)
+    // },[])
 
     return(
         <div className="experience">
@@ -95,13 +103,15 @@ const Experience =  (props) => {
             <Accordion selectionMode="multiple"
             defaultExpandedKeys={["1", "2", "3"]}
             >
-                {resume !== null && (
+  
+            {resume !== null && (
+               
                 <AccordionItem key="1" 
                 aria-label="Accordion 1" 
                 title={resume.skillsDisplayName}
                 >
                     <ul>
-                        {resume.skills.map((c,i)=> <li key={`resume-experience-skill-${i}`}>{c}</li>)}
+                        {resume != null && resume.skills.map((c,i)=> <li key={`resume-experience-skill-${i}`}>{c}</li>)}
                     </ul>
                 </AccordionItem>
                 )}

@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 
 
 const CookieReader = (props) => {
-  console.log("Step 2: ");
+
 
 
   const jobTitleParam = "jt";
@@ -51,7 +51,6 @@ const CookieReader = (props) => {
     console.log("Step 3 | responseHandler")
     console.log(receivedJobTitle)
     console.log(props.jobTitleData)
-
     setJobTitle(receivedJobTitle, props.jobTitleData);
 
 
@@ -93,6 +92,8 @@ const CookieReader = (props) => {
      setupFilteredJob(jobTitle, props.resumeData, props.jobTitleData)
   },[jobTitle])
 
+
+ 
   return (
     <>
     </>
