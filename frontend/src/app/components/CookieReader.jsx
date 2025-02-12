@@ -13,7 +13,7 @@ const CookieReader = (props) => {
 
 
   const jobTitleParam = "jt";
-  const { jobTitle, setJobTitle, setupFilteredJob  }  = useMsContext();
+  const { jobTitle, setJobTitle, setupFilteredJob, sanityJobTitles  }  = useMsContext();
   // const pathName = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -51,6 +51,7 @@ const CookieReader = (props) => {
     console.log("Step 3 | responseHandler")
     console.log(receivedJobTitle)
     console.log(props.jobTitleData)
+
     setJobTitle(receivedJobTitle, props.jobTitleData);
 
 
@@ -87,8 +88,9 @@ const CookieReader = (props) => {
 
   useEffect(()=>{
      console.log("Done Loading")
-     console.log(jobTitle)
-     //setupFilteredJob(jobTitle)
+     console.log(jobTitle);
+     console.log( props.resumeData)
+     setupFilteredJob(jobTitle, props.resumeData, props.jobTitleData)
   },[jobTitle])
 
   return (

@@ -5,7 +5,7 @@ import { getJob, validJob } from '../utilities/job-logic';
 import { useReducer } from 'react';
 
 const initialState = {
-    jobTitle : null,
+    jobTitle : "",
     jobContent: {},
     isValidJob: false, 
     sanityJobTitles: []
@@ -25,7 +25,7 @@ const msContextReducer = (state , action ) => {
         return {
             ...state,
             jobContent: action.payload.jobContent,
-            isValidJob: action.payload.isValid
+            isValidJob: action.payload.isValidJob
             
         }
     }
@@ -44,7 +44,6 @@ export const MsContextProvider = ( props ) => {
     const [msContextState, msContextDispatch] = useReducer(msContextReducer, initialState);
 
     const setJobTitle = (jobTitle, sanityJobData) => {
-        console.log("Set the Fucking job title: " + jobTitle)
         msContextDispatch({type: "SETUP_JOB_TITLE", payload: {
             jobTitle: jobTitle,
             sanityJobTitles : sanityJobData
@@ -58,19 +57,23 @@ export const MsContextProvider = ( props ) => {
     //     setJobContent(filteredJob);
     // }
 
-    const setupFilteredJob = (jt) => {
-        console.log("msContextState:")
-        console.log(msContextState)
-        const filteredJob = getJob(jt);
+    const setupFilteredJob = (jt, resumeData, jobTitleData) => {
+
+        const filteredJob = getJob(jt, resumeData);
+        console.log("Filtered Job:");
+
         let isValidJob = false;
-        if(msContextState.sanityJobTitles.length > 0){
-            isValidJob = validJob(jt, msContextState.sanityJobData);
-        }
+        console.log("setupFilteredJOb")
+        console.log(filteredJob)
+        console.log(jobTitleData);
+        isValidJob = validJob(jt,jobTitleData);
+        console.log("is Valid Job: " + isValidJob)
   
         // const isValid = true;
         msContextDispatch({type: "SETUP_FILTERED_JOB", payload: {
             filteredJob: filteredJob,
-            isValidJob: isValidJob
+            isValidJob: isValidJob,
+
         }})
 
     }

@@ -1,14 +1,35 @@
 // import { jobTitles } from '../data/jobTitleAbreviations';
-import { jobs } from '../data/profileContent';
+// import { jobs } from '../data/profileContent';
 import {resumes} from '../data/resume';
 import { IJobTitleObj } from '../interfaces/IJobTitleObj';
 
+interface IResume {
+    title: string, 
+    jobTitle: {
+        cookieValue : string
+    },
+    experience : {
+        _id: string, 
+        company: string, 
+        yearStart: string, 
+        yearEnd: string, 
+        displayYears: string, 
+        duties : string[]
+    },
+    skillsDisplayName: string, 
+    skills: string
+}
+
+
 // import { ICookieJobTile } from '../interfaces/ICookieJobTile';
 
-export const getJob = ( jobTitle : string ) => {
-    let output = jobs[0];
+export const getJob = ( jobTitle : string, resumeData : IResume[] ) : IResume => {
+    console.log("getJob:");
+    console.log(jobTitle)
+    console.log(resumeData)
+    let output : IResume = resumeData[0];
     if(jobTitle !== undefined){
-        let filteredJob = jobs.filter(j=> j.cookieValue.toLowerCase() === jobTitle.toLowerCase());
+        let filteredJob = resumeData.filter(j=> j.jobTitle.cookieValue.toLowerCase() === jobTitle.toLowerCase());
         if(filteredJob.length > 0) {
             output =  filteredJob[0];
         }
@@ -18,16 +39,16 @@ export const getJob = ( jobTitle : string ) => {
 }
 
 export const validJob = (jobTitle : string, sanityJobTitles : IJobTitleObj[]) => {
-    console.log(sanityJobTitles)
-
-
     let output = false;
-    sanityJobTitles.forEach(dataObj=>{
-        console.log("PROPS JOB TITLE: " + dataObj.cookieValue + "|" + jobTitle  );
-        if(dataObj.cookieValue === jobTitle){
-            output = true;
-        }
-    })
+    if(sanityJobTitles.length > 0){
+        sanityJobTitles.forEach(dataObj=>{
+            console.log("PROPS JOB TITLE: " + dataObj.cookieValue + "|" + jobTitle  );
+            if(dataObj.cookieValue === jobTitle){
+                output = true;
+            }
+        })
+    }
+ 
     return output; 
 }
 

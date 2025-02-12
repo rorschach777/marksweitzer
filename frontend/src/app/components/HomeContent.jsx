@@ -10,8 +10,8 @@ const HomeContent = () => {
     const {setupFilteredJob, jobTitle, isValidJob, sanityJobTitles } = useMsContext();
     
     useEffect(()=>{
-        // setupFilteredJob(jobTitle, sanityJobTitles);
-    },[jobTitle])
+        alert(isValidJob)
+    },[isValidJob])
 
     return (
         <div className="ms-full-screen-container">

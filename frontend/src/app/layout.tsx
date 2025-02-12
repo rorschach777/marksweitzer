@@ -42,7 +42,27 @@ export default async function RootLayout({
     title,
     cookieValue
   }`;
-  const jobTitleData = await sanityData(QUERY)
+
+  const RESUMEQUERY = `*[_type == "resume"]{ _id,
+    title,
+    jobTitle-> {
+      cookieValue
+    },
+    experience []->{
+      _id,
+      company,
+      yearStart,
+      yearEnd,
+      displayYears,
+      duties []->{},
+ 
+    },
+    skillsDisplayName,
+    skills
+  }`;
+
+  const jobTitleData = await sanityData(QUERY);
+  const resumeData = await sanityData(RESUMEQUERY);
 
   // const jobIsValid = validJob(jobTitle);
   return (
@@ -54,7 +74,10 @@ export default async function RootLayout({
       <body>
       <MsContextProvider>
       <Suspense fallback={<div></div>}>
-        <CookieReader jobTitleData={jobTitleData}/>
+        <CookieReader 
+        jobTitleData={jobTitleData}
+        resumeData={resumeData}
+       />
       </Suspense>
 
         <div className="root-container ms-home">
