@@ -26,14 +26,9 @@ const LoadingContent = (props) => {
     const pathName = usePathname();
     const [loaded, setLoaded] = useState(false);
     useEffect(()=>{
-        // console.log("Step 1: - Loading Content - Job Title" + jobTitle)
-        // console.log(sanityJobTitles)
         if(isValidJob){
-            alert(isValidJob)
             setLoaded(true);
-        }
-       
-    
+        } 
     },[isValidJob])
 
 
