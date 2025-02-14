@@ -2,7 +2,7 @@
 
 import { getCookie, setCookie } from 'cookies-next';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { validJob } from '../utilities/job-logic';
 import { useMsContext } from '../context/ms-context';
 import { useRouter } from 'next/navigation'
@@ -13,7 +13,7 @@ const CookieReader = (props) => {
 
 
   const jobTitleParam = "jt";
-  const { jobTitle, setJobTitle, setupFilteredJob, sanityJobTitles  }  = useMsContext();
+  const { jobTitle, setJobTitle, setupFilteredJob  }  = useMsContext();
   // const pathName = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();

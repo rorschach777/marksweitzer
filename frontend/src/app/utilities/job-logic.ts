@@ -3,19 +3,22 @@
 import {resumes} from '../data/resume';
 import { IJobTitleObj } from '../interfaces/IJobTitleObj';
 
+interface IExperience {
+    _id: string, 
+    company: string, 
+    yearStart: string, 
+    yearEnd: string, 
+    displayYears: string, 
+    duties : string[]
+} 
+
+
 interface IResume {
     title: string, 
     jobTitle: {
         cookieValue : string
     },
-    experience : {
-        _id: string, 
-        company: string, 
-        yearStart: string, 
-        yearEnd: string, 
-        displayYears: string, 
-        duties : string[]
-    },
+    experience : IExperience[],
     skillsDisplayName: string, 
     skills: string
 }
@@ -26,7 +29,7 @@ interface IResume {
 export const getJob = ( jobTitle : string, resumeData : IResume[] ) : IResume => {
     let output : IResume = resumeData[0];
     if(jobTitle !== undefined){
-        let filteredJob = resumeData.filter(j=> j.jobTitle.cookieValue.toLowerCase() === jobTitle.toLowerCase());
+        const filteredJob = resumeData.filter(j=> j.jobTitle.cookieValue.toLowerCase() === jobTitle.toLowerCase());
         if(filteredJob.length > 0) {
             output =  filteredJob[0];
         }
@@ -55,7 +58,7 @@ export const getApplicableResume = (jobTitle :string) => {
     const frontendResume = copyOfResumes[0];
   
     let output = frontendResume; 
-    let filteredResume = copyOfResumes.filter(r=> r.cookieValue === jobTitle)[0];
+    const filteredResume = copyOfResumes.filter(r=> r.cookieValue === jobTitle)[0];
     if (filteredResume !== null){
         output = filteredResume;
     }
@@ -66,13 +69,13 @@ export const getApplicableResume = (jobTitle :string) => {
 
 
 /** This filters the actual jobs within a resume based on the slider index or the year */
-export const filterResumeContent = (sliderIndex : number, resume : any) => {
+export const filterResumeContent = (sliderIndex : number, resume : IResume) => {
     // if cookie has been set not defaulted
     let output = null;
     
     if(resume != null) {
         output = resume.experience.filter( j => {
-            let matchedByYear =  (sliderIndex >= j.yearStart && sliderIndex <= j.yearEnd) ? true : false;
+            const matchedByYear =  (sliderIndex >=  parseInt(j.yearStart) && sliderIndex <= parseInt(j.yearEnd)) ? true : false;
             if(matchedByYear){
                 return j;
             }

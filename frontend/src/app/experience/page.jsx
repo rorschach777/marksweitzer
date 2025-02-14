@@ -2,7 +2,7 @@ import Header from '../components/Header';
 
 import Experience from '../components/Experience';
 import PageHeading from '../components/PageHeading';
-import { sanityData } from '../utilities/sanityData';
+
 
 
 export const metadata = {

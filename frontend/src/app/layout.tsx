@@ -7,7 +7,6 @@ import './main.css'
 
 import Provider from './Provider';
 import CookieReader from "./components/CookieReader";
-import { Suspense } from "react";
 import { sanityData } from './utilities/sanityData';
 
 

@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 const HomeContent = () => {
 
-    const {setupFilteredJob, jobTitle, isValidJob, sanityJobTitles } = useMsContext();
+    const { isValidJob } = useMsContext();
 
 
     return (

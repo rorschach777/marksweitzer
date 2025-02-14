@@ -7,9 +7,9 @@ import {Accordion, AccordionItem} from "@nextui-org/react";
 import { useMsContext } from '../context/ms-context';
 import { filterResumeContent  } from '../utilities/job-logic';
 
-const Experience =  (props) => {
+const Experience =  () => {
 
-    const { jobTitle, jobContent } = useMsContext();
+    const {  jobContent } = useMsContext();
     const year = new Date().getFullYear();
     const [sliderIndex, setSliderIndex] = useState(2025);
     const [filteredJobs, setFilteredJobs] = useState([]);
