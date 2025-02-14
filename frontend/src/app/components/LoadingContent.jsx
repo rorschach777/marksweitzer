@@ -2,7 +2,7 @@
 
 import {Spinner} from "@nextui-org/react";
 import { useMsContext } from "../context/ms-context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const loadingScreen = () => {
@@ -22,15 +22,18 @@ const loadingScreen = () => {
 
 
 const LoadingContent = (props) => {
-    const {setupFilteredJob, jobTitle, isValidJob } = useMsContext();
+    const { isValidJob,  } = useMsContext();
     const pathName = usePathname();
+    const [loaded, setLoaded] = useState(false);
     useEffect(()=>{
-        setupFilteredJob(jobTitle);
-    },[setupFilteredJob, jobTitle])
+        if(isValidJob){
+            setLoaded(true);
+        } 
+    },[isValidJob])
 
     return (
         <>
-            { isValidJob || pathName === "/" ? props.children : loadingScreen()}
+            { loaded || pathName === "/" ? props.children : loadingScreen()}
         </>
     );
 }

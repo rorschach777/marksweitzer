@@ -2,7 +2,7 @@ import Header from '../components/Header';
 
 import Experience from '../components/Experience';
 import PageHeading from '../components/PageHeading';
-import { sanityData } from '../utilities/sanityData';
+
 
 
 export const metadata = {
@@ -12,25 +12,25 @@ export const metadata = {
   };
 
 export default async function Page(){
-  const QUERY = `*[_type == "resume"]{ _id,
-  title, 
-  jobTitle -> {
-    title, 
-    cookieValue
-  },
-  experience []->{
-    title,
-    company,
-    displayTitle,
-    yearStart,
-    yearEnd,
-    displayYears,
-    duties
-  }, 
-  skillsDisplayName,
-  skills
-}`;
-const resumeData = await sanityData(QUERY)
+//   const QUERY = `*[_type == "resume"]{ _id,
+//   title, 
+//   jobTitle -> {
+//     title, 
+//     cookieValue
+//   },
+//   experience []->{
+//     title,
+//     company,
+//     displayTitle,
+//     yearStart,
+//     yearEnd,
+//     displayYears,
+//     duties
+//   }, 
+//   skillsDisplayName,
+//   skills
+// }`;
+// const resumeData = await sanityData(QUERY)
 
 
     return (
@@ -39,7 +39,7 @@ const resumeData = await sanityData(QUERY)
             <div className="page">
                 <PageHeading title="Experience" />
                 <div className="ms-container">
-                    <Experience resumeData={resumeData} />
+                    <Experience  />
                 </div>
             </div>
         </>

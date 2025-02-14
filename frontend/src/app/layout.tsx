@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { MsContextProvider } from './context/ms-context';
 import LoadingContent from './components/LoadingContent';
 // import localFont from "next/font/local";
@@ -7,8 +8,7 @@ import './main.css'
 
 import Provider from './Provider';
 import CookieReader from "./components/CookieReader";
-import { Suspense } from "react";
-
+import { sanityData } from './utilities/sanityData';
 
 
 
@@ -36,6 +36,36 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
+
+
+  const QUERY = `*[_type == "jobTitle"]{ _id,
+    title,
+    cookieValue
+  }`;
+
+  const RESUMEQUERY = `*[_type == "resume"]{ _id,
+    title,
+    jobTitle-> {
+      title,
+      cookieValue
+    },
+    experience []->{
+      _id,
+      displayTitle,
+      company,
+      yearStart,
+      yearEnd,
+      displayYears,
+      duties,
+ 
+    },
+    skillsDisplayName,
+    skills
+  }`;
+
+  const jobTitleData = await sanityData(QUERY);
+  const resumeData = await sanityData(RESUMEQUERY);
+
   // const jobIsValid = validJob(jobTitle);
   return (
     <>
@@ -45,16 +75,20 @@ export default async function RootLayout({
       </head>
       <body>
       <MsContextProvider>
-      <Suspense fallback={<div></div>}>
-        <CookieReader />
+      <Suspense fallback={<></>}>
+        <CookieReader 
+          jobTitleData={jobTitleData}
+          resumeData={resumeData}
+        />
       </Suspense>
+  
 
         <div className="root-container ms-home">
             <Provider>
               <SmoothScrolling>
-              <LoadingContent>
-              {children}
-              </LoadingContent>
+                <LoadingContent>
+                  {children}
+                </LoadingContent>
               </SmoothScrolling>
             </Provider>
         </div>

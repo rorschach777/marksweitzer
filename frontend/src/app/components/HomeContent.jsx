@@ -3,15 +3,12 @@
 import Header from './Header';
 import FlexSquare from './FlexSquare';
 import { useMsContext } from '../context/ms-context';
-import { useEffect } from 'react';
+
 
 const HomeContent = () => {
 
-    const {setupFilteredJob, jobTitle, isValidJob } = useMsContext();
-    
-    useEffect(()=>{
-        setupFilteredJob(jobTitle);
-    },[jobTitle])
+    const { isValidJob } = useMsContext();
+
 
     return (
         <div className="ms-full-screen-container">

@@ -2,16 +2,18 @@
 
 import { getCookie, setCookie } from 'cookies-next';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { validJob } from '../utilities/job-logic';
 import { useMsContext } from '../context/ms-context';
 import { useRouter } from 'next/navigation'
 
 
-const CookieReader = () => {
+const CookieReader = (props) => {
+
+
+
   const jobTitleParam = "jt";
-  const [cookieLoaded, setCookieLoaded] = useState(false);
-  const { setJobTitle }  = useMsContext();
+  const { jobTitle, setJobTitle, setupFilteredJob  }  = useMsContext();
   // const pathName = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -20,12 +22,10 @@ const CookieReader = () => {
 
   //#region Support Methods. 
   const setCookieHandler = (existingCookie) => {
-
     let setValue = existingCookie === undefined ? searchParamJobTitle : existingCookie;
     const today = new Date();
     const expirationDate = new Date(today);
     expirationDate.setDate(today.getDate() + 2);
-
     const options = {expires: expirationDate}
     setCookie(jobTitleParam, setValue, options );
   };
@@ -38,7 +38,7 @@ const CookieReader = () => {
   const validateSearchParam = () => {
     let output = false;
     if(searchParamJobTitle !== null){
-      output = validJob(searchParamJobTitle);
+      output = validJob(searchParamJobTitle, props.jobTitleData);
     }
     return output;
   }
@@ -48,8 +48,7 @@ const CookieReader = () => {
   }
 
   const responseHandler = (receivedJobTitle) => {
-    setJobTitle(receivedJobTitle);
-    setCookieLoaded(true);
+    setJobTitle(receivedJobTitle, props.jobTitleData);
   }
 
   //#endregion
@@ -66,6 +65,7 @@ const CookieReader = () => {
         // if so set it. 
         contextJobTitle = searchParamJobTitle;
         setCookieHandler();
+      
       } else {
         redirectBadRequest()
       }
@@ -77,12 +77,18 @@ const CookieReader = () => {
     }
     // loaded data accordingly 
     responseHandler(contextJobTitle);
+
   },[]);
 
   useEffect(()=>{
-  },[cookieLoaded]);
+
+     setupFilteredJob(jobTitle, props.resumeData, props.jobTitleData)
+  },[jobTitle]);
 
 
+
+
+ 
   return (
     <>
     </>
