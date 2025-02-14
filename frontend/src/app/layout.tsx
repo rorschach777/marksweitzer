@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { MsContextProvider } from './context/ms-context';
 import LoadingContent from './components/LoadingContent';
 // import localFont from "next/font/local";
@@ -74,10 +75,13 @@ export default async function RootLayout({
       </head>
       <body>
       <MsContextProvider>
-      <CookieReader 
-        jobTitleData={jobTitleData}
-        resumeData={resumeData}
-       />
+      <Suspense fallback={<></>}>
+        <CookieReader 
+          jobTitleData={jobTitleData}
+          resumeData={resumeData}
+        />
+      </Suspense>
+  
 
         <div className="root-container ms-home">
             <Provider>
