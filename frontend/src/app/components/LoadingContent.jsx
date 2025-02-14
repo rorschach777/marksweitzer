@@ -22,7 +22,7 @@ const loadingScreen = () => {
 
 
 const LoadingContent = (props) => {
-    const {setupFilteredJob, jobTitle, isValidJob, sanityJobTitles } = useMsContext();
+    const { isValidJob,  } = useMsContext();
     const pathName = usePathname();
     const [loaded, setLoaded] = useState(false);
     useEffect(()=>{

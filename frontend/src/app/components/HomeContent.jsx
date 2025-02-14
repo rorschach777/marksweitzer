@@ -3,7 +3,7 @@
 import Header from './Header';
 import FlexSquare from './FlexSquare';
 import { useMsContext } from '../context/ms-context';
-import { useEffect } from 'react';
+
 
 const HomeContent = () => {
 

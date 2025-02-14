@@ -38,7 +38,8 @@ const ContactForm = ( props ) => {
     }, [
         formState.firstName, 
         formState.lastName,
-        formState.email
+        formState.email, 
+        formState.formIsValid
     ]);
     const firstNameValidation = () => {
  
