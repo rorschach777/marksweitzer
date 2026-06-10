@@ -26,17 +26,32 @@ interface IResume {
 
 // import { ICookieJobTile } from '../interfaces/ICookieJobTile';
 
-export const getJob = ( jobTitle : string, resumeData : IResume[] ) : IResume => {
-    let output : IResume = resumeData[0];
-    if(jobTitle !== undefined){
-        const filteredJob = resumeData.filter(j=> j.jobTitle.cookieValue.toLowerCase() === jobTitle.toLowerCase());
-        if(filteredJob.length > 0) {
-            output =  filteredJob[0];
+export const getJob = (
+    jobTitle: string,
+    resumeData: IResume[]
+): IResume => {
+
+    let output: IResume = resumeData[0];
+
+    if (jobTitle) {
+
+        const sanitizedData = resumeData.filter(
+            j => j.jobTitle?.cookieValue
+        );
+
+        const filteredJob = sanitizedData.filter(
+            j =>
+                j.jobTitle?.cookieValue?.toLowerCase() ===
+                jobTitle.toLowerCase()
+        );
+
+        if (filteredJob.length > 0) {
+            output = filteredJob[0];
         }
     }
- 
+
     return output;
-}
+};
 
 export const validJob = (jobTitle : string, sanityJobTitles : IJobTitleObj[]) => {
     let output = false;

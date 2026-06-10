@@ -5,7 +5,7 @@ import { getJob, validJob } from '../utilities/job-logic';
 import { useReducer } from 'react';
 
 const initialState = {
-    jobTitle : "",
+    jobTitle : "X",
     jobContent: {},
     isValidJob: false, 
     sanityJobTitles: []
