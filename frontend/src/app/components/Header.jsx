@@ -35,7 +35,7 @@ const Header = () => {
         }
     },[headerOpen])
 
-    const headerLinks = ["Home", "Contact", "Profile", "Experience", "Portfolio"];
+    const headerLinks = ["Home", "Contact", "Experience", "Portfolio"];
 
     return(
         <>
