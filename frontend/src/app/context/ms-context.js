@@ -68,7 +68,6 @@ export const MsContextProvider = ( props ) => {
         }})
 
     }
-
     return (
         <MsContext.Provider value={{ 
         jobTitle : msContextState.jobTitle, 
