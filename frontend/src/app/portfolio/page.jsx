@@ -13,6 +13,7 @@ export default async function Page(){
     title,
     slug,
     itemName,
+    publishedAt,
     description,
     "imageUrl": image.asset->url
     }`;

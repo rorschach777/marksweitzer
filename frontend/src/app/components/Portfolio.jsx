@@ -14,7 +14,7 @@ import Footer from './Footer';
     
     const limitItems = () => {
         const output = [];
-        for (let i = 0; i < 9; i++){
+        for (let i = 0; i < 18; i++){
             output.push(props.portfolioData[i]);
         }
         return output;
@@ -42,9 +42,13 @@ import Footer from './Footer';
     }
 
     const createPortfolioItems = (startIndex, endIndex) => {
+        const items = [...allPortfolioData]
+        const updatedList = items.sort((a, b) =>
+            new Date(b.publishedAt) - new Date(a.publishedAt)
+        )
+        .slice(startIndex, endIndex);
 
-        const items = allPortfolioData.slice(startIndex, endIndex);
-        return items.map((c,i)=>{
+        return updatedList.map((c,i)=>{
             return(
                 <div className={`portfolio-item item-${i+1}`} key={`portfolio-item-${i}`}>
                     <Image
@@ -65,7 +69,6 @@ import Footer from './Footer';
                         <h2>Portfolio</h2>
                 </div>
                 <div className="portfolio">
-       
                     <div className="ms-flex-container">
                         <div className="portfolio-layout">
                             <div className="instagrid">
@@ -76,6 +79,19 @@ import Footer from './Footer';
                             </div>
                             <div className="instagrid">
                                 {createPortfolioItems(6,9)}
+                            </div>
+                        </div>
+                    </div>
+                     <div className="ms-flex-container">
+                        <div className="portfolio-layout">
+                            <div className="instagrid">
+                                 {createPortfolioItems(9,12)}
+                            </div>
+                            <div className="instagrid">
+                                {createPortfolioItems(12,15)}
+                            </div>
+                            <div className="instagrid">
+                                {createPortfolioItems(15,18)}
                             </div>
                         </div>
                     </div>
