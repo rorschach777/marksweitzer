@@ -35,7 +35,7 @@ const Header = () => {
         }
     },[headerOpen])
 
-    const headerLinks = ["Home", "Contact", "Experience", "Portfolio"];
+    const headerLinks = ["Home", "Contact", "Experience", "Portfolio", "Profile"];
 
     return(
         <>
@@ -45,7 +45,7 @@ const Header = () => {
                         <div className="ms-flex-container">
                             <nav >
                                 <ul>
-                                    { headerLinks.map((c,i)=> <HeaderLink key={`header-link-${i}`} destination={c} />) }
+                                    { headerLinks.map((c,i)=> <HeaderLink key={`header-link-${i}`} destination={c} /> )}
                                 </ul>
                             </nav>
                             <Logo/>
