@@ -3,7 +3,7 @@ import {  useEffect, useState, useRef, useReducer } from 'react';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useMsContext } from '../context/ms-context';
+
 
 
 const words = ["websites.", "brands.", "campaigns.", "products.", "insights.", "teams.", "results."];
@@ -50,36 +50,17 @@ const profileReducer = (state, action) => {
 
 }
 
-const ProfileContent = (props) => {
-    const [loaded, setLoaded] = useState(false);
+const ProfileContent = () => {
+
     const container = useRef();
     const [profileState, profileDispatch] = useReducer(profileReducer, initialState);
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(useGSAP);
-    const { jobTitle } = useMsContext();
+
 
  
-    const getActiveContent = (stepNumber) => {
-        let output = profileState.activeContent;
-        switch(stepNumber){
-            case 1 : 
-                output = profileState.job.sections[0];
-                break;
-            case 2 : 
-                output = profileState.job.sections[1];
-                break;
-            case 3 : 
-                output = profileState.job.sections[2];
-                break;
-            case 4 : 
-                output = profileState.job.sections[3];
-                break;
-    
-        }
 
-        return output; 
-    }
 
     useEffect(()=>{
         
