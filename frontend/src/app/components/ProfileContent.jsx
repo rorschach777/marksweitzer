@@ -1,5 +1,5 @@
 "use client";
-import {  useEffect, useRef, useReducer } from 'react';
+import { useRef } from 'react';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,47 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const words = ["websites.", "brands.", "campaigns.", "products.", "insights.", "teams.", "results."];
 
-const initialState = {
-    step: 1,
-    job: {},
-    activeContent: null,
-    removeHidden: false,
-}
-
-const profileReducer = (state, action) => {
-    if (action.type === "REMOVE_HIDDEN"){
-        return {
-            ...state,
-            removeHidden: true,
-        }
-    }
-    if (action.type === "LOAD"){
-        return {
-            ...state,
-            job: action.payload.job,
-            removeHidden: false,
-            activeContent: action.payload.activeContent
-        }
-    }
-    if(action.type === "FORWARDS"){
-       return {
-        ...state, 
-        step: action.payload.step,
-        activeContent: action.payload.activeContent,
-        removeHidden: false,
-  
-       }
-    }
-    if(action.type === "BACKWARDS"){
-        return {
-            ...state, 
-            step: action.payload.step,
-            activeContent: action.payload.activeContent,
-            removeHidden: false
-           }
-    }
-
-}
 
 const ProfileContent = () => {
 
