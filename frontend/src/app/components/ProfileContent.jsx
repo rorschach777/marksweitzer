@@ -62,10 +62,6 @@ const ProfileContent = () => {
  
 
 
-    useEffect(()=>{
-        
-    },[profileState.activeContent])
-
 
 useGSAP(() => {
   const wordItems = gsap.utils.toArray(".profile-words li");
