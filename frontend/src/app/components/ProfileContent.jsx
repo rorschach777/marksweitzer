@@ -1,5 +1,5 @@
 "use client";
-import {  useEffect, useState, useRef, useReducer } from 'react';
+import {  useEffect, useRef, useReducer } from 'react';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -53,7 +53,7 @@ const profileReducer = (state, action) => {
 const ProfileContent = () => {
 
     const container = useRef();
-    const [profileState, profileDispatch] = useReducer(profileReducer, initialState);
+
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(useGSAP);
