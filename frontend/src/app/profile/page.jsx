@@ -29,10 +29,8 @@ export default async function Page(){
     return (
         <>
             <Header/>
-            <div className="profile-page page">
-                <PageHeading title="Profile" />
-                <ProfileContent profileData={profileData} />
-            </div>
+            <ProfileContent profileData={profileData} />
+        
  
         </>
     );

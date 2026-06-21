@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMsContext } from '../context/ms-context';
 
 
-
+const words = ["websites.", "brands.", "campaigns.", "products.", "insights.", "teams.", "results."];
 
 const initialState = {
     step: 1,
@@ -50,7 +50,6 @@ const profileReducer = (state, action) => {
 
 }
 
-
 const ProfileContent = (props) => {
     const [loaded, setLoaded] = useState(false);
     const container = useRef();
@@ -84,125 +83,91 @@ const ProfileContent = (props) => {
 
     useEffect(()=>{
         
-        // const filteredJob = getJob(jobTitle);
-        const filteredJob = props.profileData.filter(p=> p.jobTitle.cookieValue === jobTitle)[0];
-
-        profileDispatch({type: "LOAD", payload: {job : filteredJob, activeContent: filteredJob.sections[0] }});
-        setLoaded(true);
-    }, []);
-
-    useEffect(()=>{
-        
     },[profileState.activeContent])
 
 
+useGSAP(() => {
+  const wordItems = gsap.utils.toArray(".profile-words li");
 
+  gsap.set(".profile-panel", { yPercent: 100, scale: .8});
+  gsap.set(".profile-panel p", { opacity: 0 });
 
-    useGSAP(()=>{
-       
-        if(loaded === false){
-            return;
-        }
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".profile",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      markers: true,
+    },
+  });
 
-        const movements = {
-            incrementOne: 2.5,
-            incrementTwo : 6,
-            incrementThree : 4.5,
-            incrementFour: 20
+  tl.to(".profile-panel", {
+    yPercent: 0,
+    scale: 1,
+    ease: "none",
+  }, 0.65);
 
-        }
+  tl.to(".profile-panel p", {
+    opacity: 1,
+    ease: "none",
+  }, 0.8);
 
-        const nextButton = document.getElementById("next-button");
-        const backButton = document.getElementById("back-button");
-        const profileHeadline = document.getElementById("profile-content-headline");
- 
-        const tl = gsap.timeline({paused: true, defaults: {duration: .05}});
-        const heroText = document.getElementById("hero");
-    
-        const counterContainer = document.getElementById("counter-container");
-        const contentOne = document.getElementById("description-text-section-one");
-        const handleNumber = (number, direction ) => {
-            return direction === "forwards" ? number * -1 : number;
-        }
-    
-        const clickHandler = ( direction ) => {
-         
-            tl.from(contentOne, { x : '-5rem', opacity:0}).to(contentOne, { x : '0', opacity: 1});
-            tl.to(heroText, {top: `+=${handleNumber(movements.incrementFour, direction)}rem`, ease: "circ", duration: .5, opacity: .2, filter: "blur(2rem)", stagger: .5, }).to(heroText, {filter:  'blur(0px)', opacity: 1});
-            tl.to(counterContainer, {y: `+=${handleNumber(movements.incrementThree, direction)}rem`,});
-            tl.from(profileHeadline, { x : '-5rem', opacity:0}).to(profileHeadline, { x : '0', opacity: 1});
-            tl.play();
-        }
+  tl.to(".profile", {
+  yPercent: 0,
+  scaleX: 1,
+  borderRadius: "0rem",
+  ease: "ease",
+}, 0.65);
+ScrollTrigger.create({
+  trigger: ".profile",
+  start: "top top",
+  end: "bottom bottom",
+  markers: true,
+  onUpdate: (self) => {
+    console.log(self.progress);
+  }
+});
+  ScrollTrigger.create({
+    trigger: ".profile",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true,
+    onUpdate: (self) => {
+      const activeIndex = Math.min(
+        wordItems.length - 1,
+        Math.floor(self.progress * wordItems.length)
+      );
 
-        nextButton.addEventListener("click", ()=>{
-            clickHandler("forwards");
-            const updatedStep = ( profileState.step >= 1 && profileState.step < 4 ) ? profileState.step += 1 : profileState.step; 
-            profileDispatch({type: "FORWARDS", payload: {step: updatedStep, activeContent : getActiveContent(updatedStep)}})
-            profileDispatch({type: "REMOVE_HIDDEN"})
-        });
-       
-        backButton.addEventListener("click", ()=>{
-            clickHandler("reverse");
-            const updatedStep = ( profileState.step >= 1 && profileState.step < 5 ) ? profileState.step -= 1 : profileState.step; 
-            profileDispatch({type: "BACKWARDS", payload : {step: updatedStep, activeContent : getActiveContent(updatedStep)}})
-            profileDispatch({type: "REMOVE_HIDDEN"})
-        });
-   
-        
-    }, { dependencies: [loaded], scope: container} );
-
-   
+      wordItems.forEach((word, i) => {
+        word.classList.toggle("active", i === activeIndex);
+      });
+    },
+  });
+  
+}, { scope: container });
 
     return(
-        <div className="profile" ref={container}  >
-           <div className="profile-content" >
-                <div className="profile-content-section">
-                    <div className="hero"  id="hero" >
-                        <span className={`hero-text`}>{profileState.activeContent !== null && profileState.job.mainMessage}</span>
-                    </div>
-                    <div className="profile-content-indicator">
-                        <div className="profile-content-indicator-container">
-                            <div id="counter-container" className="counter-container">
-                                <span id="step-1">01</span>
-                                <span id="step-2">02</span>
-                                <span id="step-2">03</span>
-                                <span id="step-2">04</span>
-                            </div>
-                       
-                            <span className="total-steps">/ 04</span>
-                        </div>
-                    </div>
-                    <div className="profile-content-headline" id="profile-content-headline">
-                        {profileState.activeContent && (
-                            <>
-                                <span>{profileState.activeContent.subHeadlineTop}</span>
-                                <span>{profileState.activeContent.subHeadlineBottom}</span>
-                            </>
-                        )}
-                       
-                    </div>
-                    <div className="progress-navigation">
-                        <div className="progress-navigation-container">
-                            <div  className={`progress-button ${profileState.step > 1 ? '' : 'u-hide'} progress-button-back` } id="back-button">&lt; Back<span>  </span></div>
-                            <div className={`progress-button ${profileState.step < 4 ? '' : 'u-hide'} progress-button-next` } id="next-button">Next  &gt;<span> </span></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="profile-content-section profile-content-description">
-                    <div className="profile-content-description-title">
-                        <span>{profileState.activeContent != null && profileState.activeContent.mainTitle}</span>
-                    </div>
-                    <div  className={`profile-content-description-text `}>
-                        <div id="description-text-section-one" className={`description-text-section   description-text-section-one `}>
-                            <span>{profileState.activeContent != null && profileState.activeContent.secondaryTitle}</span>
-                            <p>
-                            {profileState.activeContent != null && profileState.activeContent.mainContent}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-           </div>
+    <section className="profile" ref={container}>
+    <div className="profile-sticky">
+        <div className="profile-words">
+        <h1>Lets build&nbsp;</h1>
+        <ul>
+            {words.map((word, i) => (
+            <li key={word} className={i === 0 ? "active" : ""}>
+                {word}
+            </li>
+            ))}
+        </ul>
         </div>
+
+        <main className="profile-panel">
+        <p>
+            From an idea to real-world <span>impact.</span>
+        </p>
+         </main>
+    </div>
+    </section>
     );
 }
 export default ProfileContent;
