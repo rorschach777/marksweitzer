@@ -97,8 +97,8 @@ useGSAP(() => {
       trigger: ".profile",
       start: "top top",
       end: "bottom bottom",
-      scrub: true,
-      markers: true,
+      scrub: true
+
     },
   });
 
@@ -123,7 +123,7 @@ ScrollTrigger.create({
   trigger: ".profile",
   start: "top top",
   end: "bottom bottom",
-  markers: true,
+
   onUpdate: (self) => {
     console.log(self.progress);
   }
