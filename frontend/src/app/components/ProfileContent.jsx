@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 
-const words = ["websites.", "brands.", "campaigns.", "products.", "insights.", "teams.", "results."];
+const words = ["brands.", "campaigns.", "products.", "insights.", "results."];
 
 
 const ProfileContent = () => {
@@ -25,7 +25,7 @@ const ProfileContent = () => {
 useGSAP(() => {
   const wordItems = gsap.utils.toArray(".profile-words li");
 
-  gsap.set(".profile-panel", { yPercent: 100, scale: .8});
+  gsap.set(".profile-panel", { yPercent: 120, scale: .5, opacity: 0});
   gsap.set(".profile-panel p", { opacity: 0 });
 
   const tl = gsap.timeline({
@@ -34,7 +34,6 @@ useGSAP(() => {
       start: "top top",
       end: "bottom bottom",
       scrub: true
-
     },
   });
 
@@ -42,19 +41,20 @@ useGSAP(() => {
     yPercent: 0,
     scale: 1,
     ease: "none",
-  }, 0.65);
+    opacity: 5
+  }, 0.9);
 
   tl.to(".profile-panel p", {
     opacity: 1,
     ease: "none",
-  }, 0.8);
+  }, 0.9);
 
   tl.to(".profile", {
   yPercent: 0,
   scaleX: 1,
   borderRadius: "0rem",
   ease: "ease",
-}, 0.65);
+}, 0.8);
 ScrollTrigger.create({
   trigger: ".profile",
   start: "top top",
@@ -74,7 +74,6 @@ ScrollTrigger.create({
         wordItems.length - 1,
         Math.floor(self.progress * wordItems.length)
       );
-
       wordItems.forEach((word, i) => {
         word.classList.toggle("active", i === activeIndex);
       });
@@ -99,7 +98,7 @@ ScrollTrigger.create({
 
         <main className="profile-panel">
         <p>
-            From an idea to real-world <span>impact.</span>
+            From idea to real-world <span>impact.</span>
         </p>
          </main>
     </div>
