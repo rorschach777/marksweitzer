@@ -30,9 +30,7 @@ const Header = () => {
         } else {
             tl.current.timeScale(2)
             tl.current.reverse();
-   
-
-        }
+           }
     },[headerOpen])
 
     const headerLinks = ["Home", "Contact", "Experience", "Portfolio", "Profile"];

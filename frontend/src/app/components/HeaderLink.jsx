@@ -2,9 +2,20 @@
 import {Link} from "@nextui-org/link";
 
 const HeaderLink = (props) => {
+  const path = props.destination === "Home" ? "/" : `/${props.destination.toLowerCase()}`;
+  const linkText = props.destination;
+
     return(
         <li className="header-link">
-            <Link href={`/${props.destination === "Home" ? "" : props.destination.toLowerCase()}`} >{ props.destination}</Link>
+            <Link onClick={()=>{
+                    pushToDataLayer(`navigation_click`, {
+                    location: "top_navigation",    
+                    link_text: linkText,
+                    destination: path,
+                })
+            }} href={`/${props.destination === "Home" ? "" : props.destination.toLowerCase()}`} >
+                {linkText}
+            </Link>
         </li>
     );
 }
