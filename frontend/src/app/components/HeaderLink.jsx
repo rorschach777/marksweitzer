@@ -13,22 +13,22 @@ const HeaderLink = (props) => {
 
                 console.log("nav clicked", linkText, path);
 
-                window.dataLayer = window.dataLayer || [];
+                // window.dataLayer = window.dataLayer || [];
 
-                window.dataLayer.push({
-                    event: "navigation_click",
-                    navigation_location: "top_navigation",
-                    link_text: linkText,
-                    destination: path,
-                });
-
-                console.log("after push", window.dataLayer);
-                
-                // pushToDataLayer(`navigation_click`, {
-                //     navigation_location: "top_navigation",    
+                // window.dataLayer.push({
+                //     event: "navigation_click",
+                //     navigation_location: "top_navigation",
                 //     link_text: linkText,
                 //     destination: path,
-                // })
+                // });
+
+                // console.log("after push", window.dataLayer);
+                
+                pushToDataLayer(`navigation_click`, {
+                    navigation_location: "top_navigation",    
+                    link_text: linkText,
+                    destination: path,
+                })
             }} href={`/${props.destination === "Home" ? "" : props.destination.toLowerCase()}`} >
                 {linkText}
             </Link>
