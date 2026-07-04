@@ -100,7 +100,7 @@ export default async function RootLayout({
         </MsContextProvider>
 
       </body>
-      <GoogleTagManager gtmId="G-JD7RD1N5FQ" />
+      <GoogleTagManager gtmId="GTM-TH6BB3XL" />
     </html>
     </>
   );
