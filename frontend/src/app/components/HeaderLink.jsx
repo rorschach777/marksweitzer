@@ -10,7 +10,7 @@ const HeaderLink = (props) => {
         <li className="header-link">
             <Link onClick={()=>{
                     pushToDataLayer(`navigation_click`, {
-                    location: "top_navigation",    
+                    navigation_location: "top_navigation",    
                     link_text: linkText,
                     destination: path,
                 })

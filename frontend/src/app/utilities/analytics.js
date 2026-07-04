@@ -1,4 +1,4 @@
-export function pushToDataLayer(eventName, eventData = {}) {
+export const pushToDataLayer = (eventName, eventData = {}) => {
   if (typeof window === "undefined") return;
 
   window.dataLayer = window.dataLayer || [];
@@ -7,4 +7,4 @@ export function pushToDataLayer(eventName, eventData = {}) {
     event: eventName,
     ...eventData,
   });
-}
+};
