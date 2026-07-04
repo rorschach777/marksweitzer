@@ -10,6 +10,8 @@ import Provider from './Provider';
 import CookieReader from "./components/CookieReader";
 import { sanityData } from './utilities/sanityData';
 
+import { GoogleTagManager } from "@next/third-parties/google";
+
 
 
 // const geistSans = localFont({
@@ -72,8 +74,11 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/ewr3rhx.css" />
+
+
       </head>
       <body>
+
       <MsContextProvider>
       <Suspense fallback={<></>}>
         <CookieReader 
@@ -95,6 +100,7 @@ export default async function RootLayout({
         </MsContextProvider>
 
       </body>
+      <GoogleTagManager gtmId="G-JD7RD1N5FQ" />
     </html>
     </>
   );
