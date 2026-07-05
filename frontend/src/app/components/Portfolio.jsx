@@ -5,6 +5,7 @@ import {Image} from "@nextui-org/react";
 import {  useEffect, useState } from 'react';
 import NextUIModal from './NextUIModal';
 import Footer from './Footer';
+import {pushToDataLayer} from '../utilities/analytics';
 
  const Portfolio = (props) => {
     const [isBlurred, setIsBlurred ] = useState(false);
@@ -49,12 +50,26 @@ import Footer from './Footer';
         .slice(startIndex, endIndex);
 
         return updatedList.map((c,i)=>{
+            const portfolioItemTitle = c.title;
+            const portfolioItemName = c.itemName
+            const portfolioImageUrl = c.imageUrl
             return(
                 <div className={`portfolio-item item-${i+1}`} key={`portfolio-item-${i}`}>
                     <Image
-                        alt={c.title}
-                        src={c.imageUrl}
-                        onClick={()=>clickHandler(c.itemName)}
+                        alt={portfolioItemTitle}
+                        src={portfolioImageUrl}
+                        onClick={()=>{
+                            clickHandler(portfolioItemName);
+                            pushToDataLayer("portfolio_item_click", {
+                                portfolio_item_title: portfolioItemTitle,
+                                portfolio_item_name: portfolioItemName
+                            });
+                        }}
+                            
+        
+                    
+                            
+                        
                         />
                 </div>
             );
