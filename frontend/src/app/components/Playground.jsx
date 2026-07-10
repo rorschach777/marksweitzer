@@ -14,7 +14,7 @@ const playground = () => {
         products: updatedProducts
     };
 
-    pushToDataLayer("update-cart", {
+    pushToDataLayer("cart_update", {
         cart: updatedCart
     });
 
