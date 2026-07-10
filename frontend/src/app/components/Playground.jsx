@@ -4,20 +4,20 @@ import PlaygroundReviews from './PlaygroundReviews';
 import { pushToDataLayer } from '../utilities/analytics';
 
 const Playground = () => {
-    const [cart, setCart] = useState( {total: 0, products: []});
+    const [cart, setCart] = useState( {total: 0, items: []});
 
     const updateCart = (item) => {
-    const updatedProducts = [...cart.products, item];
+    const updatedItems = [...cart.items, item];
 
-    const updatedCart = {
-        total: updatedProducts.reduce((sum, product) => sum + product.price, 0),
-        products: updatedProducts
+    const payload = { eccomerce: {
+            currency: "USD",
+            value: updatedProducts.reduce((sum, product) => sum + product.price, 0),
+            items: updatedItems
+
+        }
     };
 
-    pushToDataLayer("cart_update", {
-        cart: updatedCart
-    });
-
+    pushToDataLayer("add_to_cart", payload);
     setCart(updatedCart);
     };
 
@@ -25,8 +25,11 @@ const Playground = () => {
         const sku = "SHIRT123";
         const price = 12.99;
         const payload = {
+            item_id: 1,
+            item_name: "Shirt", 
             sku : sku,
-            price: price
+            price: price,
+            quantity: 1
         }
         updateCart(payload);
     }
@@ -35,13 +38,15 @@ const Playground = () => {
         const sku = "PANTS123";
         const price = 19.99;
         const payload = {
+            item_id: 2,
+            item_name: "Pants", 
             sku : sku,
-            price: price
+            price: price,
+            quantity: 1
         }
         updateCart(payload);
     }
 
- 
     return (
         <div className="playground">
             <div >Analytics Playground</div>
