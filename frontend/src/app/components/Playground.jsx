@@ -4,47 +4,47 @@ import PlaygroundReviews from './PlaygroundReviews';
 import { pushToDataLayer } from '../utilities/analytics';
 
 const Playground = () => {
-    const [cart, setCart] = useState( {total: 0, items: []});
+    const [cart, setCart] = useState( {eccomerce:{currency: "USD", value: 0, items: []}});
 
     const updateCart = (item) => {
-    const updatedItems = [...cart.items, item];
+    const updatedItems = [...cart.eccomerce.items, item];
 
     const payload = { eccomerce: {
             currency: "USD",
-            value: updatedProducts.reduce((sum, product) => sum + product.price, 0),
+            value: updatedItems.reduce((sum, product) => sum + product.price, 0),
             items: updatedItems
 
         }
     };
 
-    pushToDataLayer("add_to_cart", payload);
-    setCart(updatedCart);
+    // pushToDataLayer("add_to_cart", payload);
+    setCart(payload);
     };
 
     const shirtHandler = () => {
         const sku = "SHIRT123";
         const price = 12.99;
-        const payload = {
+        const item = {
             item_id: 1,
             item_name: "Shirt", 
             sku : sku,
             price: price,
             quantity: 1
         }
-        updateCart(payload);
+        updateCart(item);
     }
 
     const pantsHandler = () => {
         const sku = "PANTS123";
         const price = 19.99;
-        const payload = {
+        const item = {
             item_id: 2,
             item_name: "Pants", 
             sku : sku,
             price: price,
             quantity: 1
         }
-        updateCart(payload);
+        updateCart(item);
     }
 
     return (
@@ -54,8 +54,8 @@ const Playground = () => {
 
             <div className="product-container">
                 <div className="cart">
-                    <div>Cart Total: ${cart.total.toFixed(2)}</div>
-                    <div>Cart Items: {cart.products.length}</div>
+                    <div>Cart Total: ${cart.eccomerce.value.toFixed(2)}</div>
+                    <div>Cart Items: {cart.eccomerce.items.length}</div>
                 </div>
                 <div className="product">
                     <span>Shirt</span>
