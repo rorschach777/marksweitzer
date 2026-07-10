@@ -8,34 +8,40 @@ const data = [
     {title: "review 3", text: "review-text"}
 ]
 
-const createReviews = () => {
-    return data.map((c,i) => {
-        const [reviewState, setReviewState] = useState({expanded: false });
-        const reviewId = `review-${i}`;
-        const updatedExpandedState = !reviewState.expanded;
-        const expandHandler = () => {
-            const eventPayload = {
-                review_id: reviewId,
-                review_expanded: updatedExpandedState
-            };
-            pushToDataLayer("review-expanded", eventPayload);
-            setReviewState({expanded: updatedExpandedState});
-        }
-        return (
-            <div className="review" key={`review-${i}`} id={`review-${i}`}>
-                <div>{c.title}</div>
-                { reviewState.expanded && ( <p>{c.text}</p>)} 
-                <span onClick={expandHandler}>expand</span>
-            </div>
-        )
-    })
-}
+
+
+const ReviewCard = ({ item, index }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const reviewId = `review-${index}`;
+
+  const expandHandler = () => {
+    const nextExpanded = !expanded;
+
+    pushToDataLayer("review-expanded", {
+      review_id: reviewId,
+      review_expanded: nextExpanded
+    });
+
+    setExpanded(nextExpanded);
+  };
+
+  return (
+    <div className="review" id={reviewId}>
+      <div>{item.title}</div>
+      {expanded && <p>{item.text}</p>}
+      <span onClick={expandHandler}>expand</span>
+    </div>
+  );
+};
 
 const PlaygroundReviews = () => {
-    return (
-        <div className="review-container">
-           {createReviews()}
-        </div>
-    );
-}
+  return (
+    <div className="review-container">
+      {data.map((item, index) => (
+        <ReviewCard key={index} item={item} index={index} />
+      ))}
+    </div>
+  );
+};
 export default PlaygroundReviews;

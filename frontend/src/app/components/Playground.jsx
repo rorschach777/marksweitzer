@@ -1,27 +1,25 @@
 "use client";
 import {useState} from 'react';
 import PlaygroundReviews from './PlaygroundReviews';
-
+import { pushToDataLayer } from '../utilities/analytics';
 
 const playground = () => {
     const [cart, setCart] = useState( {total: 0, products: []});
 
-    const updateCart = (items) => {
-        let updatedCartTotal = cart.total;
-        // get current products
-        const currentProducts = cart.products;
-        // add new items 
-        const updatedProducts = [...currentProducts, items];
-        // total the items 
-        updatedProducts.forEach(c => {
-            updatedCartTotal += c.price;
-        })
-        const updatedCart = {
-            total: updatedCartTotal,
-            products: updatedProducts
-        }
-        setCart(updatedCart);
-    }
+    const updateCart = (item) => {
+    const updatedProducts = [...cart.products, item];
+
+    const updatedCart = {
+        total: updatedProducts.reduce((sum, product) => sum + product.price, 0),
+        products: updatedProducts
+    };
+
+    pushToDataLayer("update-cart", {
+        cart: updatedCart
+    });
+
+    setCart(updatedCart);
+    };
 
     const shirtHandler = () => {
         const sku = "SHIRT123";
@@ -43,6 +41,7 @@ const playground = () => {
         updateCart(payload);
     }
 
+ 
     return (
         <div className="playground">
             <div >Analytics Playground</div>
