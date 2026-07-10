@@ -1,6 +1,6 @@
 "use client";
 import {useState} from 'react';
-
+import PlaygroundReviews from './PlaygroundReviews';
 
 
 const playground = () => {
@@ -45,8 +45,9 @@ const playground = () => {
 
     return (
         <div className="playground">
-            <div>Reviews iframe</div>
             <div >Analytics Playground</div>
+            <PlaygroundReviews />
+
             <div className="product-container">
                 <div className="cart">
                     <div>Cart Total: ${cart.total.toFixed(2)}</div>
