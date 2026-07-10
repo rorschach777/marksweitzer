@@ -8,8 +8,6 @@ const data = [
     {title: "review 3", text: "review-text"}
 ]
 
-
-
 const ReviewCard = ({ item, index }) => {
   const [expanded, setExpanded] = useState(false);
 
