@@ -77,4 +77,4 @@ const Playground = () => {
     );
 }
 
-export default playground;
+export default Playground;
