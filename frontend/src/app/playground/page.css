@@ -1,0 +1,44 @@
+
+ 
+
+.playground {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.product-container {
+    display: flex;
+}
+
+.product {
+    background-color: white;
+    padding: .5rem;
+    color: black;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 15rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem;
+}
+
+button.add-to-cart, .checkout{
+    background-color: rgb(15, 136, 223); 
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    margin: 1.5rem 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

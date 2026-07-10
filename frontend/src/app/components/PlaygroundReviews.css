@@ -1,0 +1,15 @@
+.review-container {
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    padding: .5rem;
+    width: 108rem;
+    margin:  5rem;
+}
+.review {
+    background-color: white;
+    padding: .5rem;
+    color: black;
+    border-radius: .5rem;
+    margin: 0 .5rem;
+}
