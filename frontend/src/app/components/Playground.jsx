@@ -4,7 +4,14 @@ import PlaygroundReviews from './PlaygroundReviews';
 import { pushToDataLayer } from '../utilities/analytics';
 
 const Playground = () => {
-    const [cart, setCart] = useState( {eccomerce:{currency: "USD", value: 0, items: []}});
+    const defaultState = {
+        eccomerce:{
+            currency: "USD", 
+            value: 0, 
+            items: []
+        }
+    }
+    const [cart, setCart] = useState( defaultState);
 
     const updateCart = (item) => {
     const updatedItems = [...cart.eccomerce.items, item];
@@ -55,7 +62,7 @@ const Playground = () => {
             <div className="product-container">
                 <div className="cart">
                     <div>Cart Total: ${cart.eccomerce.value.toFixed(2)}</div>
-                    <div>Cart Items: {cart.eccomerce.items.length}</div>
+                    <div>Cart Items: {cart.eccomerce.items !== undefined ? cart.eccomerce.items.length : 0}</div>
                 </div>
                 <div className="product">
                     <span>Shirt</span>
