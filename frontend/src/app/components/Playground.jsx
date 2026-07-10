@@ -3,7 +3,7 @@ import {useState} from 'react';
 import PlaygroundReviews from './PlaygroundReviews';
 import { pushToDataLayer } from '../utilities/analytics';
 
-const playground = () => {
+const Playground = () => {
     const [cart, setCart] = useState( {total: 0, products: []});
 
     const updateCart = (item) => {
